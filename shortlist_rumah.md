@@ -1,10 +1,10 @@
 # Shortlist rumah untuk disurvei
 
-Disusun 15 November 2026 dari 1.990 rumah yang sudah terkumpul (rumah123, post Threads, dan catatan survei kami). Ini bahan diskusi keluarga, bukan nasihat keuangan dan bukan penilaian properti resmi.
+Disusun 15 November 2026 dari 2.189 rumah yang sudah terkumpul (rumah123, post Threads, dan catatan survei kami). Angkanya sudah termasuk pembaruan sore hari itu: iklan rumah123 dua hari terakhir dan 13 post Threads baru. Ini bahan diskusi keluarga, bukan nasihat keuangan dan bukan penilaian properti resmi.
 
 ## Intinya
 
-Hasilnya sedikit. Dari 1.990 rumah, hanya 14 yang lolos semua kriteria wajib tanpa ada yang masih belum jelas. Dari 14 itu, 5 ada di wilayah yang kalian sebut: 1 di Jakarta dan 4 di Kota Bekasi. Sembilan sisanya ada di Depok, Bogor, dan Tangerang.
+Hasilnya sedikit. Dari 2.189 rumah, hanya 14 yang lolos semua kriteria wajib tanpa ada yang masih belum jelas. Dari 14 itu, 5 ada di wilayah yang kalian sebut: 1 di Jakarta dan 4 di Kota Bekasi. Sembilan sisanya ada di Depok, Bogor, dan Tangerang.
 
 Dari 5 rumah itu hanya satu yang harganya di bawah 400 jt, yaitu Kansa Residence di Kramat Jati (390 jt, Jakarta Timur). Empat lainnya 475 sampai 500 jt.
 
@@ -12,9 +12,9 @@ Ada 5 rumah lagi yang tinggal satu atau dua hal lagi untuk lolos. Saya masukkan 
 
 Tiga hal yang paling membatasi:
 
-1. Harga. 1.369 dari 1.990 rumah gugur di sini (1.252 di atas 500 jt, 85 tanpa harga, 30 over kredit).
-2. Harus di dalam cluster atau komplek. Dari 621 rumah yang lolos harga, 210 gugur di sini. Di Jakarta kriteria ini yang paling keras: dari 64 rumah Jakarta berharga sampai 500 jt, 50 bukan di komplek.
-3. Lokasi iklan tidak tepat. Ini bukan kriteria, tetapi inilah yang membuat daftar pasti jadi pendek. Dari 217 rumah yang belum gugur, 182 titiknya hanya titik tengah daerah, jadi banjir dan waktu tempuhnya belum bisa dipastikan.
+1. Harga. 1.513 dari 2.189 rumah gugur di sini (1.388 di atas 500 jt, 86 tanpa harga, 34 over kredit).
+2. Harus di dalam cluster atau komplek. Dari 676 rumah yang lolos harga, 228 gugur di sini. Di Jakarta kriteria ini yang paling keras: dari 67 rumah Jakarta berharga sampai 500 jt, 51 bukan di komplek.
+3. Lokasi iklan tidak tepat. Ini bukan kriteria, tetapi inilah yang membuat daftar pasti jadi pendek. Dari 235 rumah yang belum gugur, 197 titiknya hanya titik tengah daerah, jadi banjir dan waktu tempuhnya belum bisa dipastikan.
 
 Kriteria 25 menit ke gerbang tol ternyata tidak terlalu membatasi di Jakarta Timur dan Kota Bekasi, karena gerbang tol di sana rapat. Yang perlu kalian tahu: 25 menit ke gerbang bukan berarti dekat ke kantor. Dari kelima rumah teratas, perjalanan sampai Manggala Wanabakti pada Senin pukul 06.30 butuh 45 sampai 80 menit menurut Google Maps.
 
@@ -121,6 +121,27 @@ Catatan per rumah:
 - **8 dan 9. Raisya Pro Residence.** Developernya memakai nama Raisya Propertindo. Di Google Maps ada cluster bernomor 3, 5, 9, 11, dan 12 di sekitar Kranggan dan Jatimurni, jadi mereka memang sudah membangun beberapa cluster. Saya tidak menemukan ulasan independen maupun berita keluhan. Itu bukan bukti bahwa developernya baik. Keduanya di luar zona bahaya banjir BNPB dan hampir 3 km dari badan tol. Harga "mulai" berarti unit termurah. Iklan: https://www.threads.com/@yusuf_raisya_property/post/Dfq7RX7ATE6 dan https://www.threads.com/@raisyapropertindo/post/Dfo4rsEE0aD
 - **10. Cilangkap.** Satu-satunya cadangan di Jakarta. One gate isi 8 rumah, akses mobil, di foto ada mobil terparkir di depan. Lokasi tepatnya belum diketahui (iklan: 3 menit dari Mabes TNI). Di titik perkiraan, 3 dari 24 RT dalam 500 m tercatat banjir 2021 sampai 2024. BPBD DKI juga mencatat 5 RT di Cilangkap terendam pada 22 Maret 2026 ([Republika](https://news.republika.co.id/berita/tcajgt416/banjir-masih-rendam-46-rt-di-jakarta-timur)). Surat masih AJB, lihat bagian berikut. Iklan: https://www.threads.com/@mr.yoginugraha/post/DfbncffIBEX
 
+## Lima rumah baru dari pembaruan sore
+
+Pembaruan 15 November sore menambah 199 rumah. Tidak ada yang lolos semua kriteria, dan sepuluh rumah di atas tidak berubah. Lima rumah baru di wilayah kalian belum gugur. Semuanya masih perlu dicek, jadi belum saya beri nomor.
+
+| Rumah | Harga | LT / LB | Gerbang tol (model) | Yang belum terbukti | Iklan |
+|---|---|---|---|---|---|
+| Cluster Arsa 2, Petukangan Selatan, Pesanggrahan, Jakarta Selatan | 485 jt (di atas 400 jt) | sekitar 45 / 36 | Ciledug 2 (Lingkar Luar), 6 menit | Rumah belum dibangun, akses mobil, carport | [Threads](https://www.threads.com/@rizky.azhr/post/Dfv45GjAftv) |
+| Cluster di Jatibening, Pondok Gede | 400 jt | 58 / 40 | Pondok Gede Timur 2 (Jakarta-Cikampek), 9 menit | Lokasi tepat, banjir | [rumah123](https://www.rumah123.com/properti/bekasi-jatibening/rumah-moderen-desain-minilis-harga-terjangkau-di-kota-depok-hos42854510/) |
+| Rumah dalam komplek di Pondok Gede, nama komplek tidak ditulis | 470 jt (di atas 400 jt) | 75 / tidak ditulis | Pondok Gede Barat 2 (Jakarta-Cikampek), 15 menit | Lokasi tepat, carport | [Threads](https://www.threads.com/@sitimasitoh_mamas/post/Dfv344tE-mN) |
+| Rumah baru di Kranggan, Jatisampurna | 350 jt | 67 / 50 | Jatiwarna 2 (Lingkar Luar), 17 menit | Lokasi tepat, reputasi developer | [rumah123](https://www.rumah123.com/properti/bekasi-jatisampurna/dijuak-rumah-baru-dan-murah-lokasi-tidak-banjir-hos40669528/) |
+| Cluster dekat Summarecon Bekasi | 435 jt (di atas 400 jt) | 60 / 36 | Bekasi Barat 1 (Jakarta-Cikampek), 19 menit | Lokasi tepat, reputasi developer | [rumah123](https://www.rumah123.com/properti/bekasi-summarecon-bekasi/rumah-deket-dengan-summarecon-bekasi-kpr-dp-0-hos42317181/) |
+
+Catatan:
+
+- Cluster Arsa 2 adalah satu-satunya yang baru di Jakarta. Titiknya titik cluster di Google Maps (Jl. Pulo Indah Buntu I). RT itu tidak punya catatan banjir 2021 sampai 2024, RT banjir terdekat 374 m, dan badan tol Lingkar Luar 456 m. Rumah tipe 36 itu baru rencana dibangun, tanahnya sekitar 45 m² menurut balasan penjual, dan pembayarannya hanya tunai. Membayar tunai untuk rumah yang belum berdiri butuh perjanjian tertulis yang jelas.
+- Iklan Jatibening judulnya menyebut Kota Depok, padahal dipasang di Jatibening. Pastikan alamatnya dulu. Titik yang dipakai baru titik tengah Jatibening: 74 m dari badan tol dan indeks bahaya banjir BNPB 0,8. Dua hal itu harus dicek di tempat.
+- Rumah di Pondok Gede hanya menulis dalam komplek, LT 75, akses mobil, dan SHM. Tanyakan nama kompleknya supaya banjir dan jarak tolnya bisa dihitung.
+- Kranggan dan Summarecon adalah rumah baru. Seperti nomor 6, 8, dan 9, reputasi developernya belum terbukti.
+
+Foto kelima rumah ini ada di tabel kandidat dan di peta.
+
 ## Yang perlu dicek sendiri di setiap survei
 
 1. Banjir: tanya dua atau tiga tetangga dan pengurus RT, bukan penjual. Lihat bekas garis air di tembok dan pagar, dan tinggi lantai rumah terhadap jalan.
@@ -154,33 +175,33 @@ Kolom "sisa" dihitung berurutan dari atas. Kolom "gugur" adalah jumlah rumah yan
 
 | Kriteria | Sisa | Gugur di kriteria ini |
 |---|---|---|
-| Semua rumah yang terkumpul (iklan ganda sudah digabung) | 1.990 | |
-| Harga sampai 500 jt, harga ditulis, bukan over kredit | 621 | 1.369 |
-| Luas tanah minimal 36 m² | 585 | 36 |
-| Di dalam cluster, one gate, atau komplek | 392 | 210 |
-| Mobil sampai depan rumah | 390 | 22 |
-| Carport ada atau mungkin dibuat | 388 | 2 |
-| Paling lama 25 menit ke gerbang tol arah Senayan pada pagi hari | 238 | 144 |
-| Tidak ada catatan banjir | 217 | 32 |
+| Semua rumah yang terkumpul (iklan ganda sudah digabung) | 2.189 | |
+| Harga sampai 500 jt, harga ditulis, bukan over kredit | 676 | 1.513 |
+| Luas tanah minimal 36 m² | 638 | 38 |
+| Di dalam cluster, one gate, atau komplek | 427 | 228 |
+| Mobil sampai depan rumah | 425 | 23 |
+| Carport ada atau mungkin dibuat | 423 | 2 |
+| Paling lama 25 menit ke gerbang tol arah Senayan pada pagi hari | 257 | 160 |
+| Tidak ada catatan banjir | 235 | 33 |
 | Lolos semua, tidak ada yang belum jelas, lokasi sudah tepat | 14 | |
 
-Dari 217 rumah yang belum gugur, 203 masih perlu dicek. Penyebab terbanyak: lokasi masih perkiraan (182 rumah), banjir belum jelas, dan rumah baru yang reputasi developernya belum terbukti. Enam rumah lain tidak punya titik lokasi sama sekali.
+Dari 235 rumah yang belum gugur, 221 masih perlu dicek. Penyebab terbanyak: lokasi masih perkiraan (197 rumah), banjir belum jelas, dan rumah baru yang reputasi developernya belum terbukti. Enam rumah lain tidak punya titik lokasi sama sekali.
 
-Sebaran 14 rumah yang lolos semua dan 209 yang perlu dicek:
+Sebaran 14 rumah yang lolos semua dan 227 yang perlu dicek:
 
 | Wilayah | Lolos semua | Perlu dicek |
 |---|---|---|
-| Jakarta | 1 | 3 |
-| Pondok Gede, Jatiasih, Kota Bekasi | 4 | 25 |
-| Bekasi lain (kabupaten, atau kota dan kabupaten belum jelas) | 0 | 33 |
-| Depok | 3 | 61 |
-| Bogor, Tangerang, dan lainnya | 6 | 87 |
+| Jakarta | 1 | 4 |
+| Pondok Gede, Jatiasih, Kota Bekasi | 4 | 29 |
+| Bekasi lain (kabupaten, atau kota dan kabupaten belum jelas) | 0 | 37 |
+| Depok | 3 | 67 |
+| Bogor, Tangerang, dan lainnya | 6 | 90 |
 
 Sembilan rumah yang lolos semua di luar wilayah yang kalian sebut ada di `output/kandidat.csv` (kolom status = "lolos semua"). Tiga di Depok (Sukmajaya, Sawangan, Pancoran Mas), enam di Bogor dan Tangerang (Cisauk, Legok, Tajur Halang, Cibubur sisi Bogor). Saya tidak memasukkannya ke daftar atas karena kalian menyebut Jakarta, Pondok Gede, Jatiasih, dan Bekasi, dan kurang suka Depok.
 
 ## Kriteria yang layak dilonggarkan
 
-1. **Komplek, khusus untuk Jakarta.** Dari 64 rumah Jakarta berharga sampai 500 jt, 50 gugur karena bukan di cluster atau komplek, dan 31 di antaranya gugur hanya karena itu. Tujuh rumah yang gugur karena bukan komplek punya luas tanah cukup dan iklannya menyebut akses mobil. Kalau KTP Jakarta lebih penting daripada tinggal di komplek, tujuh rumah itu layak dilihat. Banjir dan waktu tempuhnya belum saya hitung.
+1. **Komplek, khusus untuk Jakarta.** Dari 67 rumah Jakarta berharga sampai 500 jt, 51 gugur karena bukan di cluster atau komplek, dan 32 di antaranya gugur hanya karena itu. Tujuh rumah yang gugur karena bukan komplek punya luas tanah cukup dan iklannya menyebut akses mobil. Kalau KTP Jakarta lebih penting daripada tinggal di komplek, tujuh rumah itu layak dilihat. Banjir dan waktu tempuhnya belum saya hitung.
 
    | Lokasi menurut iklan | Harga | LT | Iklan |
    |---|---|---|---|
@@ -193,8 +214,8 @@ Sembilan rumah yang lolos semua di luar wilayah yang kalian sebut ada di `output
    | Kalisari, dekat Cijantung | 500 jt | 50 | [Threads](https://www.threads.com/@mr.yoginugraha/post/Dfr3gR3j6Nb) |
 
    Dua rumah di Lenteng Agung masuk daerah yang kalian sebut pilihan terakhir.
-2. **Harga sampai 600 jt.** Menambah 8 rumah komplek di Jakarta dan 46 di Kota Bekasi sebelum dicek banjir dan tol. Ini bertentangan dengan batas 400 jt, jadi hanya berguna kalau harga bisa ditawar jauh.
-3. **Waktu ke gerbang sampai 35 menit.** Hanya menambah 8 rumah di Kota Bekasi. Tidak sepadan.
+2. **Harga sampai 600 jt.** Menambah 8 rumah komplek di Jakarta dan 54 di Kota Bekasi sebelum dicek banjir dan tol. Ini bertentangan dengan batas 400 jt, jadi hanya berguna kalau harga bisa ditawar jauh.
+3. **Waktu ke gerbang sampai 35 menit.** Hanya menambah 10 rumah di Kota Bekasi. Tidak sepadan.
 
 Yang tidak saya sarankan dilonggarkan: banjir dan akses mobil.
 
@@ -228,12 +249,12 @@ Developer: saya tidak menemukan developer dengan keluhan tertulis di antara kand
 
 ## Keterbatasan data
 
-- **Lokasi.** Hanya 35 dari 217 rumah yang belum gugur punya titik tepat atau titik komplek. Untuk sepuluh rumah di atas, titik komplek saya cari dari nama komplek, alamat, atau patokan di iklan lewat Google Maps dan OpenStreetMap. Itu tetap titik komplek, bukan titik rumah.
+- **Lokasi.** Hanya 38 dari 235 rumah yang belum gugur punya titik tepat atau titik komplek. Untuk sepuluh rumah di atas, titik komplek saya cari dari nama komplek, alamat, atau patokan di iklan lewat Google Maps dan OpenStreetMap. Itu tetap titik komplek, bukan titik rumah.
 - **Banjir di DKI.** Data BPBD per RT hanya 2021 sampai 2024. Banjir 2025 dan 2026 belum masuk, padahal Maret 2026 ada banjir di Cilangkap, Cibubur, Ciracas, dan Cipinang Melayu.
 - **Banjir di luar DKI.** Tidak ada data per RT. Saya memakai tiga hal: indeks bahaya banjir InaRISK BNPB (peta model dengan kotak 100 m, bukan catatan kejadian), jarak dan beda tinggi ke sungai terdekat (data ketinggian kasar, bisa meleset beberapa meter), dan daftar perumahan yang pernah diberitakan banjir. Daftar itu lengkap untuk Kota Bekasi (2021, 2025, 2026) tetapi tipis untuk Kabupaten Bekasi, Depok, Bogor, dan Tangerang. Rumah yang tidak ada di daftar belum tentu bebas banjir.
 - **Waktu tempuh.** Server rute publik OSRM tidak tahu kemacetan. Saya mengalikan hasilnya dengan 2,4. Angka itu dari 12 rute yang saya bandingkan dengan Google Maps untuk Senin pukul 06.30 (`data/kalibrasi_macet.csv`). Selisih per rute bisa 5 menit. Untuk sepuluh rumah di atas saya tulis juga angka Google.
 - **Gerbang tol.** Dari 401 gardu di OpenStreetMap, 173 gerbang terbukti pintu masuk dengan rute tol menerus ke arah Senayan. Aturannya ada di `sql/03_gerbang.sql`. Gerbang yang rutenya ke Senayan memutar jauh tetap dihitung selama tidak perlu keluar tol.
-- **Akses mobil dan carport.** Dibaca dari kata-kata di iklan. 56 rumah yang belum gugur tidak menyebut akses mobil sama sekali. Untuk sepuluh rumah di atas saya melihat fotonya.
+- **Akses mobil dan carport.** Dibaca dari kata-kata di iklan. 57 rumah yang belum gugur tidak menyebut akses mobil sama sekali. Untuk sepuluh rumah di atas saya melihat fotonya.
 - **Komplek.** Mengikuti penanda dari `komplek.py` di folder galeri (folder 23). Iklan yang tidak menulis kata cluster, komplek, atau perumahan dianggap bukan komplek, walaupun bisa saja sebenarnya di dalam komplek.
 - **Iklan aktif.** Empat iklan rumah123 di daftar atas saya buka pada 15 November 2026 dan masih tayang. Post Threads tidak bisa dicek tanpa login, jadi hanya tanggal postnya yang saya tulis.
 - **Developer.** Reputasi tidak bisa dibuktikan dari data yang ada. Semua rumah baru saya tandai "belum jelas", tidak ada yang saya loloskan.
