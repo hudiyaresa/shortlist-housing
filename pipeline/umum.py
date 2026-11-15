@@ -24,6 +24,9 @@ GALERI = ROOT / "23_galeri_rumah" / "data" / "galeri_items.json"
 R123_FOTO = ROOT / "23_galeri_rumah" / "data" / "rumah123_foto.json"
 R123_DB = ROOT / "13_rumah123" / "output" / "rumah123.db"
 RT_DKI = ROOT / "13_rumah123" / "peta" / "data" / "rt_dki.wkb.json"
+# thumbnail foto post Threads (dibuat galeri folder 23) dan hasil OCR-nya, dipakai 09_hasil.py untuk memilih foto
+GALERI_OUT = ROOT / "23_galeri_rumah" / "output"
+OCR_FOTO = ROOT / "23_galeri_rumah" / "data" / "foto" / "ocr.jsonl"
 
 # Kementerian Kehutanan, Gedung Manggala Wanabakti, Senayan
 KANTOR = (-6.2062, 106.8001)

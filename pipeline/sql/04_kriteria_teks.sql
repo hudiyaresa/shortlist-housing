@@ -103,6 +103,7 @@ UPDATE k_teks SET k_lt = CASE WHEN cast(m.nilai AS DOUBLE) >= 36 THEN 'ya' ELSE 
 UPDATE k_teks SET k_carport = m.nilai, carport_dasar = m.alasan FROM koreksi_manual m WHERE m.id_rumah = k_teks.id_rumah AND m.kolom = 'k_carport';
 UPDATE k_teks SET wilayah_urut = cast(m.nilai AS INTEGER) FROM koreksi_manual m WHERE m.id_rumah = k_teks.id_rumah AND m.kolom = 'wilayah_urut';
 UPDATE k_teks SET duplikat_dari = m.nilai FROM koreksi_manual m WHERE m.id_rumah = k_teks.id_rumah AND m.kolom = 'duplikat';
+UPDATE k_teks SET rumah_baru = (m.nilai = 'ya') FROM koreksi_manual m WHERE m.id_rumah = k_teks.id_rumah AND m.kolom = 'rumah_baru';
 UPDATE k_teks SET koreksi = x.semua
 FROM (SELECT id_rumah, string_agg(kolom || ': ' || alasan, ' | ') AS semua FROM koreksi_manual GROUP BY 1) x
 WHERE x.id_rumah = k_teks.id_rumah;

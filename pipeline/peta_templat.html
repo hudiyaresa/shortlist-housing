@@ -22,6 +22,12 @@ p{margin:4px 0;color:var(--mut)}label{display:block;margin:2px 0;cursor:pointer}
 .gt{width:10px;height:10px;background:#7a4a1e;transform:rotate(45deg);border:1px solid #fff}
 .leaflet-popup-content{font:13px/1.45 system-ui,Segoe UI,Arial,sans-serif;margin:10px 12px;min-width:230px}
 .leaflet-popup-content b.h{font-size:14px}.leaflet-popup-content .r{margin-top:3px}
+.pf{display:block;width:100%;height:160px;object-fit:cover;border-radius:6px;background:#e5e7eb;margin-bottom:5px}
+.ps{display:flex;gap:4px;margin-bottom:6px}.ps img{width:64px;height:46px;object-fit:cover;border-radius:4px;cursor:pointer;background:#e5e7eb}
+.leaflet-tooltip.hov-tip{padding:0;border:0;border-radius:8px;overflow:hidden;box-shadow:0 4px 14px #0006;white-space:normal;background:var(--bg);color:var(--fg)}
+.leaflet-tooltip.hov-tip::before{display:none}
+.hov{width:220px}.hov img{display:block;width:220px;height:126px;object-fit:cover;background:#e5e7eb}.hov div{padding:5px 8px;font-size:12.5px;line-height:1.35}
+.item{display:flex;gap:9px;align-items:flex-start}.item img{width:60px;height:46px;object-fit:cover;border-radius:4px;flex:none;margin-top:2px;background:#e5e7eb}
 #buka{display:none}
 @media (max-width:760px){body{flex-direction:column}#panel{width:100%;max-height:42%;border-right:0;border-bottom:1px solid var(--line)}}
 </style>
@@ -39,7 +45,7 @@ p{margin:4px 0;color:var(--mut)}label{display:block;margin:2px 0;cursor:pointer}
   <label><input type="checkbox" id="ltol" checked> Badan jalan tol dan gerbang arah Senayan</label>
   <h2>Sepuluh rumah yang dibahas</h2>
   <div id="daftar"></div>
-  <p style="margin-top:12px">Sumber: iklan rumah123 dan post Threads, banjir per RT BPBD DKI, indeks bahaya banjir InaRISK BNPB, jalan tol dan sungai dari OpenStreetMap, waktu tempuh dari OSRM dikali faktor macet pagi 2,4. Bahan diskusi keluarga, bukan penilaian properti resmi.</p>
+  <p style="margin-top:12px">Sumber: iklan rumah123 dan post Threads (fotonya juga dari sana), banjir per RT BPBD DKI, indeks bahaya banjir InaRISK BNPB, jalan tol dan sungai dari OpenStreetMap, waktu tempuh dari OSRM dikali faktor macet pagi 2,4. Bahan diskusi keluarga, bukan penilaian properti resmi.</p>
 </div>
 <div id="map"></div>
 <script>
@@ -64,9 +70,19 @@ const lTol = L.layerGroup([
       .bindTooltip('Gerbang ' + esc(g.nm) + (g.ruas ? '<br>' + esc(g.ruas) : '')))
 ]).addTo(map);
 
+// foto: maks 3 per rumah. Yang pertama besar, sisanya kecil di bawahnya (klik untuk menukar).
+const gbr = (u, k) => '<img' + (k ? ' class="' + k + '"' : '') + ' src="' + esc(u) + '" alt="" loading="lazy" onerror="this.remove()">';
+function fotoPopup(h) {
+  if (!h.ft || !h.ft.length) return '';
+  return gbr(h.ft[0], 'pf') + (h.ft.length > 1 ? '<div class="ps">' + h.ft.map(u => gbr(u)).join('') + '</div>' : '');
+}
+function hover(h) {
+  const teks = (h.tp === 'perkiraan' ? '~ ' : '') + rp(h.jt) + ' · ' + esc(h.nm || h.lok);
+  return h.ft && h.ft.length ? '<div class="hov">' + gbr(h.ft[0]) + '<div>' + teks + '</div></div>' : teks;
+}
 function popup(h) {
   const menit = h.mg == null ? 'tidak dihitung' : h.mg + ' menit ke gerbang ' + esc(h.gt) + (h.mgg ? ' (Google Maps Senin 06.30: ' + h.mgg + ' menit)' : '');
-  return '<b class="h">' + (h.no ? h.no + '. ' : '') + esc(h.nm || h.lok) + '</b>'
+  return fotoPopup(h) + '<b class="h">' + (h.no ? h.no + '. ' : '') + esc(h.nm || h.lok) + '</b>'
     + '<div class="r">' + rp(h.jt) + (h.jt > 400 ? ' (di atas 400 jt)' : '') + ' · LT ' + (h.lt ?? '?') + ' / LB ' + (h.lb ?? '?') + ' · ' + esc(h.srt || 'surat tidak ditulis') + '</div>'
     + '<div class="r">' + esc(h.lok) + (h.tp === 'perkiraan' ? ' <i>(lokasi perkiraan)</i>' : '') + '</div>'
     + '<div class="r"><b>Tol:</b> ' + menit + (h.mk ? '. Sampai kantor sekitar ' + h.mk + ' menit.' : '') + '</div>'
@@ -96,8 +112,8 @@ function gambar() {
       m = L.circleMarker([h.la, h.lo], {radius: h.st === 'gugur' ? 4 : 7, color: warna[h.st], weight: 2,
         dashArray: kira ? '3 3' : null, fillColor: warna[h.st], fillOpacity: kira ? 0.12 : 0.75});
     }
-    m.bindPopup(popup(h), {maxWidth: 330});
-    m.bindTooltip((kira ? '~ ' : '') + rp(h.jt) + ' · ' + esc(h.nm || h.lok));
+    m.bindPopup(() => popup(h), {maxWidth: 330, minWidth: 250, autoPanPadding: [20, 20]});
+    m.bindTooltip(() => hover(h), h.ft && h.ft.length ? {direction: 'top', offset: [0, -8], opacity: 1, className: 'hov-tip'} : {});
     tanda[h.id] = m; lRumah.addLayer(m);
   });
 }
@@ -110,11 +126,15 @@ document.getElementById('n2').textContent = hit('perlu dicek');
 document.getElementById('n3').textContent = hit('gugur');
 document.getElementById('tgl').textContent = D.dibuat;
 document.getElementById('daftar').innerHTML = D.rumah.filter(h => h.no).sort((a, b) => a.no - b.no).map(h =>
-  '<div class="item" data-id="' + h.id + '"><b>' + h.no + '. ' + esc(h.nm || h.lok) + '</b><small>' + rp(h.jt) + ' · LT ' + (h.lt ?? '?')
-  + ' · ' + (h.mg ?? '?') + ' menit ke gerbang ' + esc(h.gt) + ' · ' + (h.st === 'lolos semua' ? 'lolos semua' : 'perlu dicek: ' + esc(h.pc)) + '</small></div>').join('');
+  '<div class="item" data-id="' + h.id + '">' + (h.ft && h.ft.length ? gbr(h.ft[0]) : '') + '<div><b>' + h.no + '. ' + esc(h.nm || h.lok) + '</b><small>' + rp(h.jt) + ' · LT ' + (h.lt ?? '?')
+  + ' · ' + (h.mg ?? '?') + ' menit ke gerbang ' + esc(h.gt) + ' · ' + (h.st === 'lolos semua' ? 'lolos semua' : 'perlu dicek: ' + esc(h.pc)) + '</small></div></div>').join('');
 document.querySelectorAll('.item').forEach(e => e.addEventListener('click', () => {
-  const h = D.rumah.find(x => x.id === e.dataset.id); map.setView([h.la, h.lo], 15); if (tanda[h.id]) tanda[h.id].openPopup();
+  const h = D.rumah.find(x => x.id === e.dataset.id); map.setView([h.la, h.lo], 15, {animate: false}); if (tanda[h.id]) tanda[h.id].openPopup();
 }));
+// klik foto kecil di popup: jadikan foto besar
+map.getContainer().addEventListener('click', e => {
+  if (e.target.matches('.ps img')) { const b = e.target.closest('.leaflet-popup-content').querySelector('.pf'); if (b) b.src = e.target.src; }
+});
 gambar();
 </script>
 </body>

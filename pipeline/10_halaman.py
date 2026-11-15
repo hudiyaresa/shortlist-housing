@@ -2,11 +2,14 @@
 
   output/index.html      shortlist_rumah.md sebagai halaman (dipakai GitHub Pages)
   output/kandidat.html   tabel rumah yang belum gugur, bisa disaring dan diurutkan
+
+Foto diambil dari kolom `foto` di kandidat.csv (diisi 09_hasil.py). Klik foto untuk melihat semuanya lebih besar.
 """
 from __future__ import annotations
 
 import csv
 import html
+import importlib
 import json
 import re
 
@@ -27,7 +30,33 @@ code,pre{font-family:ui-monospace,Consolas,monospace;font-size:13.5px;background
 code{padding:1px 4px}pre{padding:10px 12px;overflow-x:auto}pre code{padding:0;background:none}
 input,select{font:inherit;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);margin:0 8px 8px 0}
 th.s{cursor:pointer;white-space:nowrap}.ok{color:#1a7f37;font-weight:600}.cek{color:#bc4c00}
+.tk{display:block;width:84px;height:60px;object-fit:cover;border-radius:4px;cursor:zoom-in;background:var(--soft);margin-bottom:3px}
+td small{color:var(--mut)}td.p{min-width:230px}
+.fs{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 10px}
+.fs img{flex:1 1 96px;min-width:0;max-width:176px;aspect-ratio:7/5;object-fit:cover;border-radius:6px;cursor:zoom-in;background:var(--soft)}
+#lb{position:fixed;inset:0;z-index:20;display:none;align-items:center;align-content:center;justify-content:center;flex-wrap:wrap;gap:8px;padding:16px;background:#000c;cursor:zoom-out;overflow:auto}
+#lb.buka{display:flex}#lb img{max-width:min(92vw,620px);max-height:86vh;border-radius:6px}
 """
+# klik gambar yang punya data-ft (daftar alamat foto dipisah " | "): tampilkan semuanya di atas halaman
+LIHAT_FOTO = """<div id="lb"></div><script>
+const lb=document.getElementById('lb');
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-ft]');
+  lb.classList.toggle('buka',!!t);
+  if(t)lb.replaceChildren(...t.dataset.ft.split(' | ').map(u=>{const g=new Image();g.src=u;g.alt='';g.onerror=()=>g.remove();return g}));
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('buka')});
+</script>"""
+FOTO_NO: dict[str, list[str]] = {}     # nomor rumah di shortlist_rumah.md -> alamat fotonya, diisi main()
+
+
+def gambar(daftar: list[str], kelas: str = "") -> str:
+    """Tag gambar untuk tiap alamat di `daftar`. Klik salah satunya membuka semua foto rumah itu."""
+    semua = html.escape(" | ".join(daftar), quote=True)
+    k = f' class="{kelas}"' if kelas else ""
+    return "".join(f'<img{k} src="{html.escape(u, quote=True)}" data-ft="{semua}" alt="" loading="lazy" '
+                   'onerror="this.remove()">' for u in daftar)
+
 NAV = ('<nav><a href="index.html">Shortlist</a><a href="peta_shortlist.html">Peta</a>'
        '<a href="kandidat.html">Tabel kandidat</a><a href="kandidat.csv">kandidat.csv</a></nav>')
 
@@ -53,7 +82,10 @@ def tabel(baris: list[str]) -> str:
     sel = [[c.strip() for c in b.strip().strip("|").split("|")] for b in baris]
     kepala, isi = sel[0], sel[2:]
     h = "".join(f"<th>{sebaris(c)}</th>" for c in kepala)
-    b = "".join("<tr>" + "".join(f"<td>{sebaris(c)}</td>" for c in r) + "</tr>" for r in isi)
+    # tabel shortlist (kolom pertama "No"): foto pertama rumah itu ditaruh di atas namanya
+    foto = (lambda r: gambar(FOTO_NO.get(r[0], [])[:1], "tk")) if kepala[0] == "No" else (lambda r: "")
+    b = "".join("<tr>" + "".join(f"<td>{foto(r) if n == 1 else ''}{sebaris(c)}</td>" for n, c in enumerate(r)) + "</tr>"
+                for r in isi)
     return f'<div class="tw"><table><thead><tr>{h}</tr></thead><tbody>{b}</tbody></table></div>'
 
 
@@ -97,6 +129,9 @@ def md_ke_html(md: str) -> str:
             tutup()
             n = len(m.group(1))
             out.append(f"<h{n}>{sebaris(m.group(2))}</h{n}>")
+            no = re.match(r"(\d+)\. ", m.group(2))        # "### 3. Nama rumah": deretan foto di bawah judulnya
+            if n == 3 and no and FOTO_NO.get(no.group(1)):
+                out.append('<div class="fs">' + gambar(FOTO_NO[no.group(1)]) + "</div>")
             i += 1
             continue
         m = re.match(r"(-|\d+\.) (.*)", polos)
@@ -128,23 +163,26 @@ def md_ke_html(md: str) -> str:
 def halaman(judul: str, isi: str, skrip: str = "") -> str:
     return (f'<!doctype html><html lang="id"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width, initial-scale=1"><title>{judul}</title>'
-            f"<style>{CSS}</style></head><body>{NAV}<main>{isi}</main>{skrip}</body></html>")
+            f"<style>{CSS}</style></head><body>{NAV}<main>{isi}</main>{LIHAT_FOTO}{skrip}</body></html>")
 
 
 def main() -> None:
+    with open(OUT / "kandidat.csv", encoding="utf-8-sig", newline="") as f:
+        semua = list(csv.DictReader(f))
+    nomor = importlib.import_module("09_hasil").NOMOR           # id_rumah -> nomor di shortlist_rumah.md
+    FOTO_NO.update({str(nomor[r["id_rumah"]]): r["foto"].split(" | ")
+                    for r in semua if r["id_rumah"] in nomor and r.get("foto")})
     md = (HERE / "shortlist_rumah.md").read_text(encoding="utf-8")
     (OUT / "index.html").write_text(halaman("Shortlist rumah untuk disurvei", md_ke_html(md)), encoding="utf-8")
 
-    with open(OUT / "kandidat.csv", encoding="utf-8-sig", newline="") as f:
-        semua = list(csv.DictReader(f))
     pakai = ["status", "kelompok_wilayah", "harga_jt", "luas_tanah_m2", "komplek", "lokasi", "ketepatan_lokasi",
              "gerbang_tol", "menit_ke_gerbang_pagi", "k_banjir", "banjir_dasar", "jarak_badan_tol_m", "k_mobil",
-             "k_carport", "k_developer", "yang_perlu_dicek", "sumber", "link"]
+             "k_carport", "k_developer", "yang_perlu_dicek", "sumber", "link", "foto"]
     baris = [[r[k] for k in pakai] for r in semua
              if r["status"] in ("lolos semua", "perlu dicek") and r["sumber"] != "Catatan survei"]
     isi = ("<h1>Rumah yang belum gugur</h1><p>Semua rumah yang lolos semua kriteria wajib atau masih perlu dicek. "
            "Daftar lengkap termasuk yang gugur ada di <a href=\"kandidat.csv\">kandidat.csv</a>. "
-           "Klik judul kolom untuk mengurutkan.</p>"
+           "Klik judul kolom untuk mengurutkan, klik foto untuk melihatnya lebih besar.</p>"
            '<input id="cari" placeholder="cari komplek atau lokasi" size="28">'
            '<select id="st"><option value="">semua status</option><option>lolos semua</option><option>perlu dicek</option></select>'
            '<select id="wil"><option value="">semua wilayah</option></select> <span id="jml"></span>'
@@ -154,19 +192,23 @@ const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&g
 const nama={status:'Status',kelompok_wilayah:'Wilayah',harga_jt:'Harga (jt)',luas_tanah_m2:'LT',komplek:'Komplek',lokasi:'Lokasi di iklan',
 ketepatan_lokasi:'Titik',gerbang_tol:'Gerbang tol',menit_ke_gerbang_pagi:'Menit ke gerbang',k_banjir:'Banjir',banjir_dasar:'Dasar banjir',
 jarak_badan_tol_m:'Badan tol (m)',k_mobil:'Mobil',k_carport:'Carport',k_developer:'Developer',yang_perlu_dicek:'Perlu dicek',sumber:'Sumber',link:'Iklan'};
+const U=[K.indexOf('foto'),...K.keys()].filter((i,n)=>n===0||K[i]!=='foto');  // urutan tampil: foto dulu
+const P=['lokasi','banjir_dasar','yang_perlu_dicek'];  // kolom berteks panjang, diberi lebar minimal
 let urut=8,naik=true;
 [...new Set(B.map(r=>r[1]))].sort().forEach(w=>document.getElementById('wil').insertAdjacentHTML('beforeend','<option>'+esc(w)+'</option>'));
-document.querySelector('#t thead').innerHTML='<tr>'+K.map((k,i)=>'<th class="s" data-i="'+i+'">'+nama[k]+'</th>').join('')+'</tr>';
+document.querySelector('#t thead').innerHTML='<tr>'+U.map(i=>K[i]==='foto'?'<th>Foto</th>':'<th class="s" data-i="'+i+'">'+nama[K[i]]+'</th>').join('')+'</tr>';
 function gambar(){
   const c=document.getElementById('cari').value.toLowerCase(),s=document.getElementById('st').value,w=document.getElementById('wil').value;
   const angka=[2,3,8,11].includes(urut);
   const r=B.filter(x=>(!s||x[0]===s)&&(!w||x[1]===w)&&(!c||(x[4]+' '+x[5]).toLowerCase().includes(c)))
     .sort((a,b)=>{let p=a[urut],q=b[urut];if(angka){p=p===''?1e9:+p;q=q===''?1e9:+q;return naik?p-q:q-p}return naik?String(p).localeCompare(q):String(q).localeCompare(p)});
   document.getElementById('jml').textContent=r.length+' rumah';
-  document.querySelector('#t tbody').innerHTML=r.map(x=>'<tr>'+x.map((v,i)=>{
+  document.querySelector('#t tbody').innerHTML=r.map(x=>'<tr>'+U.map(i=>{
+    const v=x[i];
+    if(K[i]==='foto'){const f=v?v.split(' | '):[];return '<td>'+(f.length?'<img class="tk" src="'+esc(f[0])+'" data-ft="'+esc(v)+'" alt="" loading="lazy" onerror="this.remove()">'+(f.length>1?'<small>'+f.length+' foto</small>':''):'')+'</td>'}
     if(K[i]==='link')return '<td>'+(v?'<a href="'+esc(v.split(' | ')[0])+'" target="_blank" rel="noopener">buka</a>':'')+'</td>';
     if(K[i]==='status')return '<td class="'+(v==='lolos semua'?'ok':'cek')+'">'+esc(v)+'</td>';
-    return '<td>'+esc(v)+'</td>'}).join('')+'</tr>').join('');
+    return '<td'+(P.includes(K[i])&&v?' class="p"':'')+'>'+esc(v)+'</td>'}).join('')+'</tr>').join('');
 }
 document.querySelectorAll('th.s').forEach(t=>t.onclick=()=>{const i=+t.dataset.i;naik=urut===i?!naik:true;urut=i;gambar()});
 ['cari','st','wil'].forEach(i=>document.getElementById(i).oninput=gambar);gambar();</script>"""

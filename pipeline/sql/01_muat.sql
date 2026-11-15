@@ -30,6 +30,7 @@ SELECT
     coalesce(nullif(post, ''), kirim) AS tanggal,
     lat, lon, est, ket AS ket_lokasi,
     len(foto) AS n_foto, foto[1].f AS foto1,
+    foto AS foto_daftar,   -- t = thumbnail, f = foto asli (URL rumah123 atau path lokal folder 23)
     teks, catatan, dari, "no" AS no_sumber, kirim, urut
 FROM mentah;
 

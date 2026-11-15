@@ -1,6 +1,7 @@
 """Langkah 9: tulis file hasil dari tabel `kandidat`.
 
   output/kandidat.csv         semua rumah, satu kolom per kriteria (tanpa isi iklan, tanpa catatan pribadi)
+  output/foto/                thumbnail foto post Threads untuk rumah yang lolos kriteria harga (maks 3 per rumah)
   output/corong.csv           berapa rumah yang tersisa dan gugur di tiap kriteria
   output/gerbang_tol.csv      gerbang tol yang terbukti pintu masuk ke arah Senayan
   output/peta_shortlist.html  peta Leaflet satu file, bisa dibuka langsung di browser
@@ -13,8 +14,11 @@ from __future__ import annotations
 import csv
 import json
 import re
+from pathlib import PureWindowsPath
 
-from umum import HERE, OUT, con
+from PIL import Image
+
+from umum import GALERI_OUT, HERE, OCR_FOTO, OUT, con
 
 # sepuluh rumah yang dibahas di shortlist_rumah.md, urut waktu tempuh ke gerbang tol
 NOMOR = {"T-553d3b77": 1, "R-hos16335281": 2, "T-13703e88": 3, "T-0b921701": 4, "R-hos19252497": 5,
@@ -41,14 +45,81 @@ KOLOM = """id_rumah, status, kelompok_wilayah,
 
 
 HP = re.compile(r"(?:\+?62|0)8\d[\d\s.\-]{7,13}\d")
+# di foto, nomor sering ditulis renggang ("+62 812 ..."), jadi polanya dibuat lebih longgar
+HP_FOTO = re.compile(r"(?:\+?62[\s.\-]?|0)8\d[\d\s.\-]{6,13}\d")
+MAKS_FOTO = 3      # foto per rumah di tabel dan peta
+FOTO_PX = 360      # sisi terpanjang thumbnail yang disalin ke output/foto/
 
 
-def tulis_csv(nama: str, cur) -> int:
+def pilih_foto(c) -> dict[str, list[str]]:
+    """id_rumah -> sampai MAKS_FOTO alamat foto, untuk rumah yang lolos kriteria harga.
+
+    rumah123: alamat thumbnail di CDN rumah123 (tidak disalin). Threads: thumbnail galeri folder 23 dikecilkan ke
+    output/foto/. Foto Threads yang menurut OCR memuat nomor HP dibuang, foto yang penuh tulisan (brosur) ditaruh
+    paling belakang, dan foto yang belum di-OCR tidak dipakai. Foto dari catatan survei tidak pernah dipakai.
+    """
+    ocr: dict[tuple[str, ...], tuple[bool, int]] = {}
+    if OCR_FOTO.exists():
+        for baris in OCR_FOTO.read_text(encoding="utf-8").splitlines():
+            if baris.strip():
+                o = json.loads(baris)
+                ada_hp = bool(HP_FOTO.search(o.get("text") or ""))
+                ocr[PureWindowsPath(o["path"]).parts[-2:]] = (ada_hp, o.get("lines") or 0)   # kunci: (kode post, file)
+    tujuan = OUT / "foto"
+    tujuan.mkdir(parents=True, exist_ok=True)
+    hasil: dict[str, list[str]] = {}
+    dipakai: set[str] = set()
+    buang_hp = belum_ocr = 0
+    for id_rumah, sumber, daftar in c.execute("""
+            SELECT r.id_rumah, r.sumber, r.foto_daftar FROM rumah r JOIN kandidat k USING (id_rumah)
+            WHERE k.k_harga = 'ya' AND k.duplikat_dari IS NULL AND len(r.foto_daftar) > 0
+              AND r.sumber <> 'Catatan survei' ORDER BY r.id_rumah""").fetchall():
+        if sumber == "rumah123":
+            hasil[id_rumah] = [f["t"] for f in daftar[:MAKS_FOTO] if (f["t"] or "").startswith("https://")]
+            continue
+        calon = []
+        for urut, f in enumerate(daftar):
+            info = ocr.get(PureWindowsPath(f["f"] or "").parts[-2:])   # kunci: (kode post, nama file)
+            if info is None:
+                belum_ocr += 1
+            elif info[0]:
+                buang_hp += 1
+            else:
+                calon.append((info[1] > 5, urut, f["t"]))
+        pilih = []
+        for _, _, kecil in sorted(calon)[:MAKS_FOTO]:
+            asal = GALERI_OUT / kecil
+            if not asal.exists():
+                continue
+            nama = asal.name
+            if not (tujuan / nama).exists():
+                with Image.open(asal) as im:
+                    im = im.convert("RGB")
+                    im.thumbnail((FOTO_PX, FOTO_PX))
+                    im.save(tujuan / nama, "JPEG", quality=72, optimize=True)
+            dipakai.add(nama)
+            pilih.append("foto/" + nama)
+        if pilih:
+            hasil[id_rumah] = pilih
+    for lama in tujuan.glob("*.jpg"):      # foto rumah yang sudah tidak ada di daftar
+        if lama.name not in dipakai:
+            lama.unlink()
+    print(f"foto: {len(hasil)} rumah berfoto, {len(dipakai)} thumbnail Threads di output/foto "
+          f"({sum(p.stat().st_size for p in tujuan.glob('*.jpg')) / 1e6:.1f} MB), "
+          f"{buang_hp} foto dibuang karena memuat nomor HP, {belum_ocr} belum di-OCR")
+    return hasil
+
+
+def tulis_csv(nama: str, cur, foto: dict[str, list[str]] | None = None) -> int:
     # nomor HP yang terbawa dari teks iklan tidak ditulis ke file hasil
     baris = [[HP.sub("[nomor]", x) if isinstance(x, str) else x for x in r] for r in cur.fetchall()]
+    kepala = [d[0] for d in cur.description]
+    if foto is not None:               # kolom pertama = id_rumah
+        kepala.append("foto")
+        baris = [r + [" | ".join(foto.get(r[0], []))] for r in baris]
     with open(OUT / nama, "w", newline="", encoding="utf-8-sig") as f:
         w = csv.writer(f)
-        w.writerow([d[0] for d in cur.description])
+        w.writerow(kepala)
         w.writerows(baris)
     return len(baris)
 
@@ -56,10 +127,11 @@ def tulis_csv(nama: str, cur) -> int:
 def main() -> None:
     OUT.mkdir(exist_ok=True)
     c = con(read_only=True)
+    foto = pilih_foto(c)
     n = tulis_csv("kandidat.csv", c.execute(f"""
         SELECT {KOLOM} FROM kandidat
         ORDER BY CASE status WHEN 'lolos semua' THEN 1 WHEN 'perlu dicek' THEN 2 WHEN 'duplikat' THEN 3 ELSE 4 END,
-                 wilayah_urut, mnt_gerbang_pagi NULLS LAST, rp, id_rumah"""))
+                 wilayah_urut, mnt_gerbang_pagi NULLS LAST, rp, id_rumah"""), foto)
     print("kandidat.csv:", n, "baris")
     tulis_csv("corong.csv", c.execute("SELECT urut, tahap, sisa, gugur_sendiri FROM corong ORDER BY urut"))
     tulis_csv("gerbang_tol.csv", c.execute("""
@@ -84,6 +156,7 @@ def main() -> None:
             "mk": d["menit_ke_kantor_google"], "bj": d["k_banjir"], "bd": d["banjir_dasar"],
             "tol": d["jarak_badan_tol_m"], "cp": d["carport_dasar"], "mb": d["mobil_dasar"],
             "gg": d["gugur_karena"], "pc": d["yang_perlu_dicek"], "ln": (d["link"] or "").split(" | ")[0],
+            "ft": foto.get(d["id_rumah"], []),
         })
     gerbang = [{"nm": r[0], "la": round(r[1], 5), "lo": round(r[2], 5), "ruas": r[3]}
                for r in c.execute("SELECT nama, lat, lon, ruas_pertama FROM gerbang").fetchall()]
