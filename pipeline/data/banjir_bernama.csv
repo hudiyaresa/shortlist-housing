@@ -1,0 +1,62 @@
+nama;pola;tingkat;kecamatan;kota;kejadian;tinggi_maks_cm;sumber
+Pondok Gede Permai;pondok\s*gede\s*permai|\bpgp\b;perumahan;Jatiasih;Kota Bekasi;2021, 2025;300;S21 S25
+Villa Jatirasa;vill?a\s*jati\s*rasa;perumahan;Jatiasih;Kota Bekasi;2025;300;S25
+Kemang IFI;kemang\s*ifi;perumahan;Jatiasih;Kota Bekasi;2025;;S25K
+Bumi Nasio Indah;nasio;perumahan;Jatiasih;Kota Bekasi;2021, 2025, 2026;200;S21 S25 S26A
+Komplek Dosen IKIP;dosen\s*ikip;perumahan;Jatiasih;Kota Bekasi;2021, 2025, 2026;155;S21 S25 S26A S26B
+Perum Jatiluhur;perum(?:ahan)?\s*jati\s*luhur;perumahan;Jatiasih;Kota Bekasi;2025;150;S25
+Graha Indah;graha\s*indah;perumahan;Jatiasih;Kota Bekasi;2021, 2025;150;S21 S25
+Cahaya Kemang Permai;cahaya\s*kemang;perumahan;Jatiasih;Kota Bekasi;2021;80;S21
+Jatibening Permai;jati\s*bening\s*permai;perumahan;Pondok Gede;Kota Bekasi;2021, 2025, 2026;90;S21 S25 S26A S26B
+Taman Bougenville;bougenvil|bugenvil|boegenvil;perumahan;Pondok Gede;Kota Bekasi;2021, 2025;60;S21 S25
+Duta Indah;duta\s*indah;perumahan;Pondok Gede;Kota Bekasi;2021, 2025, 2026;150;S21 S25N S26A
+Sarigaperi;sarigaperi;perumahan;Pondok Gede;Kota Bekasi;2021;60;S21
+Antilope;antilop;perumahan;Pondok Gede;Kota Bekasi;2021;100;S21
+Taman Pondok Gede;taman\s*pondok\s*gede;perumahan;Pondok Gede;Kota Bekasi;2021;200;S21
+Pondok Cikunir Indah;cikunir\s*indah;perumahan;Pondok Gede;Kota Bekasi;2021;80;S21
+Essence Park;essence\s*park;perumahan;Pondok Gede;Kota Bekasi;2021;65;S21
+Komplek Wirana;wirana;perumahan;Pondok Gede;Kota Bekasi;2021;60;S21
+Kavling Arta Kencana;arta\s*kencana;perumahan;Pondok Gede;Kota Bekasi;2021;100;S21
+Jatiwaringin Asri;jati\s*waringin\s*asri;perumahan;Pondok Gede;Kota Bekasi;2021;100;S21
+Bukit Kencana;bukit\s*kencana;perumahan;Pondok Gede;Kota Bekasi;2021;90;S21
+Intan Lestari;intan\s*lestari;perumahan;Pondok Gede;Kota Bekasi;2021;80;S21
+Griya Asri Taman Mini;griya\s*asri\s*taman\s*mini|taman\s*mini\s*asri;perumahan;Pondok Gede;Kota Bekasi;2021;40;S21
+Prima Lingkar Asri;prima\s*lingkar;perumahan;Pondok Gede;Kota Bekasi;2021;100;S21
+Jatibening Estate;jati\s*bening\s*estate;perumahan;Pondok Gede;Kota Bekasi;2021;35;S21
+Pondok Artha;pondok\s*artha;perumahan;Pondok Melati;Kota Bekasi;2021;100;S21
+Radiance Villa;radiance;perumahan;Jatisampurna;Kota Bekasi;2021;20;S21
+Perum Eraska;eraska;perumahan;Jatisampurna;Kota Bekasi;2021;20;S21
+Wahana Pondok Gede;wahana;perumahan;Jatisampurna;Kota Bekasi;2020, 2021;50;SW1 SW2 SW3
+Vila Jaka Setia;vill?a\s*jaka\s*setia;perumahan;Bekasi Selatan;Kota Bekasi;2021;70;S21
+Pondok Timur Mas;pondok\s*timur\s*mas;perumahan;Bekasi Selatan;Kota Bekasi;2021;90;S21
+Pondok Surya Mandala;surya\s*mandala;perumahan;Bekasi Selatan;Kota Bekasi;2021;150;S21
+Perum Galaxy;galax[yi];perumahan;Bekasi Selatan;Kota Bekasi;2021;40;S21
+Bumi Satria Kencana;satria\s*kencana;perumahan;Bekasi Selatan;Kota Bekasi;2025;110;S25
+Jaka Kencana;jaka\s*kencana;perumahan;Bekasi Selatan;Kota Bekasi;2025;300;S25
+Perumahan Depnaker;depnaker;perumahan;Bekasi Selatan;Kota Bekasi;2025;150;S25
+Kemang Pratama;kemang\s*pratama;perumahan;Rawalumbu;Kota Bekasi;2025;50;S25
+Taman Narogong Indah;narogong\s*indah;perumahan;Rawalumbu;Kota Bekasi;2021, 2025, 2026;60;S21 S25 S26B
+Pondok Hijau Permai (PHP);pondok\s*hijau\s*permai|\bphp\b;perumahan;Rawalumbu;Kota Bekasi;2021, 2026;80;S21 S26A S26B
+Bumi Bekasi Baru;bumi\s*bekasi\s*baru;perumahan;Rawalumbu;Kota Bekasi;2021, 2026;70;S21 S26A S26B
+Mutiara Gading Timur;mutiara\s*gading\s*timur;perumahan;Mustikajaya;Kota Bekasi;2021;180;S21
+Bekasi Timur Regency (BTR);bekasi\s*timur\s*regency|\bbtr\b;perumahan;Mustikajaya;Kota Bekasi;2021;100;S21
+Griya Mustikasari;griya\s*mustika\s*sari;perumahan;Mustikajaya;Kota Bekasi;2021;30;S21
+Grand Mustikasari;grand\s*mustika\s*sari;perumahan;Mustikajaya;Kota Bekasi;2021;30;S21
+Alamanda;alamanda;perumahan;Mustikajaya;Kota Bekasi;2021;30;S21
+Mayang Pratama;mayang\s*pratama;perumahan;Mustikajaya;Kota Bekasi;2021, 2026;;S21 S26B
+Perumahan Duren Jaya;perum(?:ahan)?\s*duren\s*jaya;perumahan;Bekasi Timur;Kota Bekasi;2021, 2026;60;S21 S26A
+Margahayu Jaya;marga\s*hayu;perumahan;Bekasi Timur;Kota Bekasi;2021, 2026;70;S21 S26A
+Taman Villa Kartini;vill?a\s*kartini;perumahan;Bekasi Timur;Kota Bekasi;2021;60;S21
+Irigasi Danita;danita;perumahan;Bekasi Timur;Kota Bekasi;2026;60;S26A
+Pondok Cipta;pondok\s*cipta;perumahan;Bekasi Barat;Kota Bekasi;2021;50;S21
+Duta Kranji;duta\s*kranji;perumahan;Bekasi Barat;Kota Bekasi;2021, 2026;90;S21 S26A
+Puri Bintara;puri\s*bintara;perumahan;Bekasi Barat;Kota Bekasi;2021, 2026;70;S21 S26A
+Mas Naga;mas\s*naga;perumahan;Bekasi Barat;Kota Bekasi;2021, 2026;90;S21 S26A
+Fajar Indah;fajar\s*indah;perumahan;Bekasi Barat;Kota Bekasi;2021;60;S21
+Teluk Pucung;teluk\s*pucung;kelurahan;Bekasi Utara;Kota Bekasi;2021, 2025, 2026;180;S21 S25 S26A
+Marga Mulya;marga\s*mulya;kelurahan;Bekasi Utara;Kota Bekasi;2021, 2026;60;S21 S26A
+Harapan Jaya;harapan\s*jaya;kelurahan;Bekasi Utara;Kota Bekasi;2021, 2026;50;S21 S26A
+Harapan Baru;harapan\s*baru;kelurahan;Bekasi Utara;Kota Bekasi;2021, 2026;50;S21 S26A
+Kaliabang Tengah;kali\s*abang\s*tengah;kelurahan;Bekasi Utara;Kota Bekasi;2026;50;S26A S26B
+Perwira;\bperwira\b;kelurahan;Bekasi Utara;Kota Bekasi;2021, 2026;50;S21 S26A
+Bojong Kulur (Villa Nusa Indah, Vila Mahkota Pesona);bojong\s*kulur|nusa\s*indah|mahkota\s*pesona;perumahan;Gunung Putri;Kab. Bogor;2020, 2025;300;SBK

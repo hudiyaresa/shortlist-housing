@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peta shortlist rumah</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root{--bg:#fff;--fg:#1f2328;--mut:#59636e;--line:#d1d9e0;--ok:#1a7f37;--cek:#bc4c00;--ggr:#8c959f;--acc:#0969da}
+@media (prefers-color-scheme:dark){:root{--bg:#161b22;--fg:#e6edf3;--mut:#9198a1;--line:#3d444d;--ok:#3fb950;--cek:#f0883e;--ggr:#6e7681;--acc:#4493f8}}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font:14px/1.45 system-ui,Segoe UI,Arial,sans-serif;color:var(--fg);background:var(--bg);display:flex}
+#panel{width:340px;max-width:100%;overflow:auto;padding:12px 14px;border-right:1px solid var(--line);flex:none}
+#map{flex:1;min-height:320px}
+h1{font-size:17px;margin:0 0 4px}h2{font-size:13px;margin:14px 0 6px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+p{margin:4px 0;color:var(--mut)}label{display:block;margin:2px 0;cursor:pointer}a{color:var(--acc)}
+.item{padding:7px 0;border-top:1px solid var(--line);cursor:pointer}.item b{display:block}.item small{color:var(--mut)}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.no{background:var(--ok);color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;border:2px solid #fff;box-shadow:0 0 3px #0008}
+.no.cek{background:var(--cek)}.no.kira{border-style:dashed;border-color:#000}
+.gt{width:10px;height:10px;background:#7a4a1e;transform:rotate(45deg);border:1px solid #fff}
+.leaflet-popup-content{font:13px/1.45 system-ui,Segoe UI,Arial,sans-serif;margin:10px 12px;min-width:230px}
+.leaflet-popup-content b.h{font-size:14px}.leaflet-popup-content .r{margin-top:3px}
+#buka{display:none}
+@media (max-width:760px){body{flex-direction:column}#panel{width:100%;max-height:42%;border-right:0;border-bottom:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<div id="panel">
+  <h1>Peta shortlist rumah</h1>
+  <p>Data sampai <span id="tgl"></span>. Titik bergaris putus-putus berarti lokasinya masih perkiraan (titik tengah daerah), jadi waktu tempuh dan status banjirnya juga perkiraan.</p>
+  <h2>Tampilkan</h2>
+  <label><input type="checkbox" class="f" value="lolos semua" checked> <span class="dot" style="background:var(--ok)"></span>Lolos semua kriteria wajib (<span id="n1"></span>)</label>
+  <label><input type="checkbox" class="f" value="perlu dicek" checked> <span class="dot" style="background:var(--cek)"></span>Belum gugur, masih perlu dicek (<span id="n2"></span>)</label>
+  <label><input type="checkbox" class="f" value="gugur"> <span class="dot" style="background:var(--ggr)"></span>Gugur, harga sampai 500 jt (<span id="n3"></span>)</label>
+  <label><input type="checkbox" id="tepat"> Hanya lokasi yang sudah tepat</label>
+  <label><input type="checkbox" id="lbanjir" checked> RT yang tercatat banjir 2021 sampai 2024 (BPBD DKI)</label>
+  <label><input type="checkbox" id="ltol" checked> Badan jalan tol dan gerbang arah Senayan</label>
+  <h2>Sepuluh rumah yang dibahas</h2>
+  <div id="daftar"></div>
+  <p style="margin-top:12px">Sumber: iklan rumah123 dan post Threads, banjir per RT BPBD DKI, indeks bahaya banjir InaRISK BNPB, jalan tol dan sungai dari OpenStreetMap, waktu tempuh dari OSRM dikali faktor macet pagi 2,4. Bahan diskusi keluarga, bukan penilaian properti resmi.</p>
+</div>
+<div id="map"></div>
+<script>
+const D = /*DATA*/null;
+const rp = j => j == null ? '?' : j + ' jt';
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const warna = {'lolos semua': getComputedStyle(document.documentElement).getPropertyValue('--ok').trim(),
+               'perlu dicek': getComputedStyle(document.documentElement).getPropertyValue('--cek').trim(),
+               'gugur': getComputedStyle(document.documentElement).getPropertyValue('--ggr').trim()};
+const map = L.map('map', {preferCanvas: true}).setView([-6.295, 106.93], 12);
+const jalan = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
+  {maxZoom: 19, maxNativeZoom: 17, attribution: 'Tiles &copy; Esri'}).addTo(map);
+const satelit = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+  {maxZoom: 19, maxNativeZoom: 17, attribution: 'Tiles &copy; Esri'});
+L.control.layers({'Jalan': jalan, 'Satelit': satelit}).addTo(map);
+
+const lBanjir = L.layerGroup(D.banjir.map(b => L.polygon(b.g.map(r => r.map(p => [p[1], p[0]])),
+  {color: '#cf222e', weight: 0.5, fillOpacity: 0.3, interactive: true}).bindTooltip(b.n + ': ' + b.k + ' kejadian'))).addTo(map);
+const lTol = L.layerGroup([
+  ...D.tol.map(g => L.polyline(g.map(p => [p[1], p[0]]), {color: '#7a4a1e', weight: 2.5, opacity: 0.8, interactive: false})),
+  ...D.gerbang.map(g => L.marker([g.la, g.lo], {icon: L.divIcon({className: '', html: '<div class="gt"></div>', iconSize: [10, 10]})})
+      .bindTooltip('Gerbang ' + esc(g.nm) + (g.ruas ? '<br>' + esc(g.ruas) : '')))
+]).addTo(map);
+
+function popup(h) {
+  const menit = h.mg == null ? 'tidak dihitung' : h.mg + ' menit ke gerbang ' + esc(h.gt) + (h.mgg ? ' (Google Maps Senin 06.30: ' + h.mgg + ' menit)' : '');
+  return '<b class="h">' + (h.no ? h.no + '. ' : '') + esc(h.nm || h.lok) + '</b>'
+    + '<div class="r">' + rp(h.jt) + (h.jt > 400 ? ' (di atas 400 jt)' : '') + ' · LT ' + (h.lt ?? '?') + ' / LB ' + (h.lb ?? '?') + ' · ' + esc(h.srt || 'surat tidak ditulis') + '</div>'
+    + '<div class="r">' + esc(h.lok) + (h.tp === 'perkiraan' ? ' <i>(lokasi perkiraan)</i>' : '') + '</div>'
+    + '<div class="r"><b>Tol:</b> ' + menit + (h.mk ? '. Sampai kantor sekitar ' + h.mk + ' menit.' : '') + '</div>'
+    + '<div class="r"><b>Banjir:</b> ' + esc(h.bd || 'tidak dihitung') + '</div>'
+    + (h.tol != null ? '<div class="r"><b>Badan tol terdekat:</b> ' + h.tol + ' m</div>' : '')
+    + '<div class="r"><b>Carport:</b> ' + esc(h.cp) + '. <b>Mobil:</b> ' + esc(h.mb) + '</div>'
+    + (h.gg ? '<div class="r"><b>Gugur karena:</b> ' + esc(h.gg) + '</div>' : '')
+    + (h.pc ? '<div class="r"><b>Perlu dicek:</b> ' + esc(h.pc) + '</div>' : '')
+    + '<div class="r">' + (h.ln ? '<a href="' + esc(h.ln) + '" target="_blank" rel="noopener">Buka iklan (' + esc(h.sb) + ')</a> · ' : '')
+    + '<a href="https://www.google.com/maps/search/?api=1&query=' + h.la + ',' + h.lo + '" target="_blank" rel="noopener">Google Maps</a></div>';
+}
+const tanda = {};
+const lRumah = L.layerGroup().addTo(map);
+function gambar() {
+  lRumah.clearLayers();
+  const pilih = new Set([...document.querySelectorAll('.f:checked')].map(e => e.value));
+  const tepat = document.getElementById('tepat').checked;
+  const urut = {'gugur': 0, 'perlu dicek': 1, 'lolos semua': 2};
+  [...D.rumah].sort((a, b) => urut[a.st] - urut[b.st]).forEach(h => {
+    if (!pilih.has(h.st) || (tepat && h.tp === 'perkiraan')) return;
+    const kira = h.tp === 'perkiraan';
+    let m;
+    if (h.no) {
+      m = L.marker([h.la, h.lo], {zIndexOffset: 1000, icon: L.divIcon({className: '', iconSize: [24, 24],
+        html: '<div class="no' + (h.st === 'perlu dicek' ? ' cek' : '') + (kira ? ' kira' : '') + '">' + h.no + '</div>'})});
+    } else {
+      m = L.circleMarker([h.la, h.lo], {radius: h.st === 'gugur' ? 4 : 7, color: warna[h.st], weight: 2,
+        dashArray: kira ? '3 3' : null, fillColor: warna[h.st], fillOpacity: kira ? 0.12 : 0.75});
+    }
+    m.bindPopup(popup(h), {maxWidth: 330});
+    m.bindTooltip((kira ? '~ ' : '') + rp(h.jt) + ' · ' + esc(h.nm || h.lok));
+    tanda[h.id] = m; lRumah.addLayer(m);
+  });
+}
+document.querySelectorAll('.f, #tepat').forEach(e => e.addEventListener('change', gambar));
+document.getElementById('lbanjir').addEventListener('change', e => e.target.checked ? lBanjir.addTo(map) : map.removeLayer(lBanjir));
+document.getElementById('ltol').addEventListener('change', e => e.target.checked ? lTol.addTo(map) : map.removeLayer(lTol));
+const hit = s => D.rumah.filter(h => h.st === s).length;
+document.getElementById('n1').textContent = hit('lolos semua');
+document.getElementById('n2').textContent = hit('perlu dicek');
+document.getElementById('n3').textContent = hit('gugur');
+document.getElementById('tgl').textContent = D.dibuat;
+document.getElementById('daftar').innerHTML = D.rumah.filter(h => h.no).sort((a, b) => a.no - b.no).map(h =>
+  '<div class="item" data-id="' + h.id + '"><b>' + h.no + '. ' + esc(h.nm || h.lok) + '</b><small>' + rp(h.jt) + ' · LT ' + (h.lt ?? '?')
+  + ' · ' + (h.mg ?? '?') + ' menit ke gerbang ' + esc(h.gt) + ' · ' + (h.st === 'lolos semua' ? 'lolos semua' : 'perlu dicek: ' + esc(h.pc)) + '</small></div>').join('');
+document.querySelectorAll('.item').forEach(e => e.addEventListener('click', () => {
+  const h = D.rumah.find(x => x.id === e.dataset.id); map.setView([h.la, h.lo], 15); if (tanda[h.id]) tanda[h.id].openPopup();
+}));
+gambar();
+</script>
+</body>
+</html>

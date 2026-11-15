@@ -1,0 +1,29 @@
+id_rumah;kolom;nilai;alasan
+T-1dd14aba;k_komplek;tidak;iklan menyebut pemukiman padat penduduk di Kampung Jembatan, kata "Perum" hanya penunjuk arah masuk motor
+T-1dd14aba;k_mobil;tidak;iklan menyebut pengguna motor masuk dari Perum Jatinegara Baru
+T-06b83bec;k_mobil;tidak;iklan menyebut akses motor, 10 sampai 20 m ke akses mobil
+T-06b83bec;k_lt;tidak;luas tanah 3,6 x 6,5 m, sekitar 23 m2
+T-6790fdb9;k_mobil;tidak;balasan penjual: akses motor, jarak ke akses mobil sekitar 10 m
+T-a1182a18;k_mobil;tidak;foto iklan menyebut selangkah ke jalan mobil, jadi mobil tidak sampai depan rumah
+T-ffa431a1;k_carport;tidak;iklan menyebut tidak ada garasi, dan bangunan 42 m2 memenuhi tanah 42 m2
+T-56bd22f2;k_komplek;tidak;Vittoria Residence adalah apartemen, bukan rumah tapak
+T-fa08b711;duplikat;T-8692d453;luas tanah, luas bangunan, listrik 3.500 watt, dan one gate sama, iklan yang lebih baru dipakai
+R-hos42731239;wilayah_urut;4;deskripsi menulis Duren Mekar, Bojongsari, Depok
+R-hos42731230;wilayah_urut;4;deskripsi menulis Duren Mekar, Bojongsari, Depok
+R-hos42590063;wilayah_urut;4;deskripsi menulis Cinangka, Sawangan, Depok
+R-hos42710414;wilayah_urut;5;Harvest City ada di Cileungsi, Kab. Bogor
+R-hos42815119;wilayah_urut;5;Bojong Kulur ada di Gunung Putri, Kab. Bogor
+R-hos42816726;wilayah_urut;3;Grand Residence City ada di Setu, Kab. Bekasi
+T-6db17fd0;wilayah_urut;2;Bintara Jaya ada di Bekasi Barat, Kota Bekasi
+T-1787c702;wilayah_urut;2;perbatasan Bekasi dan Jakarta Timur, sisi mana belum jelas
+R-hos9875501;catatan;dua rumah petak yang sedang disewakan;harga di deskripsi 500 jt, harga iklan 300 jt
+T-13703e88;lt;89;iklan menulis LT LB 89/49
+T-553d3b77;k_mobil;ya;foto iklan: mobil terparkir di depan rumah
+T-553d3b77;k_carport;ya;foto iklan: mobil terparkir di bawah kanopi depan rumah
+T-911ec913;k_mobil;ya;foto iklan: jalan komplek lebar dan ada halaman depan
+T-13703e88;k_mobil;ya;foto iklan: carport berkanopi di jalan cluster berpaving
+T-13703e88;k_carport;ya;foto iklan: carport berkanopi
+T-8692d453;k_carport;ya;foto iklan: mobil terparkir di depan rumah
+T-6db17fd0;k_mobil;ya;iklan menulis akses mobil dan jalanan luas
+T-f972925f;k_lt;belum jelas;brosur di foto menulis LT 34 m2, teks iklan menulis 37 m2
+T-13703e88;lb;49;iklan menulis LT LB 89/49
