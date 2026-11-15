@@ -1,10 +1,11 @@
 # Shortlist housing
 
-I collected about 2,000 house listings around Jakarta over two months and could not survey them all. This repo
+I collected about 2,200 house listings around Jakarta over two months and could not survey them all. This repo
 filters them down with spatial SQL in DuckDB: price, land size, whether the house sits inside a housing complex,
 car access, flood history, and how long it takes to drive to a toll gate that actually leads to my office in Senayan.
 
-Result of the 15 November 2026 run: 14 houses pass every hard rule, and 5 of them are in the areas we want.
+Result of the 15 November 2026 run (2,189 listings after merging duplicate ads): 14 houses pass every hard rule,
+and 5 of them are in the areas we want.
 
 Pages (in Indonesian, because the listings, addresses and flood reports are Indonesian):
 
