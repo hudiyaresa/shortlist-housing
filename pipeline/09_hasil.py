@@ -59,7 +59,7 @@ def main() -> None:
     n = tulis_csv("kandidat.csv", c.execute(f"""
         SELECT {KOLOM} FROM kandidat
         ORDER BY CASE status WHEN 'lolos semua' THEN 1 WHEN 'perlu dicek' THEN 2 WHEN 'duplikat' THEN 3 ELSE 4 END,
-                 wilayah_urut, mnt_gerbang_pagi NULLS LAST, rp"""))
+                 wilayah_urut, mnt_gerbang_pagi NULLS LAST, rp, id_rumah"""))
     print("kandidat.csv:", n, "baris")
     tulis_csv("corong.csv", c.execute("SELECT urut, tahap, sisa, gugur_sendiri FROM corong ORDER BY urut"))
     tulis_csv("gerbang_tol.csv", c.execute("""
