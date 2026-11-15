@@ -19,6 +19,7 @@ Pages (in Indonesian, because the listings, addresses and flood reports are Indo
 | `index.html`, `shortlist_rumah.md` | The shortlist write-up |
 | `peta_shortlist.html` | Leaflet map, one file. Dashed markers mean the location is only an area centroid |
 | `kandidat.csv`, `kandidat.html` | Every listing with one column per rule |
+| `foto/` | Small photos from the Threads posts, up to three per house. rumah123 photos load from their CDN |
 | `corong.csv` | How many listings drop out at each rule |
 | `gerbang_tol.csv` | Toll gates that turned out to be entrances heading toward Senayan |
 | `pipeline/` | Scripts, SQL and hand-made reference data |
@@ -41,7 +42,8 @@ Pages (in Indonesian, because the listings, addresses and flood reports are Indo
 7. `07_spasial` and `08_kandidat` join everything in SQL: point in flood polygon, distance to the nearest toll road
    body, distance and height above the nearest river, fastest gate, and a named list of housing estates that made the
    news for flooding (`data/banjir_bernama.csv`).
-8. `09_hasil` and `10_halaman` write the CSV files, the map and the pages.
+8. `09_hasil` and `10_halaman` write the CSV files, the map and the pages. They also pick up to three photos per
+   house. Photos whose OCR text contains a phone number are skipped, and brochure-style images go last.
 
 Each rule has three values: yes, no, unclear. Only "no" removes a house. A house is listed as passing only when
 nothing is unclear and its location is at least the complex, not an area centroid.
@@ -55,7 +57,7 @@ this code is here to be read and reused, not to be run as is. With your own list
 python pipeline/jalankan_semua.py
 ```
 
-Python 3.11 with `duckdb` and `requests`. Requests to public services are spaced out and cached in `cache/`.
+Python 3.11 with `duckdb`, `requests` and `Pillow`. Requests to public services are spaced out and cached in `cache/`.
 
 ## Limits
 
@@ -72,3 +74,6 @@ This is a family discussion aid. It is not a property appraisal or financial adv
 OpenStreetMap (toll roads, rivers), OSRM public server (routing), BPBD DKI Jakarta (flood history per RT),
 BNPB InaRISK (flood hazard index), Open-Meteo (elevation), public listings on rumah123 and Threads, and news
 reports quoting BPBD Kota Bekasi (listed in `data/banjir_sumber.csv`).
+
+Photos belong to the sellers and agents who posted the listings. They are shown here only so each house can be
+recognised at a glance.
