@@ -4,7 +4,9 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,Segoe UI,Arial,sans-serif}
 main{max-width:920px;margin:0 auto;padding:20px 16px 60px}
 nav{position:sticky;top:0;background:var(--soft);border-bottom:1px solid var(--line);padding:9px 16px;font-size:14px;z-index:5}
-nav a{margin-right:16px}a{color:var(--acc)}
+nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px}a{color:var(--acc)}
+nav a.ke{margin-left:auto;background:var(--acc);color:#fff;padding:3px 12px;border-radius:999px;font-weight:600;text-decoration:none}
+nav a.ke:hover{filter:brightness(1.1)}
 h1{font-size:28px;line-height:1.25;margin:18px 0 8px}h2{font-size:21px;margin:34px 0 8px;padding-top:8px;border-top:1px solid var(--line)}
 h3{font-size:17px;margin:24px 0 6px}p,li{overflow-wrap:anywhere}
 .tw{overflow-x:auto;margin:10px 0}table{border-collapse:collapse;font-size:14px;min-width:100%}
@@ -19,7 +21,7 @@ td small{color:var(--mut)}td.p{min-width:230px}
 .fs img{flex:1 1 96px;min-width:0;max-width:176px;aspect-ratio:7/5;object-fit:cover;border-radius:6px;cursor:zoom-in;background:var(--soft)}
 #lb{position:fixed;inset:0;z-index:20;display:none;align-items:center;align-content:center;justify-content:center;flex-wrap:wrap;gap:8px;padding:16px;background:#000c;cursor:zoom-out;overflow:auto}
 #lb.buka{display:flex}#lb img{max-width:min(92vw,620px);max-height:86vh;border-radius:6px}
-</style></head><body><nav><a href="index.html">Shortlist</a><a href="peta_shortlist.html">Peta</a><a href="kandidat.html">Tabel kandidat</a><a href="kandidat.csv">kandidat.csv</a></nav><main><h1>Rumah yang belum gugur</h1><p>Semua rumah yang lolos semua kriteria wajib atau masih perlu dicek. Daftar lengkap termasuk yang gugur ada di <a href="kandidat.csv">kandidat.csv</a>. Klik judul kolom untuk mengurutkan, klik foto untuk melihatnya lebih besar.</p><input id="cari" placeholder="cari komplek atau lokasi" size="28"><select id="st"><option value="">semua status</option><option>lolos semua</option><option>perlu dicek</option></select><select id="wil"><option value="">semua wilayah</option></select> <span id="jml"></span><div class="tw"><table id="t"><thead></thead><tbody></tbody></table></div></main><div id="lb"></div><script>
+</style></head><body><nav><a href="index.html">Shortlist</a><a href="peta_shortlist.html">Peta</a><a href="kandidat.html">Tabel kandidat</a><a href="kandidat.csv">kandidat.csv</a><a class="ke" href="https://hudiyaresa.github.io/house-listing-gallery/#map" title="Galeri dan peta semua rumah dari rumah123 dan Threads">Peta semua iklan rumah123 &rarr;</a></nav><main><h1>Rumah yang belum gugur</h1><p>Semua rumah yang lolos semua kriteria wajib atau masih perlu dicek. Daftar lengkap termasuk yang gugur ada di <a href="kandidat.csv">kandidat.csv</a>. Klik judul kolom untuk mengurutkan, klik foto untuk melihatnya lebih besar.</p><input id="cari" placeholder="cari komplek atau lokasi" size="28"><select id="st"><option value="">semua status</option><option>lolos semua</option><option>perlu dicek</option></select><select id="wil"><option value="">semua wilayah</option></select> <span id="jml"></span><div class="tw"><table id="t"><thead></thead><tbody></tbody></table></div></main><div id="lb"></div><script>
 const lb=document.getElementById('lb');
 document.addEventListener('click',e=>{
   const t=e.target.closest('[data-ft]');
