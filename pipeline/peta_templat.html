@@ -13,6 +13,8 @@
 body{font:14px/1.45 system-ui,Segoe UI,Arial,sans-serif;color:var(--fg);background:var(--bg);display:flex}
 #panel{width:340px;max-width:100%;overflow:auto;padding:12px 14px;border-right:1px solid var(--line);flex:none}
 #map{flex:1;min-height:320px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}.nav a{font-size:13px;padding:3px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none}
+.nav a.ke{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
 h1{font-size:17px;margin:0 0 4px}h2{font-size:13px;margin:14px 0 6px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
 p{margin:4px 0;color:var(--mut)}label{display:block;margin:2px 0;cursor:pointer}a{color:var(--acc)}
 .item{padding:7px 0;border-top:1px solid var(--line);cursor:pointer}.item b{display:block}.item small{color:var(--mut)}
@@ -34,6 +36,7 @@ p{margin:4px 0;color:var(--mut)}label{display:block;margin:2px 0;cursor:pointer}
 </head>
 <body>
 <div id="panel">
+  <div class="nav"><a href="index.html">&larr; Shortlist</a><a href="kandidat.html">Tabel kandidat</a><a class="ke" href="https://hudiyaresa.github.io/house-listing-gallery/#map" title="Galeri dan peta semua rumah dari rumah123 dan Threads">Peta semua iklan rumah123 &rarr;</a></div>
   <h1>Peta shortlist rumah</h1>
   <p>Data sampai <span id="tgl"></span>. Titik bergaris putus-putus berarti lokasinya masih perkiraan (titik tengah daerah), jadi waktu tempuh dan status banjirnya juga perkiraan.</p>
   <h2>Tampilkan</h2>

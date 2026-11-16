@@ -21,7 +21,9 @@ CSS = """
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,Segoe UI,Arial,sans-serif}
 main{max-width:920px;margin:0 auto;padding:20px 16px 60px}
 nav{position:sticky;top:0;background:var(--soft);border-bottom:1px solid var(--line);padding:9px 16px;font-size:14px;z-index:5}
-nav a{margin-right:16px}a{color:var(--acc)}
+nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px}a{color:var(--acc)}
+nav a.ke{margin-left:auto;background:var(--acc);color:#fff;padding:3px 12px;border-radius:999px;font-weight:600;text-decoration:none}
+nav a.ke:hover{filter:brightness(1.1)}
 h1{font-size:28px;line-height:1.25;margin:18px 0 8px}h2{font-size:21px;margin:34px 0 8px;padding-top:8px;border-top:1px solid var(--line)}
 h3{font-size:17px;margin:24px 0 6px}p,li{overflow-wrap:anywhere}
 .tw{overflow-x:auto;margin:10px 0}table{border-collapse:collapse;font-size:14px;min-width:100%}
@@ -57,8 +59,12 @@ def gambar(daftar: list[str], kelas: str = "") -> str:
     return "".join(f'<img{k} src="{html.escape(u, quote=True)}" data-ft="{semua}" alt="" loading="lazy" '
                    'onerror="this.remove()">' for u in daftar)
 
+# galeri semua iklan (repo house-listing-gallery); galeri itu punya tombol balik ke sini
+GALERI = "https://hudiyaresa.github.io/house-listing-gallery/#map"
 NAV = ('<nav><a href="index.html">Shortlist</a><a href="peta_shortlist.html">Peta</a>'
-       '<a href="kandidat.html">Tabel kandidat</a><a href="kandidat.csv">kandidat.csv</a></nav>')
+       '<a href="kandidat.html">Tabel kandidat</a><a href="kandidat.csv">kandidat.csv</a>'
+       f'<a class="ke" href="{GALERI}" title="Galeri dan peta semua rumah dari rumah123 dan Threads">'
+       'Peta semua iklan rumah123 &rarr;</a></nav>')
 
 
 def sebaris(t: str) -> str:
