@@ -40,6 +40,9 @@ Pages (in Indonesian, because the listings, addresses and flood reports are Indo
    06:30 departure (`data/kalibrasi_macet.csv`).
 6. `06_banjir_luar_dki` adds the BNPB InaRISK flood hazard index and ground elevation for houses outside Jakarta,
    where there is no per-RT flood record.
+6b. `06b_sekolah` adds primary, junior and senior high schools around each house (our school map plus the
+   datawan-labs national school list), straight-line distance for school zoning and road distance to the best-ranked
+   schools.
 7. `07_spasial` and `08_kandidat` join everything in SQL: point in flood polygon, distance to the nearest toll road
    body, distance and height above the nearest river, fastest gate, and a named list of housing estates that made the
    news for flooding (`data/banjir_bernama.csv`).
