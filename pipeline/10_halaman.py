@@ -22,8 +22,12 @@ CSS = """
 main{max-width:920px;margin:0 auto;padding:20px 16px 60px}
 nav{position:sticky;top:0;background:var(--soft);border-bottom:1px solid var(--line);padding:9px 16px;font-size:14px;z-index:5}
 nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px}a{color:var(--acc)}
-nav a.ke{margin-left:auto;background:var(--acc);color:#fff;padding:3px 12px;border-radius:999px;font-weight:600;text-decoration:none}
-nav a.ke:hover{filter:brightness(1.1)}
+nav b.judul{margin-right:4px}nav a.tab{padding:2px 10px;border-radius:999px;text-decoration:none}
+nav a.tab.aktif{background:var(--acc);color:#fff;font-weight:600}
+nav .luar{margin-left:auto;font-size:12.5px;color:var(--mut);border:1px dashed var(--line);border-radius:6px;padding:2px 8px}
+nav .luar a{font-weight:600}
+.pl{display:inline-block;font-size:11px;background:#7c3aed;color:#fff;border-radius:4px;padding:0 5px}
+.ggr{color:var(--mut)}
 h1{font-size:28px;line-height:1.25;margin:18px 0 8px}h2{font-size:21px;margin:34px 0 8px;padding-top:8px;border-top:1px solid var(--line)}
 h3{font-size:17px;margin:24px 0 6px}p,li{overflow-wrap:anywhere}
 .tw{overflow-x:auto;margin:10px 0}table{border-collapse:collapse;font-size:14px;min-width:100%}
@@ -59,12 +63,19 @@ def gambar(daftar: list[str], kelas: str = "") -> str:
     return "".join(f'<img{k} src="{html.escape(u, quote=True)}" data-ft="{semua}" alt="" loading="lazy" '
                    'onerror="this.remove()">' for u in daftar)
 
-# galeri semua iklan (repo house-listing-gallery); galeri itu punya tombol balik ke sini
+# galeri semua iklan (repo house-listing-gallery); galeri itu punya tombol balik ke sini.
+# Tautannya sengaja dipisah dari tab halaman ini dan diberi label "belum disaring" supaya tidak tertukar dengan
+# Peta shortlist.
 GALERI = "https://hudiyaresa.github.io/house-listing-gallery/#map"
-NAV = ('<nav><a href="index.html">Shortlist</a><a href="peta_shortlist.html">Peta</a>'
-       '<a href="kandidat.html">Tabel kandidat</a><a href="kandidat.csv">kandidat.csv</a>'
-       f'<a class="ke" href="{GALERI}" title="Galeri dan peta semua rumah dari rumah123 dan Threads">'
-       'Peta semua iklan rumah123 &rarr;</a></nav>')
+
+
+def nav(aktif: str, n_galeri: int) -> str:
+    tab = [("index.html", "Ringkasan"), ("peta_shortlist.html", "Peta shortlist"), ("kandidat.html", "Tabel kandidat")]
+    isi = "".join(f'<a class="tab{" aktif" if h == aktif else ""}" href="{h}">{t}</a>' for h, t in tab)
+    return (f'<nav><b class="judul">Shortlist rumah</b>{isi}<a class="tab" href="kandidat.csv">CSV</a>'
+            f'<span class="luar">Situs lain: <a href="{GALERI}" target="_blank" rel="noopener" '
+            f'title="Semua iklan dari rumah123 dan Threads, belum disaring">Galeri semua iklan '
+            f'({n_galeri:,} rumah, belum disaring) &#8599;</a></span></nav>'.replace(f"{n_galeri:,}", f"{n_galeri:,}".replace(",", ".")))
 
 
 def sebaris(t: str) -> str:
@@ -166,10 +177,10 @@ def md_ke_html(md: str) -> str:
     return "\n".join(out)
 
 
-def halaman(judul: str, isi: str, skrip: str = "") -> str:
+def halaman(judul: str, isi: str, aktif: str, n_galeri: int, skrip: str = "") -> str:
     return (f'<!doctype html><html lang="id"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width, initial-scale=1"><title>{judul}</title>'
-            f"<style>{CSS}</style></head><body>{NAV}<main>{isi}</main>{LIHAT_FOTO}{skrip}</body></html>")
+            f"<style>{CSS}</style></head><body>{nav(aktif, n_galeri)}<main>{isi}</main>{LIHAT_FOTO}{skrip}</body></html>")
 
 
 def main() -> None:
@@ -178,47 +189,81 @@ def main() -> None:
     nomor = importlib.import_module("09_hasil").NOMOR           # id_rumah -> nomor di shortlist_rumah.md
     FOTO_NO.update({str(nomor[r["id_rumah"]]): r["foto"].split(" | ")
                     for r in semua if r["id_rumah"] in nomor and r.get("foto")})
+    from umum import con
+    c = con(read_only=True)
+    n_galeri = c.execute("SELECT count(*) FROM rumah").fetchone()[0]
+    c.close()
     md = (HERE / "shortlist_rumah.md").read_text(encoding="utf-8")
-    (OUT / "index.html").write_text(halaman("Shortlist rumah untuk disurvei", md_ke_html(md)), encoding="utf-8")
+    (OUT / "index.html").write_text(halaman("Shortlist rumah untuk disurvei", md_ke_html(md), "index.html", n_galeri),
+                                    encoding="utf-8")
 
-    pakai = ["status", "kelompok_wilayah", "harga_jt", "luas_tanah_m2", "komplek", "lokasi", "ketepatan_lokasi",
-             "gerbang_tol", "menit_ke_gerbang_pagi", "k_banjir", "banjir_dasar", "jarak_badan_tol_m", "k_mobil",
-             "k_carport", "k_developer", "yang_perlu_dicek", "sumber", "link", "foto"]
-    baris = [[r[k] for k in pakai] for r in semua
-             if r["status"] in ("lolos semua", "perlu dicek") and r["sumber"] != "Catatan survei"]
-    isi = ("<h1>Rumah yang belum gugur</h1><p>Semua rumah yang lolos semua kriteria wajib atau masih perlu dicek. "
+    pakai = ["no", "status", "kelompok_wilayah", "harga_jt", "luas_tanah_m2", "komplek", "lokasi", "ketepatan_lokasi",
+             "gerbang_tol", "menit_ke_gerbang_pagi", "km_ke_manggala", "k_banjir", "banjir_dasar", "jarak_badan_tol_m",
+             "km_ke_sekolah_paling_favorit", "sekolah_paling_favorit_terdekat", "m_ke_sd_negeri", "sd_negeri_terdekat",
+             "sekolah_favorit_2km", "cicil_pribadi", "k_mobil", "k_carport", "k_developer", "yang_perlu_dicek",
+             "gugur_karena", "pilihan_kalian", "sumber", "link", "foto"]
+    baris = []
+    for r in semua:
+        if r["sumber"] == "Catatan survei" or r.get("duplikat_dari"):
+            continue
+        if r["status"] in ("lolos semua", "perlu dicek") or r["pilihan_kalian"] == "True":
+            r = {**r, "no": nomor.get(r["id_rumah"], "")}
+            baris.append([r.get(k, "") for k in pakai])
+    isi = ("<h1>Tabel kandidat</h1><p>Rumah yang lolos semua kriteria wajib, yang masih perlu dicek, dan semua rumah "
+           "yang kalian kirim sendiri (tanda <span class=\"pl\">pilihan kalian</span>, ikut tampil walau gugur). "
            "Daftar lengkap termasuk yang gugur ada di <a href=\"kandidat.csv\">kandidat.csv</a>. "
-           "Klik judul kolom untuk mengurutkan, klik foto untuk melihatnya lebih besar.</p>"
-           '<input id="cari" placeholder="cari komplek atau lokasi" size="28">'
-           '<select id="st"><option value="">semua status</option><option>lolos semua</option><option>perlu dicek</option></select>'
-           '<select id="wil"><option value="">semua wilayah</option></select> <span id="jml"></span>'
+           "Pilih urutan di kotak Urutkan atau klik judul kolom. Klik foto untuk melihatnya lebih besar.</p>"
+           '<label>Urutkan <select id="urut">'
+           '<option value="harga_jt">Harga termurah</option>'
+           '<option value="km_ke_manggala">Jarak ke Manggala Wanabakti (km jalan lewat tol)</option>'
+           '<option value="km_ke_sekolah_paling_favorit">Jarak ke sekolah paling favorit (km jalan)</option>'
+           '<option value="menit_ke_gerbang_pagi">Waktu ke gerbang tol terdekat (menit, pagi)</option>'
+           '<option value="m_ke_sd_negeri">Jarak ke SD negeri terdekat</option>'
+           '<option value="no">Nomor di shortlist</option></select></label> '
+           '<input id="cari" placeholder="cari komplek atau lokasi" size="24">'
+           '<select id="st"><option value="">semua status</option><option>lolos semua</option><option>perlu dicek</option>'
+           '<option>gugur</option></select>'
+           '<select id="wil"><option value="">semua wilayah</option></select>'
+           '<label><input type="checkbox" id="pil"> hanya pilihan kalian</label> <span id="jml"></span>'
            '<div class="tw"><table id="t"><thead></thead><tbody></tbody></table></div>')
     skrip = "<script>const K=" + json.dumps(pakai) + ";const B=" + json.dumps(baris, ensure_ascii=False) + """;
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const nama={status:'Status',kelompok_wilayah:'Wilayah',harga_jt:'Harga (jt)',luas_tanah_m2:'LT',komplek:'Komplek',lokasi:'Lokasi di iklan',
-ketepatan_lokasi:'Titik',gerbang_tol:'Gerbang tol',menit_ke_gerbang_pagi:'Menit ke gerbang',k_banjir:'Banjir',banjir_dasar:'Dasar banjir',
-jarak_badan_tol_m:'Badan tol (m)',k_mobil:'Mobil',k_carport:'Carport',k_developer:'Developer',yang_perlu_dicek:'Perlu dicek',sumber:'Sumber',link:'Iklan'};
-const U=[K.indexOf('foto'),...K.keys()].filter((i,n)=>n===0||K[i]!=='foto');  // urutan tampil: foto dulu
-const P=['lokasi','banjir_dasar','yang_perlu_dicek'];  // kolom berteks panjang, diberi lebar minimal
-let urut=8,naik=true;
-[...new Set(B.map(r=>r[1]))].sort().forEach(w=>document.getElementById('wil').insertAdjacentHTML('beforeend','<option>'+esc(w)+'</option>'));
+const I=Object.fromEntries(K.map((k,i)=>[k,i]));
+const nama={no:'No',status:'Status',kelompok_wilayah:'Wilayah',harga_jt:'Harga (jt)',luas_tanah_m2:'LT',komplek:'Komplek',lokasi:'Lokasi di iklan',
+ketepatan_lokasi:'Titik',gerbang_tol:'Gerbang tol',menit_ke_gerbang_pagi:'Menit ke gerbang (pagi)',km_ke_manggala:'Km ke Manggala',
+k_banjir:'Banjir',banjir_dasar:'Dasar banjir',jarak_badan_tol_m:'Badan tol (m)',km_ke_sekolah_paling_favorit:'Km ke sekolah paling favorit',
+sekolah_paling_favorit_terdekat:'Sekolah paling favorit terdekat',m_ke_sd_negeri:'M ke SD negeri',sd_negeri_terdekat:'SD negeri terdekat',
+sekolah_favorit_2km:'Sekolah favorit dalam 2 km',cicil_pribadi:'Cicil tanpa bank',k_mobil:'Mobil',k_carport:'Carport',k_developer:'Developer',
+yang_perlu_dicek:'Perlu dicek',gugur_karena:'Gugur karena',sumber:'Sumber',link:'Iklan'};
+const ANGKA=['no','harga_jt','luas_tanah_m2','menit_ke_gerbang_pagi','km_ke_manggala','jarak_badan_tol_m','km_ke_sekolah_paling_favorit','m_ke_sd_negeri'];
+const SEMBUNYI=['foto','pilihan_kalian'];
+const U=[I.foto,...K.keys()].filter((i,n)=>n===0||!SEMBUNYI.includes(K[i]));
+const P=['lokasi','banjir_dasar','yang_perlu_dicek','gugur_karena','sekolah_favorit_2km'];
+let urut=I.harga_jt,naik=true;
+[...new Set(B.map(r=>r[I.kelompok_wilayah]))].sort().forEach(w=>document.getElementById('wil').insertAdjacentHTML('beforeend','<option>'+esc(w)+'</option>'));
 document.querySelector('#t thead').innerHTML='<tr>'+U.map(i=>K[i]==='foto'?'<th>Foto</th>':'<th class="s" data-i="'+i+'">'+nama[K[i]]+'</th>').join('')+'</tr>';
 function gambar(){
-  const c=document.getElementById('cari').value.toLowerCase(),s=document.getElementById('st').value,w=document.getElementById('wil').value;
-  const angka=[2,3,8,11].includes(urut);
-  const r=B.filter(x=>(!s||x[0]===s)&&(!w||x[1]===w)&&(!c||(x[4]+' '+x[5]).toLowerCase().includes(c)))
-    .sort((a,b)=>{let p=a[urut],q=b[urut];if(angka){p=p===''?1e9:+p;q=q===''?1e9:+q;return naik?p-q:q-p}return naik?String(p).localeCompare(q):String(q).localeCompare(p)});
+  const c=document.getElementById('cari').value.toLowerCase(),s=document.getElementById('st').value,w=document.getElementById('wil').value,
+        pil=document.getElementById('pil').checked;
+  const angka=ANGKA.includes(K[urut]);
+  const r=B.filter(x=>(!s||x[I.status]===s)&&(!w||x[I.kelompok_wilayah]===w)&&(!pil||x[I.pilihan_kalian]==='True')
+      &&(!c||(x[I.komplek]+' '+x[I.lokasi]).toLowerCase().includes(c)))
+    .sort((a,b)=>{let p=a[urut],q=b[urut];if(angka){p=p===''?1e9:+p;q=q===''?1e9:+q;return (naik?p-q:q-p)||(+a[I.harga_jt]-+b[I.harga_jt])}
+      return naik?String(p).localeCompare(q):String(q).localeCompare(p)});
   document.getElementById('jml').textContent=r.length+' rumah';
   document.querySelector('#t tbody').innerHTML=r.map(x=>'<tr>'+U.map(i=>{
     const v=x[i];
     if(K[i]==='foto'){const f=v?v.split(' | '):[];return '<td>'+(f.length?'<img class="tk" src="'+esc(f[0])+'" data-ft="'+esc(v)+'" alt="" loading="lazy" onerror="this.remove()">'+(f.length>1?'<small>'+f.length+' foto</small>':''):'')+'</td>'}
     if(K[i]==='link')return '<td>'+(v?'<a href="'+esc(v.split(' | ')[0])+'" target="_blank" rel="noopener">buka</a>':'')+'</td>';
-    if(K[i]==='status')return '<td class="'+(v==='lolos semua'?'ok':'cek')+'">'+esc(v)+'</td>';
-    return '<td'+(P.includes(K[i])&&v?' class="p"':'')+'>'+esc(v)+'</td>'}).join('')+'</tr>').join('');
+    if(K[i]==='status')return '<td class="'+(v==='lolos semua'?'ok':v==='gugur'?'ggr':'cek')+'">'+esc(v)+(x[I.pilihan_kalian]==='True'?'<br><span class="pl">pilihan kalian</span>':'')+'</td>';
+    const t=ANGKA.includes(K[i])?String(v).replace(/[.]0$/,'').replace('.',','):v;
+    return '<td'+(P.includes(K[i])&&v?' class="p"':'')+'>'+esc(t)+'</td>'}).join('')+'</tr>').join('');
 }
 document.querySelectorAll('th.s').forEach(t=>t.onclick=()=>{const i=+t.dataset.i;naik=urut===i?!naik:true;urut=i;gambar()});
-['cari','st','wil'].forEach(i=>document.getElementById(i).oninput=gambar);gambar();</script>"""
-    (OUT / "kandidat.html").write_text(halaman("Tabel kandidat rumah", isi, skrip), encoding="utf-8")
+document.getElementById('urut').onchange=e=>{urut=I[e.target.value];naik=true;gambar()};
+['cari','st','wil','pil'].forEach(i=>document.getElementById(i).oninput=gambar);gambar();</script>"""
+    (OUT / "kandidat.html").write_text(halaman("Tabel kandidat rumah", isi, "kandidat.html", n_galeri, skrip),
+                                       encoding="utf-8")
     print("index.html dan kandidat.html ditulis,", len(baris), "rumah di tabel")
 
 

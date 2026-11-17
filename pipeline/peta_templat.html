@@ -13,14 +13,23 @@
 body{font:14px/1.45 system-ui,Segoe UI,Arial,sans-serif;color:var(--fg);background:var(--bg);display:flex}
 #panel{width:340px;max-width:100%;overflow:auto;padding:12px 14px;border-right:1px solid var(--line);flex:none}
 #map{flex:1;min-height:320px}
-.nav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}.nav a{font-size:13px;padding:3px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none}
-.nav a.ke{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.nav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px}.nav a{font-size:13px;padding:3px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none}
+.nav a.aktif{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.luar{font-size:12px;color:var(--mut);border:1px dashed var(--line);border-radius:6px;padding:5px 8px;margin:0 0 10px}
+.luar a{font-weight:600}
+select{font:inherit;font-size:13px;padding:3px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}
+#semua{max-height:340px;overflow:auto;border-top:1px solid var(--line)}
+.lg{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-2px;margin:0 4px 0 2px}
+.sek{font-size:12.5px;margin-top:5px;padding-top:5px;border-top:1px solid var(--line)}.sek li{margin:1px 0}.sek ul{margin:2px 0 0;padding-left:16px}
+.pl{display:inline-block;font-size:11px;background:#7c3aed;color:#fff;border-radius:4px;padding:0 5px;margin-left:4px;vertical-align:1px}
+.cc{display:inline-block;font-size:11px;background:#0e7490;color:#fff;border-radius:4px;padding:0 5px;margin-left:4px;vertical-align:1px}
+.no.pil{background:#7c3aed}
 h1{font-size:17px;margin:0 0 4px}h2{font-size:13px;margin:14px 0 6px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
 p{margin:4px 0;color:var(--mut)}label{display:block;margin:2px 0;cursor:pointer}a{color:var(--acc)}
 .item{padding:7px 0;border-top:1px solid var(--line);cursor:pointer}.item b{display:block}.item small{color:var(--mut)}
 .dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px}
 .no{background:var(--ok);color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;border:2px solid #fff;box-shadow:0 0 3px #0008}
-.no.cek{background:var(--cek)}.no.kira{border-style:dashed;border-color:#000}
+.no.cek{background:var(--cek)}.no.ggr{background:var(--ggr)}.no.kira{border-style:dashed;border-color:#000}
 .gt{width:10px;height:10px;background:#7a4a1e;transform:rotate(45deg);border:1px solid #fff}
 .leaflet-popup-content{font:13px/1.45 system-ui,Segoe UI,Arial,sans-serif;margin:10px 12px;min-width:230px}
 .leaflet-popup-content b.h{font-size:14px}.leaflet-popup-content .r{margin-top:3px}
@@ -36,7 +45,9 @@ p{margin:4px 0;color:var(--mut)}label{display:block;margin:2px 0;cursor:pointer}
 </head>
 <body>
 <div id="panel">
-  <div class="nav"><a href="index.html">&larr; Shortlist</a><a href="kandidat.html">Tabel kandidat</a><a class="ke" href="https://hudiyaresa.github.io/house-listing-gallery/#map" title="Galeri dan peta semua rumah dari rumah123 dan Threads">Peta semua iklan rumah123 &rarr;</a></div>
+  <div class="nav"><a href="index.html">Ringkasan</a><a class="aktif" href="peta_shortlist.html">Peta shortlist</a><a href="kandidat.html">Tabel kandidat</a></div>
+  <div class="luar">Halaman ini hanya rumah yang lolos saringan. Semua iklan mentah (belum disaring) ada di situs lain:
+    <a id="keGaleri" href="#" target="_blank" rel="noopener">Galeri semua iklan &#8599;</a></div>
   <h1>Peta shortlist rumah</h1>
   <p>Data sampai <span id="tgl"></span>. Titik bergaris putus-putus berarti lokasinya masih perkiraan (titik tengah daerah), jadi waktu tempuh dan status banjirnya juga perkiraan.</p>
   <h2>Tampilkan</h2>
@@ -46,14 +57,35 @@ p{margin:4px 0;color:var(--mut)}label{display:block;margin:2px 0;cursor:pointer}
   <label><input type="checkbox" id="tepat"> Hanya lokasi yang sudah tepat</label>
   <label><input type="checkbox" id="lbanjir" checked> RT yang tercatat banjir 2021 sampai 2024 (BPBD DKI)</label>
   <label><input type="checkbox" id="ltol" checked> Badan jalan tol dan gerbang arah Senayan</label>
-  <h2>Sepuluh rumah yang dibahas</h2>
+  <label><input type="checkbox" id="lsek"> Sekolah SD, SMP, SMA (<span id="nsek"></span>)</label>
+  <div id="legSek" style="display:none;margin:2px 0 4px 22px;font-size:12.5px;color:var(--mut)">
+    Isi: <span class="lg" style="background:#d1242f"></span>SD <span class="lg" style="background:#0969da"></span>SMP
+    <span class="lg" style="background:#06b6d4"></span>SMA, pucat = swasta.<br>
+    Cincin: <span class="lg" style="border:3px solid #f59e0b"></span>paling favorit
+    <span class="lg" style="border:3px solid #7c3aed"></span>favorit
+    <span class="lg" style="border:3px solid #db2777"></span>sering direkomendasikan di Threads. Tanpa cincin = tidak ada data peringkat.
+    <br><label style="display:inline"><input type="checkbox" id="hanyaFav"> hanya yang bercincin</label>
+  </div>
+  <label>Klik rumah: tandai sekolah dalam radius
+    <select id="radius"><option value="1000">1 km</option><option value="1500">1,5 km</option><option value="2000" selected>2 km</option></select></label>
+  <h2>Rumah di shortlist</h2>
   <div id="daftar"></div>
-  <p style="margin-top:12px">Sumber: iklan rumah123 dan post Threads (fotonya juga dari sana), banjir per RT BPBD DKI, indeks bahaya banjir InaRISK BNPB, jalan tol dan sungai dari OpenStreetMap, waktu tempuh dari OSRM dikali faktor macet pagi 2,4. Bahan diskusi keluarga, bukan penilaian properti resmi.</p>
+  <h2>Semua rumah yang tampil (<span id="nsemua"></span>)</h2>
+  <label>Urutkan <select id="urut">
+    <option value="harga">Harga termurah</option>
+    <option value="manggala">Jarak ke Manggala Wanabakti (jalan lewat tol)</option>
+    <option value="sekolah">Jarak ke sekolah paling favorit (jalan)</option>
+    <option value="tol">Waktu ke gerbang tol terdekat (pagi)</option>
+    <option value="sdn">Jarak ke SD negeri terdekat</option>
+  </select></label>
+  <div id="semua"></div>
+  <p style="margin-top:12px">Sumber: iklan rumah123 dan post Threads (fotonya juga dari sana), sekolah dari peta sekolah kami (data Kemendikdasmen lewat datawan-labs, peringkat UTBK 2022 dan TKA 2026), banjir per RT BPBD DKI, indeks bahaya banjir InaRISK BNPB, jalan tol dan sungai dari OpenStreetMap, waktu tempuh dari OSRM dikali faktor macet pagi 2,4. Bahan diskusi keluarga, bukan penilaian properti resmi.</p>
 </div>
 <div id="map"></div>
 <script>
 const D = /*DATA*/null;
 const rp = j => j == null ? '?' : j + ' jt';
+const kom = v => String(v).replace('.', ',');
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const warna = {'lolos semua': getComputedStyle(document.documentElement).getPropertyValue('--ok').trim(),
                'perlu dicek': getComputedStyle(document.documentElement).getPropertyValue('--cek').trim(),
@@ -83,6 +115,47 @@ function hover(h) {
   const teks = (h.tp === 'perkiraan' ? '~ ' : '') + rp(h.jt) + ' · ' + esc(h.nm || h.lok);
   return h.ft && h.ft.length ? '<div class="hov">' + gbr(h.ft[0]) + '<div>' + teks + '</div></div>' : teks;
 }
+// ---- sekolah ----
+const WJ = {SD: '#d1242f', SMP: '#0969da', SMA: '#06b6d4'};
+const WT = {top: '#f59e0b', fav: '#7c3aed', ramai: '#db2777'};
+const NT = {top: 'paling favorit', fav: 'favorit', ramai: 'sering direkomendasikan di Threads'};
+function jarakM(a, b, c, d) {
+  const p = Math.PI / 180, x = (d - b) * p * Math.cos((a + c) / 2 * p), y = (c - a) * p;
+  return 6371000 * Math.hypot(x, y);
+}
+function gayaSek(s, besar) {
+  return {radius: besar ? 7 : (s.t ? 6 : 4.5), color: s.t ? WT[s.t] : '#ffffff', weight: s.t ? 3 : 1,
+          fillColor: WJ[s.g], fillOpacity: s.n ? 0.95 : 0.4};
+}
+function popupSek(s) {
+  return '<b>' + esc(s.nm) + '</b><br>' + esc(s.j) + ' ' + (s.n ? 'negeri' : 'swasta') + (s.a ? ', akreditasi ' + esc(s.a) : '')
+    + (s.t ? '<br><span style="color:' + WT[s.t] + ';font-weight:600">' + NT[s.t] + '</span>' : '') + (s.pk ? '<br>' + esc(s.pk) : '');
+}
+const lSek = L.layerGroup();
+function gambarSek() {
+  lSek.clearLayers();
+  const fav = document.getElementById('hanyaFav').checked;
+  D.sekolah.forEach(s => { if (!fav || s.t) lSek.addLayer(L.circleMarker([s.la, s.lo], gayaSek(s)).bindTooltip(() => popupSek(s))); });
+}
+const lSekitar = L.layerGroup().addTo(map);
+function sekitar(h) {
+  const r = +document.getElementById('radius').value;
+  const dekat = D.sekolah.map(s => ({s, m: jarakM(h.la, h.lo, s.la, s.lo)})).filter(x => x.m <= r).sort((a, b) => a.m - b.m);
+  return {r, dekat};
+}
+function popupSekolah(h) {
+  const {r, dekat} = sekitar(h);
+  const km = m => (m / 1000).toFixed(1).replace('.', ',') + ' km';
+  const baris = g => {
+    const d = dekat.filter(x => x.s.g === g), n = d.filter(x => x.s.n).length, f = d.filter(x => x.s.t);
+    const n1 = d.find(x => x.s.n);
+    return '<li>' + g + ': ' + d.length + ' sekolah (' + n + ' negeri)' + (n1 ? ', negeri terdekat ' + esc(n1.s.nm) + ' ' + km(n1.m) : '')
+      + (f.length ? '. Bercincin: ' + f.slice(0, 3).map(x => '<span style="color:' + WT[x.s.t] + ';font-weight:600">' + esc(x.s.nm) + '</span> ' + km(x.m)).join(', ') : '') + '</li>';
+  };
+  return '<div class="sek"><b>Sekolah dalam ' + km(r) + ' (garis lurus)</b><ul>' + ['SD', 'SMP', 'SMA'].map(baris).join('') + '</ul>'
+    + (h.kmt != null ? 'Sekolah paling favorit terdekat lewat jalan: ' + esc(h.tn) + ', ' + String(h.kmt).replace('.', ',') + ' km<br>' : '')
+    + '<span style="color:var(--mut)">Zonasi Kota Bekasi dan Jawa Barat mengurutkan pendaftar dengan jarak garis lurus. DKI memakai wilayah RT dan kelurahan, bukan jarak.</span></div>';
+}
 function popup(h) {
   const menit = h.mg == null ? 'tidak dihitung' : h.mg + ' menit ke gerbang ' + esc(h.gt) + (h.mgg ? ' (Google Maps Senin 06.30: ' + h.mgg + ' menit)' : '');
   return fotoPopup(h) + '<b class="h">' + (h.no ? h.no + '. ' : '') + esc(h.nm || h.lok) + '</b>'
@@ -92,10 +165,20 @@ function popup(h) {
     + '<div class="r"><b>Banjir:</b> ' + esc(h.bd || 'tidak dihitung') + '</div>'
     + (h.tol != null ? '<div class="r"><b>Badan tol terdekat:</b> ' + h.tol + ' m</div>' : '')
     + '<div class="r"><b>Carport:</b> ' + esc(h.cp) + '. <b>Mobil:</b> ' + esc(h.mb) + '</div>'
+    + (h.cc ? '<div class="r"><b>Pembayaran:</b> ' + esc(h.cc) + '</div>' : '')
+    + (h.kmk != null ? '<div class="r"><b>Ke Manggala Wanabakti:</b> ' + kom(h.kmk) + ' km lewat tol</div>' : '')
     + (h.gg ? '<div class="r"><b>Gugur karena:</b> ' + esc(h.gg) + '</div>' : '')
     + (h.pc ? '<div class="r"><b>Perlu dicek:</b> ' + esc(h.pc) + '</div>' : '')
     + '<div class="r">' + (h.ln ? '<a href="' + esc(h.ln) + '" target="_blank" rel="noopener">Buka iklan (' + esc(h.sb) + ')</a> · ' : '')
-    + '<a href="https://www.google.com/maps/search/?api=1&query=' + h.la + ',' + h.lo + '" target="_blank" rel="noopener">Google Maps</a></div>';
+    + '<a href="https://www.google.com/maps/search/?api=1&query=' + h.la + ',' + h.lo + '" target="_blank" rel="noopener">Google Maps</a></div>'
+    + popupSekolah(h);
+}
+// saat popup rumah terbuka: lingkaran radius dan sekolah di dalamnya ditandai, walau layer sekolah disembunyikan
+function tandaiSekitar(h) {
+  lSekitar.clearLayers();
+  const {r, dekat} = sekitar(h);
+  lSekitar.addLayer(L.circle([h.la, h.lo], {radius: r, color: '#7c3aed', weight: 1.5, dashArray: '6 5', fill: false, interactive: false}));
+  dekat.forEach(x => lSekitar.addLayer(L.circleMarker([x.s.la, x.s.lo], gayaSek(x.s, true)).bindTooltip(() => popupSek(x.s) + '<br>' + Math.round(x.m) + ' m dari rumah')));
 }
 const tanda = {};
 const lRumah = L.layerGroup().addTo(map);
@@ -105,21 +188,49 @@ function gambar() {
   const tepat = document.getElementById('tepat').checked;
   const urut = {'gugur': 0, 'perlu dicek': 1, 'lolos semua': 2};
   [...D.rumah].sort((a, b) => urut[a.st] - urut[b.st]).forEach(h => {
-    if (!pilih.has(h.st) || (tepat && h.tp === 'perkiraan')) return;
+    if ((!pilih.has(h.st) && !h.no) || (tepat && h.tp === 'perkiraan')) return;
     const kira = h.tp === 'perkiraan';
     let m;
     if (h.no) {
       m = L.marker([h.la, h.lo], {zIndexOffset: 1000, icon: L.divIcon({className: '', iconSize: [24, 24],
-        html: '<div class="no' + (h.st === 'perlu dicek' ? ' cek' : '') + (kira ? ' kira' : '') + '">' + h.no + '</div>'})});
+        html: '<div class="no' + (h.pl && h.no > 10 ? ' pil' : h.st === 'perlu dicek' ? ' cek' : h.st === 'gugur' ? ' ggr' : '') + (kira ? ' kira' : '') + '">' + h.no + '</div>'})});
     } else {
       m = L.circleMarker([h.la, h.lo], {radius: h.st === 'gugur' ? 4 : 7, color: warna[h.st], weight: 2,
         dashArray: kira ? '3 3' : null, fillColor: warna[h.st], fillOpacity: kira ? 0.12 : 0.75});
     }
-    m.bindPopup(() => popup(h), {maxWidth: 330, minWidth: 250, autoPanPadding: [20, 20]});
+    m.bindPopup(() => popup(h), {maxWidth: 340, minWidth: 260, autoPanPadding: [20, 20]});
+    m.on('popupopen', () => tandaiSekitar(h)); m.on('popupclose', () => lSekitar.clearLayers());
     m.bindTooltip(() => hover(h), h.ft && h.ft.length ? {direction: 'top', offset: [0, -8], opacity: 1, className: 'hov-tip'} : {});
     tanda[h.id] = m; lRumah.addLayer(m);
   });
+  daftarSemua();
 }
+const URUT = {harga: h => h.jt, manggala: h => h.kmk, sekolah: h => h.kmt, tol: h => h.mg, sdn: h => h.msdn};
+const ISI = {harga: h => (h.mg != null ? h.mg + ' menit ke tol' : 'tol belum dihitung'),
+  manggala: h => h.kmk != null ? kom(h.kmk) + ' km ke Manggala' : 'jarak belum dihitung',
+  sekolah: h => h.kmt != null ? kom(h.kmt) + ' km ke ' + esc(h.tn) : 'belum dihitung',
+  tol: h => h.mg != null ? h.mg + ' menit ke gerbang ' + esc(h.gt) : 'belum dihitung',
+  sdn: h => h.msdn != null ? h.msdn + ' m ke ' + esc(h.sdn) : 'belum dihitung'};
+function daftarSemua() {
+  const k = document.getElementById('urut').value, f = URUT[k];
+  const ada = Object.keys(tanda).map(id => D.rumah.find(h => h.id === id)).filter(Boolean)
+    .sort((a, b) => (f(a) ?? 1e9) - (f(b) ?? 1e9) || a.jt - b.jt);
+  document.getElementById('nsemua').textContent = ada.length;
+  document.getElementById('semua').innerHTML = ada.slice(0, 300).map(h =>
+    '<div class="item" data-id="' + h.id + '">' + (h.ft && h.ft.length ? gbr(h.ft[0]) : '') + '<div><b>' + (h.no ? h.no + '. ' : '') + (h.tp === 'perkiraan' ? '~ ' : '') + esc(h.nm || h.lok)
+    + (h.pl ? '<span class="pl">pilihan kalian</span>' : '') + (h.cc ? '<span class="cc">cicil</span>' : '') + '</b><small>' + rp(h.jt) + ' · ' + ISI[k](h)
+    + ' · ' + esc(h.st) + '</small></div></div>').join('')
+    + (ada.length > 300 ? '<p>300 pertama ditampilkan. Persempit dengan pilihan di atas.</p>' : '');
+}
+document.getElementById('urut').addEventListener('change', daftarSemua);
+document.getElementById('lsek').addEventListener('change', e => {
+  document.getElementById('legSek').style.display = e.target.checked ? '' : 'none';
+  if (e.target.checked) { gambarSek(); lSek.addTo(map); } else map.removeLayer(lSek);
+});
+document.getElementById('hanyaFav').addEventListener('change', gambarSek);
+document.getElementById('nsek').textContent = D.sekolah.length;
+document.getElementById('keGaleri').href = D.galeri;
+document.getElementById('keGaleri').textContent = 'Galeri semua iklan (' + D.n_galeri.toLocaleString('id-ID') + ' rumah, belum disaring) \u2197';
 document.querySelectorAll('.f, #tepat').forEach(e => e.addEventListener('change', gambar));
 document.getElementById('lbanjir').addEventListener('change', e => e.target.checked ? lBanjir.addTo(map) : map.removeLayer(lBanjir));
 document.getElementById('ltol').addEventListener('change', e => e.target.checked ? lTol.addTo(map) : map.removeLayer(lTol));
@@ -129,11 +240,12 @@ document.getElementById('n2').textContent = hit('perlu dicek');
 document.getElementById('n3').textContent = hit('gugur');
 document.getElementById('tgl').textContent = D.dibuat;
 document.getElementById('daftar').innerHTML = D.rumah.filter(h => h.no).sort((a, b) => a.no - b.no).map(h =>
-  '<div class="item" data-id="' + h.id + '">' + (h.ft && h.ft.length ? gbr(h.ft[0]) : '') + '<div><b>' + h.no + '. ' + esc(h.nm || h.lok) + '</b><small>' + rp(h.jt) + ' · LT ' + (h.lt ?? '?')
-  + ' · ' + (h.mg ?? '?') + ' menit ke gerbang ' + esc(h.gt) + ' · ' + (h.st === 'lolos semua' ? 'lolos semua' : 'perlu dicek: ' + esc(h.pc)) + '</small></div></div>').join('');
-document.querySelectorAll('.item').forEach(e => e.addEventListener('click', () => {
-  const h = D.rumah.find(x => x.id === e.dataset.id); map.setView([h.la, h.lo], 15, {animate: false}); if (tanda[h.id]) tanda[h.id].openPopup();
-}));
+  '<div class="item" data-id="' + h.id + '">' + (h.ft && h.ft.length ? gbr(h.ft[0]) : '') + '<div><b>' + h.no + '. ' + esc(h.nm || h.lok) + (h.pl && h.no > 10 ? '<span class="pl">pilihan kalian</span>' : '') + '</b><small>' + rp(h.jt) + ' · LT ' + (h.lt ?? '?')
+  + ' · ' + (h.mg ?? '?') + ' menit ke gerbang ' + esc(h.gt) + ' · ' + (h.st === 'lolos semua' ? 'lolos semua' : h.st === 'gugur' ? 'gugur: ' + esc(h.gg) : 'perlu dicek: ' + esc(h.pc)) + '</small></div></div>').join('');
+document.getElementById('panel').addEventListener('click', e => {
+  const it = e.target.closest('.item'); if (!it) return;
+  const h = D.rumah.find(x => x.id === it.dataset.id); map.setView([h.la, h.lo], 15, {animate: false}); if (tanda[h.id]) tanda[h.id].openPopup();
+});
 // klik foto kecil di popup: jadikan foto besar
 map.getContainer().addEventListener('click', e => {
   if (e.target.matches('.ps img')) { const b = e.target.closest('.leaflet-popup-content').querySelector('.pf'); if (b) b.src = e.target.src; }

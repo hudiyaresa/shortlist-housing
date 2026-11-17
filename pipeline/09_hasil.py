@@ -41,10 +41,17 @@ KOLOM = """id_rumah, status, kelompok_wilayah,
     banjir_dasar, banjir_kode_sumber, round(inarisk, 2) AS indeks_bahaya_banjir_bnpb,
     cast(jarak_badan_tol_m AS INTEGER) AS jarak_badan_tol_m, nama_tol_terdekat, bising_tol,
     gugur_karena, yang_perlu_dicek, duplikat_dari, koreksi AS koreksi_manual,
-    tanggal AS tanggal_iklan, r123_dicek AS rumah123_terakhir_dicek, link"""
+    tanggal AS tanggal_iklan, r123_dicek AS rumah123_terakhir_dicek,
+    cicil_pribadi, pilihan AS pilihan_kalian, km_ke_manggala,
+    sdn_nama AS sd_negeri_terdekat, cast(sdn_m AS INTEGER) AS m_ke_sd_negeri, n_sd_2km, n_sdn_2km,
+    n_fav_2km AS n_sekolah_favorit_2km, fav_2km AS sekolah_favorit_2km,
+    km_top_jalan AS km_ke_sekolah_paling_favorit, top_nama AS sekolah_paling_favorit_terdekat,
+    km_fav_jalan AS km_ke_sekolah_favorit, fav_nama AS sekolah_favorit_terdekat, link"""
 
 
-HP = re.compile(r"(?:\+?62|0)8\d[\d\s.\-]{7,13}\d")
+DIBUAT = "17 November 2026"
+GALERI_PUBLIK = "https://hudiyaresa.github.io/house-listing-gallery/#map"
+HP = re.compile(r"(?<![0-9A-Za-z])(?:\+?62|0)8\d[\d\s.\-]{7,13}\d(?![0-9A-Za-z])")
 # di foto, nomor sering ditulis renggang ("+62 812 ..."), jadi polanya dibuat lebih longgar
 HP_FOTO = re.compile(r"(?:\+?62[\s.\-]?|0)8\d[\d\s.\-]{6,13}\d")
 MAKS_FOTO = 3      # foto per rumah di tabel dan peta
@@ -124,9 +131,25 @@ def tulis_csv(nama: str, cur, foto: dict[str, list[str]] | None = None) -> int:
     return len(baris)
 
 
+def nomor_pilihan(c) -> None:
+    """Rumah yang kalian kirim (data/pilihan.csv) dapat nomor lanjutan setelah sepuluh rumah di atas."""
+    kode = [b.split(";")[0] for b in (HERE / "data" / "pilihan.csv").read_text(encoding="utf-8").splitlines()[1:] if b]
+    rows = c.execute("SELECT id_rumah, link FROM kandidat WHERE pilihan AND duplikat_dari IS NULL").fetchall()
+    berikut = max(NOMOR.values()) + 1
+    for k in kode:
+        cocok = [i for i, ln in rows if k in (ln or "")]
+        if not cocok:
+            print(f"pilihan {k}: belum ada di data")
+            continue
+        if cocok[0] not in NOMOR:
+            NOMOR[cocok[0]] = berikut
+            berikut += 1
+
+
 def main() -> None:
     OUT.mkdir(exist_ok=True)
     c = con(read_only=True)
+    nomor_pilihan(c)
     foto = pilih_foto(c)
     n = tulis_csv("kandidat.csv", c.execute(f"""
         SELECT {KOLOM} FROM kandidat
@@ -143,7 +166,7 @@ def main() -> None:
     kol = [d[0] for d in c.execute(f"SELECT {KOLOM} FROM kandidat LIMIT 0").description]
     rumah = []
     for r in c.execute(f"""SELECT {KOLOM} FROM kandidat
-                           WHERE k_harga = 'ya' AND lat IS NOT NULL AND duplikat_dari IS NULL
+                           WHERE (k_harga = 'ya' OR pilihan) AND lat IS NOT NULL AND duplikat_dari IS NULL
                              AND NOT (sumber = 'Catatan survei' AND coalesce(link, '') = '')""").fetchall():
         d = dict(zip(kol, r))
         rumah.append({
@@ -157,6 +180,10 @@ def main() -> None:
             "tol": d["jarak_badan_tol_m"], "cp": d["carport_dasar"], "mb": d["mobil_dasar"],
             "gg": d["gugur_karena"], "pc": d["yang_perlu_dicek"], "ln": (d["link"] or "").split(" | ")[0],
             "ft": foto.get(d["id_rumah"], []),
+            "pl": bool(d["pilihan_kalian"]), "cc": d["cicil_pribadi"] or "", "kmk": d["km_ke_manggala"],
+            "sdn": d["sd_negeri_terdekat"], "msdn": d["m_ke_sd_negeri"], "kmt": d["km_ke_sekolah_paling_favorit"],
+            "tn": d["sekolah_paling_favorit_terdekat"], "kmf": d["km_ke_sekolah_favorit"],
+            "fn": d["sekolah_favorit_terdekat"],
         })
     gerbang = [{"nm": r[0], "la": round(r[1], 5), "lo": round(r[2], 5), "ruas": r[3]}
                for r in c.execute("SELECT nama, lat, lon, ruas_pertama FROM gerbang").fetchall()]
@@ -168,11 +195,21 @@ def main() -> None:
                kejadian, 'RT ' || rt || '/RW ' || rw || ' ' || kel
         FROM rt_dki WHERE kejadian > 0 AND ST_GeometryType(geom) = 'POLYGON'
           AND ST_X(ST_Centroid(geom)) > 106.82 AND ST_Y(ST_Centroid(geom)) < -6.15""").fetchall()]
-    data = {"rumah": rumah, "gerbang": gerbang, "tol": tol, "banjir": banjir, "dibuat": "15 November 2026"}
+    # sekolah: semua yang dalam 2,5 km dari rumah yang tampil (belum gugur atau pilihan kalian), plus semua sekolah favorit
+    tampil = [(h["la"], h["lo"]) for h in rumah if h["st"] != "gugur" or h["pl"]]
+    sekolah = []
+    for r in c.execute("""SELECT nama, g, jenjang, status, akr, tier, peringkat, lat, lon FROM sekolah""").fetchall():
+        if r[5] in ("top", "fav") or any(abs(r[7] - a) < 0.02 and abs(r[8] - b) < 0.02 for a, b in tampil):
+            sekolah.append({"nm": r[0], "g": r[1], "j": r[2], "n": r[3] == "negeri", "a": r[4] or "", "t": r[5] or "",
+                            "pk": r[6] or "", "la": round(r[7], 5), "lo": round(r[8], 5)})
+    data = {"rumah": rumah, "gerbang": gerbang, "tol": tol, "banjir": banjir, "sekolah": sekolah,
+            "galeri": GALERI_PUBLIK, "n_galeri": c.execute("SELECT count(*) FROM rumah").fetchone()[0],
+            "dibuat": DIBUAT}
     templat = (HERE / "peta_templat.html").read_text(encoding="utf-8")
     (OUT / "peta_shortlist.html").write_text(
         templat.replace("/*DATA*/null", json.dumps(data, ensure_ascii=False, separators=(",", ":"))), encoding="utf-8")
-    print(f"peta_shortlist.html: {len(rumah)} rumah, {len(gerbang)} gerbang, {len(tol)} ruas tol, {len(banjir)} RT banjir,",
+    print(f"peta_shortlist.html: {len(sekolah)} sekolah,", end=" ")
+    print(f"{len(rumah)} rumah, {len(gerbang)} gerbang, {len(tol)} ruas tol, {len(banjir)} RT banjir,",
           round((OUT / "peta_shortlist.html").stat().st_size / 1e6, 2), "MB")
 
 
