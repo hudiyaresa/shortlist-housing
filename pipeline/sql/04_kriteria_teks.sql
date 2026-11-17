@@ -2,6 +2,11 @@
 -- Tiap kriteria punya tiga nilai: 'ya', 'tidak', 'belum jelas'. Hanya 'tidak' yang menggugurkan.
 -- Semua pola ada di sini supaya bisa diperiksa dan diubah; contoh pemeriksaannya ada di bawah file ini.
 
+-- koreksi harga dari balasan penjual (data/koreksi_manual.csv, kolom 'rp'), sebelum kriteria dihitung
+UPDATE rumah SET rp = cast(m.nilai AS BIGINT)
+FROM read_csv('{{koreksi_manual}}', delim = ';', quote = '', header = true, all_varchar = true) m
+WHERE m.id_rumah = rumah.id_rumah AND m.kolom = 'rp';
+
 CREATE OR REPLACE TABLE k_teks AS
 WITH t AS (
     SELECT r.*,
@@ -35,6 +40,12 @@ pola AS (
                          || '|(sisa|tersisa)\s*[0-9]+\s*unit|booking|free\s*(biaya|bphtb|ajb|shm)'
                          || '|mulai\s*(dari\s*)?[0-9]+\s*(jt|juta)|developer|develover|request\s*layout|custom\s*denah') AS tanda_baru,
         regexp_matches(isi, 'bebas\s*banjir|anti\s*banjir|tidak\s*(pernah\s*)?banjir|no\s*banjir|free\s*banjir') AS klaim_bebas_banjir,
+        -- bisa dicicil langsung ke pemilik atau developer tanpa bank dan tanpa bunga (sesuai aturan tanpa bank)
+        regexp_matches(isi, 'cicil(an)?\s*(pribadi|langsung|ke\s*(owner|pemilik|developer|dev|penjual))'
+                         || '|tanpa\s*(bunga|riba|bank|bi\s*checking)|bebas\s*riba|anti\s*riba|0\s*%\s*bunga|bunga\s*0'
+                         || '|kpr\s*(syariah\s*)?(developer|in\s*house|inhouse|langsung)|in\s*house\s*(syariah|kpr|cicil)'
+                         || '|syariah\s*tanpa\s*bank|angsur(an)?\s*(langsung\s*)?(ke\s*)?(developer|pemilik)') AS cicil_tanpa_bunga,
+        regexp_matches(isi, 'cash\s*bertahap|bayar\s*bertahap|tunai\s*bertahap') AS cash_bertahap,
         regexp_matches(isi, 'halaman\s*(depan|luas)|taman\s*depan|bisa\s*(tanam|berkebun)|taman\s*(kecil|mungil|belakang)') AS sebut_halaman
     FROM t
 )
@@ -46,8 +57,14 @@ SELECT
          WHEN rp < 100e6 THEN 'bukan harga rumah'
          WHEN rp <= 400e6 THEN 'sampai 400 jt'
          WHEN rp <= 500e6 THEN '400 sampai 500 jt'
+         WHEN cicil_tanpa_bunga AND rp <= 700e6 THEN '500 sampai 700 jt, bisa cicil tanpa bunga'
          ELSE 'di atas 500 jt' END AS harga_kelas,
-    CASE WHEN rp IS NULL OR over_kredit OR rp < 100e6 OR rp > 500e6 THEN 'tidak' ELSE 'ya' END AS k_harga,
+    -- harga: sampai 500 jt. Rumah yang bisa dicicil langsung ke pemilik atau developer tanpa bunga (disebut jelas di
+    -- iklan) boleh sampai 700 jt, karena tidak butuh bank. Batas 700 jt adalah anggapan, ubah di sini kalau perlu.
+    CASE WHEN rp IS NULL OR over_kredit OR rp < 100e6 THEN 'tidak'
+         WHEN rp <= 500e6 THEN 'ya'
+         WHEN cicil_tanpa_bunga AND rp <= 700e6 THEN 'ya'
+         ELSE 'tidak' END AS k_harga,
     -- luas tanah
     CASE WHEN lt IS NULL THEN 'belum jelas' WHEN lt >= 36 THEN 'ya' ELSE 'tidak' END AS k_lt,
     -- cluster / komplek (penanda dari komplek.py di folder 23)
@@ -76,6 +93,8 @@ SELECT
          ELSE 'tidak disebut' END AS carport_dasar,
     tanda_baru AS rumah_baru,
     klaim_bebas_banjir, sebut_halaman,
+    CASE WHEN cicil_tanpa_bunga THEN 'cicil langsung tanpa bunga (disebut di iklan)'
+         WHEN cash_bertahap THEN 'cash bertahap ke penjual' ELSE '' END AS cicil_pribadi,
     round(lt - lb / greatest(coalesce(lantai, 1), 1)) AS sisa_tanah_m2,
     -- wilayah menurut urutan yang kalian sebut
     CASE WHEN wilayah LIKE 'Jakarta%' THEN 1
@@ -107,3 +126,12 @@ UPDATE k_teks SET rumah_baru = (m.nilai = 'ya') FROM koreksi_manual m WHERE m.id
 UPDATE k_teks SET koreksi = x.semua
 FROM (SELECT id_rumah, string_agg(kolom || ': ' || alasan, ' | ') AS semua FROM koreksi_manual GROUP BY 1) x
 WHERE x.id_rumah = k_teks.id_rumah;
+
+-- Rumah yang kalian kirim sendiri untuk dimasukkan ke shortlist (data/pilihan.csv, kode post Threads atau nomor iklan
+-- rumah123). Rumah ini selalu ikut dihitung tol, banjir, dan sekolahnya walaupun gugur di saringan isi iklan.
+CREATE OR REPLACE TABLE pilihan AS
+SELECT * FROM read_csv('{{pilihan}}', delim = ';', quote = '', header = true, all_varchar = true);
+ALTER TABLE k_teks ADD COLUMN pilihan BOOLEAN DEFAULT false;
+UPDATE k_teks SET pilihan = true
+WHERE id_rumah IN (SELECT r.id_rumah FROM rumah r JOIN pilihan p ON contains(coalesce(r.link, ''), p.kode));
+UPDATE k_teks SET cicil_pribadi = m.nilai FROM koreksi_manual m WHERE m.id_rumah = k_teks.id_rumah AND m.kolom = 'cicil_pribadi';

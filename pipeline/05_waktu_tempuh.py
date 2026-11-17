@@ -36,7 +36,7 @@ def main() -> None:
         select distinct t.lat5, t.lon5
         from titik t join k_teks k using (id_rumah)
         where t.lat is not null
-          and k.k_harga = 'ya' and k.k_lt <> 'tidak' and k.k_komplek = 'ya' and k.k_mobil <> 'tidak' and k.k_carport <> 'tidak'
+          and ((k.k_harga = 'ya' and k.k_lt <> 'tidak' and k.k_komplek = 'ya' and k.k_mobil <> 'tidak' and k.k_carport <> 'tidak') or k.pilihan)
           and not exists (select 1 from waktu_gerbang w where w.lat5 = t.lat5 and w.lon5 = t.lon5)
         order by round(t.lon5 / 5000), t.lat5""").fetchall()
     print(f"{len(titik)} titik rumah belum punya waktu tempuh, {len(gerbang)} gerbang")

@@ -17,7 +17,7 @@ from umum import ambil, con
 
 INARISK = "https://gis.bnpb.go.id/server/rest/services/inarisk/INDEKS_BAHAYA_BANJIR/ImageServer/getSamples"
 ELEV = "https://api.open-meteo.com/v1/elevation"
-SARING = """k.k_harga = 'ya' and k.k_lt <> 'tidak' and k.k_komplek = 'ya' and k.k_mobil <> 'tidak' and k.k_carport <> 'tidak'"""
+SARING = """((k.k_harga = 'ya' and k.k_lt <> 'tidak' and k.k_komplek = 'ya' and k.k_mobil <> 'tidak' and k.k_carport <> 'tidak') or k.pilihan)"""
 
 
 def potong(daftar: list, n: int):

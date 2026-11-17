@@ -22,7 +22,7 @@ WITH p AS (
            lower(coalesce(r.teks, '')) AS badan_iklan
     FROM titik t JOIN k_teks k USING (id_rumah) JOIN rumah r USING (id_rumah)
     WHERE t.lat IS NOT NULL
-      AND k.k_harga = 'ya' AND k.k_lt <> 'tidak' AND k.k_komplek = 'ya' AND k.k_mobil <> 'tidak' AND k.k_carport <> 'tidak'
+      AND ((k.k_harga = 'ya' AND k.k_lt <> 'tidak' AND k.k_komplek = 'ya' AND k.k_mobil <> 'tidak' AND k.k_carport <> 'tidak') OR k.pilihan)
 ),
 -- RT tempat titik berada (DKI saja). Kalau titik jatuh di celah antar poligon, pakai RT terdekat dalam 60 m.
 rt_isi AS (
