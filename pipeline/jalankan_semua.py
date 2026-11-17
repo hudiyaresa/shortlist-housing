@@ -7,7 +7,7 @@ import subprocess
 import sys
 
 LANGKAH = ["01_muat.py", "02_ambil_osm.py", "03_gerbang.py", "04_kriteria_teks.py", "05_waktu_tempuh.py",
-           "06_banjir_luar_dki.py", "07_spasial.py", "08_kandidat.py", "09_hasil.py", "10_halaman.py"]
+           "06_banjir_luar_dki.py", "06b_sekolah.py", "07_spasial.py", "08_kandidat.py", "09_hasil.py", "10_halaman.py"]
 
 mulai = int(sys.argv[1]) if len(sys.argv) > 1 else 1
 for nama in LANGKAH[mulai - 1:]:

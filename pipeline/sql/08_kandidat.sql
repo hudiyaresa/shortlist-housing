@@ -13,7 +13,9 @@ WITH g AS (
            coalesce(s.ketepatan, t.ketepatan) AS ketepatan, coalesce(s.lat, t.lat) AS lat, coalesce(s.lon, t.lon) AS lon,
            coalesce(s.sumber_titik, t.sumber_titik) AS sumber_titik,
            k.k_harga, k.k_lt, k.k_komplek, k.k_mobil, k.mobil_dasar, k.k_carport, k.carport_dasar,
-           coalesce(s.k_tol, 'tidak dihitung') AS k_tol,
+           -- kalau sudah dicek di Google Maps (Senin 06.30), angka Google yang dipakai untuk kriteria 25 menit
+           CASE WHEN gc.mnt_gerbang_google IS NOT NULL THEN CASE WHEN gc.mnt_gerbang_google <= 25 THEN 'ya' ELSE 'tidak' END
+                ELSE coalesce(s.k_tol, 'tidak dihitung') END AS k_tol,
            s.gerbang, s.ruas_tol, s.mnt_gerbang_lancar, s.mnt_gerbang_pagi, s.km_gerbang,
            s.mnt_gerbang_ke_kantor_lancar, s.km_gerbang_ke_kantor,
            coalesce(s.k_banjir, 'tidak dihitung') AS k_banjir, s.banjir_dasar, s.banjir_kode_sumber, s.di_dki,
@@ -24,12 +26,17 @@ WITH g AS (
            -- rumah baru dari developer: reputasinya tidak bisa dibuktikan dari data, jadi selalu 'belum jelas'
            CASE WHEN k.rumah_baru THEN 'belum jelas' ELSE 'ya' END AS k_developer,
            gc.mnt_gerbang_google, gc.mnt_kantor_google,
+           k.cicil_pribadi, k.pilihan,
+           round(s.km_gerbang + s.km_gerbang_ke_kantor, 1) AS km_ke_manggala,
+           ks.sdn_nama, ks.sdn_m, ks.n_sd_2km, ks.n_sdn_2km, ks.n_fav_2km, ks.fav_2km,
+           ks.km_top_jalan, ks.top_nama, ks.km_fav_jalan, ks.fav_nama, ks.fav_tier,
            r.akun, r.link, r.n_foto, r.foto1, r.teks, r.catatan, r.dari, r.no_sumber
     FROM rumah r
     JOIN k_teks k USING (id_rumah)
     LEFT JOIN google_cek gc USING (id_rumah)
     LEFT JOIN titik t USING (id_rumah)
     LEFT JOIN k_spasial s USING (id_rumah)
+    LEFT JOIN k_sekolah ks USING (id_rumah)
 ),
 h AS (
     SELECT *,
@@ -70,7 +77,7 @@ FROM h;
 CREATE OR REPLACE TABLE corong AS
 WITH a AS (SELECT * FROM kandidat WHERE duplikat_dari IS NULL)
 SELECT 1 AS urut, 'Semua rumah yang terkumpul' AS tahap, count(*) AS sisa, NULL::BIGINT AS gugur_sendiri FROM a
-UNION ALL SELECT 2, 'Harga sampai 500 jt (bukan over kredit, harga ditulis)', count(*) FILTER (k_harga = 'ya'),
+UNION ALL SELECT 2, 'Harga sampai 500 jt, atau sampai 700 jt kalau bisa dicicil tanpa bunga (bukan over kredit, harga ditulis)', count(*) FILTER (k_harga = 'ya'),
                  count(*) FILTER (k_harga = 'tidak') FROM a
 UNION ALL SELECT 3, 'Luas tanah minimal 36 m2', count(*) FILTER (k_harga = 'ya' AND k_lt <> 'tidak'),
                  count(*) FILTER (k_harga = 'ya' AND k_lt = 'tidak') FROM a
@@ -84,8 +91,8 @@ UNION ALL SELECT 6, 'Carport ada atau mungkin dibuat',
                  count(*) FILTER (k_harga = 'ya' AND k_lt <> 'tidak' AND k_komplek = 'ya' AND k_mobil <> 'tidak' AND k_carport <> 'tidak'),
                  count(*) FILTER (k_harga = 'ya' AND k_carport = 'tidak' AND k_mobil <> 'tidak') FROM a
 UNION ALL SELECT 7, 'Paling lama 25 menit ke gerbang tol arah Senayan (pagi)',
-                 count(*) FILTER (k_tol = 'ya'), count(*) FILTER (k_tol = 'tidak') FROM a
+                 count(*) FILTER (k_tol = 'ya' AND k_harga = 'ya' AND k_lt <> 'tidak' AND k_komplek = 'ya' AND k_mobil <> 'tidak' AND k_carport <> 'tidak'), count(*) FILTER (k_tol = 'tidak' AND k_harga = 'ya' AND k_lt <> 'tidak' AND k_komplek = 'ya' AND k_mobil <> 'tidak' AND k_carport <> 'tidak') FROM a
 UNION ALL SELECT 8, 'Tidak ada catatan banjir',
-                 count(*) FILTER (k_tol = 'ya' AND k_banjir <> 'tidak'), count(*) FILTER (k_tol <> 'tidak dihitung' AND k_banjir = 'tidak') FROM a
+                 count(*) FILTER (k_tol = 'ya' AND k_banjir <> 'tidak' AND k_harga = 'ya' AND k_lt <> 'tidak' AND k_komplek = 'ya' AND k_mobil <> 'tidak' AND k_carport <> 'tidak'), count(*) FILTER (k_tol <> 'tidak dihitung' AND k_banjir = 'tidak' AND k_harga = 'ya' AND k_lt <> 'tidak' AND k_komplek = 'ya' AND k_mobil <> 'tidak' AND k_carport <> 'tidak') FROM a
 UNION ALL SELECT 9, 'Lolos semua dan tidak ada yang belum jelas', count(*) FILTER (status = 'lolos semua'), NULL FROM a
 ORDER BY 1;
