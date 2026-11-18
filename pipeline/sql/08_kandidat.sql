@@ -26,7 +26,7 @@ WITH g AS (
            -- rumah baru dari developer: reputasinya tidak bisa dibuktikan dari data, jadi selalu 'belum jelas'
            CASE WHEN k.rumah_baru THEN 'belum jelas' ELSE 'ya' END AS k_developer,
            gc.mnt_gerbang_google, gc.mnt_kantor_google,
-           k.cicil_pribadi, k.pilihan,
+           k.cicil_pribadi, k.pilihan, k.dicoret,
            round(s.km_gerbang + s.km_gerbang_ke_kantor, 1) AS km_ke_manggala,
            ks.sdn_nama, ks.sdn_m, ks.n_sd_2km, ks.n_sdn_2km, ks.n_fav_2km, ks.fav_2km,
            ks.km_top_jalan, ks.top_nama, ks.km_fav_jalan, ks.fav_nama, ks.fav_tier,
@@ -61,7 +61,8 @@ h AS (
     FROM g
 )
 SELECT *,
-    CASE WHEN len(gugur) > 0 THEN 'gugur'
+    CASE WHEN dicoret IS NOT NULL THEN 'dicoret'
+         WHEN len(gugur) > 0 THEN 'gugur'
          WHEN duplikat_dari IS NOT NULL THEN 'duplikat'
          WHEN len(perlu_cek) > 0 THEN 'perlu dicek'
          ELSE 'lolos semua' END AS status,

@@ -20,15 +20,26 @@ from PIL import Image
 
 from umum import GALERI_OUT, HERE, OCR_FOTO, OUT, con
 
-# sepuluh rumah yang dibahas di shortlist_rumah.md, urut waktu tempuh ke gerbang tol
-NOMOR = {"T-553d3b77": 1, "R-hos16335281": 2, "T-13703e88": 3, "T-0b921701": 4, "R-hos19252497": 5,
-         "T-911ec913": 6, "T-6db17fd0": 7, "T-38b721b8": 8, "T-975592fb": 9, "T-8692d453": 10}
+# Nomor rumah di shortlist_rumah.md, peta, dan tabel dihitung ulang tiap run (hitung_nomor):
+#   1. rumah yang lolos semua kriteria di wilayah kalian (Jakarta, Pondok Gede, Jatiasih, Kota Bekasi), urut waktu ke
+#      gerbang tol (angka Google Maps kalau sudah dicek, selain itu model)
+#   2. cadangan yang dipilih tangan (CADANGAN), urut seperti di daftar
+#   3. rumah kiriman kalian (data/pilihan.csv) yang belum bernomor, urut seperti di file itu
+# Rumah di data/dicoret.csv dan iklan ganda tidak diberi nomor, jadi rumah di bawahnya otomatis naik.
+CADANGAN = ["T-911ec913", "T-6db17fd0", "T-38b721b8", "T-975592fb", "T-8692d453"]
+NOMOR: dict[str, int] = {}
 
 NAMA = {"T-553d3b77": "Kansa Residence, Kramat Jati", "R-hos16335281": "Mini cluster Kemangsari, Jaticempaka",
         "T-13703e88": "Cluster Prima Pedurenan 5, Jatiluhur", "T-0b921701": "Pondok Indah Jatisari, Jatiasih",
         "R-hos19252497": "Dukuh Zamrud, Kota Legenda", "T-911ec913": "Kodau V Ambarapura, Jatimekar",
         "T-6db17fd0": "Komplek Bintara Jaya", "T-38b721b8": "Raisya Pro Residence 9, Kranggan",
-        "T-975592fb": "Raisya Pro Residence 11, Jatimurni", "T-8692d453": "Cluster kecil di Cilangkap"}
+        "T-975592fb": "Raisya Pro Residence 11, Jatimurni", "T-8692d453": "Cluster kecil di Cilangkap",
+        "T-3c78d524": "Cluster Aldira 2, Jatisari", "T-a1892808": "Cluster mini di Kalisari",
+        "T-46ef6797": "Cluster Arsa 2, Pesanggrahan", "T-bf7661b0": "Lavender Crown Residence IV, Jatiasih",
+        "T-ae7e9090": "Komplek Alastua, Semanan", "T-ccab0a9b": "Cluster di Pekayon",
+        "T-15a345ee": "AS Cluster Jatisari", "T-6489b9a9": "Kavling Azzahra 1, Cilangkap",
+        "T-12f53c23": "Rumah indent di Cipayung", "T-3fa7085b": "Jl. Sonton, Lenteng Agung",
+        "T-97341809": "Rumah di Pondok Kelapa, Duren Sawit"}
 
 KOLOM = """id_rumah, status, kelompok_wilayah,
     CASE sumber WHEN 'Threads' THEN 'Threads' ELSE sumber END AS sumber,
@@ -131,25 +142,34 @@ def tulis_csv(nama: str, cur, foto: dict[str, list[str]] | None = None) -> int:
     return len(baris)
 
 
-def nomor_pilihan(c) -> None:
-    """Rumah yang kalian kirim (data/pilihan.csv) dapat nomor lanjutan setelah sepuluh rumah di atas."""
+def hitung_nomor(c) -> dict[str, int]:
+    """Isi NOMOR (id_rumah -> nomor). Lihat penjelasan di atas CADANGAN."""
+    NOMOR.clear()
+    aktif = {r[0] for r in c.execute(
+        "SELECT id_rumah FROM kandidat WHERE duplikat_dari IS NULL AND status <> 'dicoret'").fetchall()}
+    urut = [r[0] for r in c.execute("""
+        SELECT id_rumah FROM kandidat
+        WHERE status = 'lolos semua' AND wilayah_urut <= 2 AND duplikat_dari IS NULL
+        ORDER BY coalesce(mnt_gerbang_google, mnt_gerbang_pagi), mnt_gerbang_pagi, rp""").fetchall()]
+    urut += [i for i in CADANGAN if i in aktif]
     kode = [b.split(";")[0] for b in (HERE / "data" / "pilihan.csv").read_text(encoding="utf-8").splitlines()[1:] if b]
     rows = c.execute("SELECT id_rumah, link FROM kandidat WHERE pilihan AND duplikat_dari IS NULL").fetchall()
-    berikut = max(NOMOR.values()) + 1
     for k in kode:
         cocok = [i for i, ln in rows if k in (ln or "")]
         if not cocok:
             print(f"pilihan {k}: belum ada di data")
-            continue
-        if cocok[0] not in NOMOR:
-            NOMOR[cocok[0]] = berikut
-            berikut += 1
+        elif cocok[0] in aktif:
+            urut.append(cocok[0])
+    for i in urut:
+        if i in aktif and i not in NOMOR:
+            NOMOR[i] = len(NOMOR) + 1
+    return NOMOR
 
 
 def main() -> None:
     OUT.mkdir(exist_ok=True)
     c = con(read_only=True)
-    nomor_pilihan(c)
+    hitung_nomor(c)
     foto = pilih_foto(c)
     n = tulis_csv("kandidat.csv", c.execute(f"""
         SELECT {KOLOM} FROM kandidat

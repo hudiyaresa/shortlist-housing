@@ -186,7 +186,10 @@ def halaman(judul: str, isi: str, aktif: str, n_galeri: int, skrip: str = "") ->
 def main() -> None:
     with open(OUT / "kandidat.csv", encoding="utf-8-sig", newline="") as f:
         semua = list(csv.DictReader(f))
-    nomor = importlib.import_module("09_hasil").NOMOR           # id_rumah -> nomor di shortlist_rumah.md
+    from umum import con as _con
+    _c = _con(read_only=True)
+    nomor = importlib.import_module("09_hasil").hitung_nomor(_c)   # id_rumah -> nomor di shortlist_rumah.md
+    _c.close()
     FOTO_NO.update({str(nomor[r["id_rumah"]]): r["foto"].split(" | ")
                     for r in semua if r["id_rumah"] in nomor and r.get("foto")})
     from umum import con

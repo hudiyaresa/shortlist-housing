@@ -135,3 +135,14 @@ ALTER TABLE k_teks ADD COLUMN pilihan BOOLEAN DEFAULT false;
 UPDATE k_teks SET pilihan = true
 WHERE id_rumah IN (SELECT r.id_rumah FROM rumah r JOIN pilihan p ON contains(coalesce(r.link, ''), p.kode));
 UPDATE k_teks SET cicil_pribadi = m.nilai FROM koreksi_manual m WHERE m.id_rumah = k_teks.id_rumah AND m.kolom = 'cicil_pribadi';
+
+-- Rumah yang kalian coret sendiri (data/dicoret.csv: kode post Threads atau nomor iklan rumah123, dan alasannya).
+-- Rumah ini tidak diberi nomor dan tidak tampil di peta maupun tabel, tetapi tetap ada di kandidat.csv.
+CREATE OR REPLACE TABLE dicoret AS
+SELECT * FROM read_csv('{{dicoret}}', delim = ';', quote = '', header = true, all_varchar = true);
+ALTER TABLE k_teks ADD COLUMN dicoret VARCHAR;
+UPDATE k_teks SET dicoret = d.tanggal || ': ' || d.alasan
+FROM rumah r, dicoret d
+WHERE r.id_rumah = k_teks.id_rumah AND contains(coalesce(r.link, ''), d.kode);
+-- pilihan yang dicoret tidak lagi dihitung sebagai pilihan
+UPDATE k_teks SET pilihan = false WHERE dicoret IS NOT NULL;
