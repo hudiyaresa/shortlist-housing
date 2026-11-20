@@ -60,7 +60,7 @@ KOLOM = """id_rumah, status, kelompok_wilayah,
     km_fav_jalan AS km_ke_sekolah_favorit, fav_nama AS sekolah_favorit_terdekat, link"""
 
 
-DIBUAT = "17 November 2026"
+DIBUAT = "20 November 2026"
 GALERI_PUBLIK = "https://hudiyaresa.github.io/house-listing-gallery/#map"
 HP = re.compile(r"(?<![0-9A-Za-z])(?:\+?62|0)8\d[\d\s.\-]{7,13}\d(?![0-9A-Za-z])")
 # di foto, nomor sering ditulis renggang ("+62 812 ..."), jadi polanya dibuat lebih longgar
