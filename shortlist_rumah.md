@@ -1,26 +1,26 @@
 # Shortlist rumah untuk disurvei
 
-Diperbarui 20 November 2026 dari 3.340 rumah yang sudah terkumpul (rumah123, post Threads, dan catatan survei kami). Pembaruan ini menambah iklan rumah123 tiga hari terakhir dan 78 pesan DM baru, dan mencoret satu rumah lagi atas permintaan kalian. Ini bahan diskusi keluarga, bukan nasihat keuangan dan bukan penilaian properti resmi.
+Diperbarui 22 November 2026 dari 4.396 rumah yang sudah terkumpul (rumah123, Pinhome, post Threads, dan catatan survei kami). Pembaruan ini menambah iklan rumah123 tiga hari terakhir, 59 pesan DM baru, iklan Pinhome tujuh hari terakhir (sumber baru), dan mencoret dua rumah lagi atas permintaan kalian. Ini bahan diskusi keluarga, bukan nasihat keuangan dan bukan penilaian properti resmi.
 
 ## Intinya
 
-Kalian mencoret dua rumah teratas (Kansa Residence dan Kemangsari) pada 18 November, lalu AS Cluster Jatisari (dulu nomor 15) pada 20 November karena bangunannya lama dan kamar tidurnya tinggal satu. Semua nomor di bawahnya naik. Nomor 1 tetap Cluster Prima Pedurenan 5 di Jatiluhur, Jatiasih (500 jt).
+Kalian mencoret dua rumah teratas (Kansa Residence dan Kemangsari) pada 18 November, lalu AS Cluster Jatisari (dulu nomor 15) pada 20 November karena bangunannya lama dan kamar tidurnya tinggal satu. Pada 22 November kalian mencoret Komplek Alastua di Semanan (dulu nomor 2) karena setelah disurvei lokasinya terlalu jauh, dan rumah Pondok Kelapa (dulu nomor 18) karena sudah terjual. Semua nomor di bawahnya naik. Nomor 1 tetap Cluster Prima Pedurenan 5 di Jatiluhur, Jatiasih (500 jt).
 
-Dari 3.340 rumah, 16 lolos semua kriteria wajib tanpa ada yang masih belum jelas. 4 di antaranya ada di wilayah yang kalian sebut: 1 di Jakarta dan 3 di Kota Bekasi. Sisanya di Kabupaten Bekasi, Depok, Bogor, dan Tangerang.
+Dari 4.396 rumah, 15 lolos semua kriteria wajib tanpa ada yang masih belum jelas. 3 di antaranya ada di wilayah yang kalian sebut, semuanya di Kota Bekasi. Di Jakarta belum ada lagi. Sisanya di Kabupaten Bekasi, Depok, Bogor, dan Tangerang.
 
-Tidak ada lagi rumah di bawah 400 jt yang lolos semua di wilayah kalian. Yang paling murah dan belum gugur adalah Lavender Crown IV (320 jt, nomor 13), Aldira 2 (350 jt, nomor 10), dan rumah di Jl. Sonton, Lenteng Agung (370 jt, nomor 17). Semuanya masih perlu dicek, terutama akses mobil dan carport.
+Tidak ada lagi rumah di bawah 400 jt yang lolos semua di wilayah kalian. Yang paling murah dan belum gugur adalah Lavender Crown IV (320 jt, nomor 12), Aldira 2 (350 jt, nomor 9), dan rumah di Jl. Sonton, Lenteng Agung (370 jt, nomor 16). Semuanya masih perlu dicek, terutama akses mobil dan carport.
 
-Empat rumah Jakarta yang kalian kirim (Cilangkap, Cipayung, Lenteng Agung, dan Pondok Kelapa) sudah masuk dengan nomor 15 sampai 18, lengkap dengan hitungan tol, banjir, dan sekolah. Rumah Pondok Kelapa sebelumnya belum ada di shortlist, hanya di daftar rumah Jakarta di luar komplek.
+Tiga rumah Jakarta yang kalian kirim 18 November (Cilangkap, Cipayung, dan Lenteng Agung) ada di nomor 14 sampai 16, lengkap dengan hitungan tol, banjir, dan sekolah. Rumah keempat, di Pondok Kelapa, sudah terjual.
 
 Peta punya layer sekolah SD, SMP, dan SMA dengan tanda sekolah favorit. Klik rumah untuk melihat sekolah dalam radius 2 km. Tabel dan daftar di peta bisa diurutkan menurut harga, jarak ke Manggala Wanabakti, jarak ke sekolah paling favorit, atau waktu ke gerbang tol.
 
 Tiga hal yang paling membatasi:
 
-1. Harga. 2.330 dari 3.340 rumah gugur di sini (2.076 di atas 500 jt tanpa cicilan tanpa bunga, 202 tanpa harga, 46 over kredit, 6 bukan harga rumah).
-2. Harus di dalam cluster atau komplek. Dari 1.010 rumah yang lolos harga, 366 gugur di sini. Di Jakarta kriteria ini yang paling keras: dari 99 rumah Jakarta yang lolos harga, 74 bukan di komplek.
-3. Lokasi iklan tidak tepat. Ini bukan kriteria, tetapi inilah yang membuat daftar pasti jadi pendek. Dari 341 rumah yang belum gugur, 281 titiknya hanya titik tengah daerah, jadi banjir dan waktu tempuhnya belum bisa dipastikan.
+1. Harga. 2.965 dari 4.396 rumah gugur di sini (2.646 di atas 500 jt tanpa cicilan tanpa bunga, 210 tanpa harga, 99 over kredit, 10 bukan harga rumah).
+2. Harus di dalam cluster atau komplek. Dari 1.431 rumah yang lolos harga, 639 gugur di sini. Di Jakarta kriteria ini yang paling keras: dari 151 rumah Jakarta yang lolos harga, 117 bukan di komplek.
+3. Lokasi iklan tidak tepat. Ini bukan kriteria, tetapi inilah yang membuat daftar pasti jadi pendek. Dari 420 rumah yang belum gugur, 359 titiknya hanya titik perkiraan, jadi banjir dan waktu tempuhnya belum bisa dipastikan.
 
-Kriteria 25 menit ke gerbang tol ternyata tidak terlalu membatasi di Jakarta Timur dan Kota Bekasi, karena gerbang tol di sana rapat. Yang perlu kalian tahu: 25 menit ke gerbang bukan berarti dekat ke kantor. Dari keempat rumah teratas, perjalanan sampai Manggala Wanabakti pada Senin pukul 06.30 butuh 50 sampai 80 menit menurut Google Maps.
+Kriteria 25 menit ke gerbang tol ternyata tidak terlalu membatasi di Jakarta Timur dan Kota Bekasi, karena gerbang tol di sana rapat. Yang perlu kalian tahu: 25 menit ke gerbang bukan berarti dekat ke kantor. Dari ketiga rumah teratas, perjalanan sampai Manggala Wanabakti pada Senin pukul 06.30 butuh 65 sampai 80 menit menurut Google Maps.
 
 Kalau mau daftar yang lebih panjang, kriteria yang paling layak dilonggarkan adalah komplek untuk rumah di Jakarta (lihat bagian "Kriteria yang layak dilonggarkan").
 
@@ -31,9 +31,8 @@ Urut dari waktu tempuh ke gerbang tol. Kalau sudah dicek di Google Maps, angka G
 | No | Rumah | Harga | LT / LB | Gerbang tol arah Senayan | Ke gerbang (model / Google) | Sampai kantor (Google) | Badan tol terdekat |
 |---|---|---|---|---|---|---|---|
 | 1 | Cluster Prima Pedurenan 5, Jatiluhur | 500 jt (di atas 400 jt) | 89 / 49 | Jati Asih 2 (Lingkar Luar Jakarta) | 14 / 16 menit | sekitar 65 menit | 2,1 km |
-| 2 | Komplek Alastua, Semanan | 650 jt, bisa cicil tanpa bunga | 40 / 88 | Buaran Indah 1 (Cengkareng-Batuceper-Kunciran) | 26 / 16 menit | sekitar 50 menit | 3,5 km |
-| 3 | Pondok Indah Jatisari, Jatiasih | 500 jt (di atas 400 jt) | 90 / 70 | Jati Asih 2 (Lingkar Luar Jakarta) | 16 / 18 menit | sekitar 70 menit | 2,9 km |
-| 4 | Dukuh Zamrud, Kota Legenda | 495 jt (di atas 400 jt) | 78 / 50 | Tambun (Jakarta-Cikampek) | 19 / 22 menit | sekitar 80 menit | 2,7 km |
+| 2 | Pondok Indah Jatisari, Jatiasih | 500 jt (di atas 400 jt) | 90 / 70 | Jati Asih 2 (Lingkar Luar Jakarta) | 16 / 18 menit | sekitar 70 menit | 2,9 km |
+| 3 | Dukuh Zamrud, Kota Legenda | 495 jt (di atas 400 jt) | 78 / 50 | Tambun (Jakarta-Cikampek) | 19 / 22 menit | sekitar 80 menit | 2,7 km |
 
 ### 1. Cluster Prima Pedurenan 5, Jatiluhur (500 jt)
 
@@ -49,21 +48,7 @@ Urut dari waktu tempuh ke gerbang tol. Kalau sudah dicek di Google Maps, angka G
 - Alasan: tanah paling luas kedua, lokasi paling pasti, dan masih ada sisa tanah untuk halaman.
 - Cek saat survei: jarak ke Perum Jatiluhur yang pernah banjir, kondisi plafon (di satu foto terlihat rusak), dan luas tanah di sertifikat.
 
-### 2. Komplek Alastua, Semanan, Kalideres, Jakarta Barat (650 jt, bisa cicil tanpa bunga)
-
-- Harga 650 jt (di post lain penjual yang sama menulis 600 jt-an). Penjual menerima cicilan pribadi tanpa bunga, tetapi besar DP dan lama cicilannya belum ditulis. Lolos karena aturan cicil tanpa bunga (sampai 700 jt).
-- LT 40 / LB 88, 2 lantai, 2 kamar tidur, 2 kamar mandi, listrik 3.500 watt, full furnished. SHM.
-- Lokasi: Komplek Alastua, kawasan Midland Premiere, Semanan, Kalideres. Titiknya Jalan Komplek Alastua di OpenStreetMap, bukan titik rumahnya.
-- Tol: gerbang Buaran Indah 1 (tol Cengkareng-Batuceper-Kunciran). Model 26 menit, Google 16 menit (Senin 06.30), jadi angka Google yang dipakai. Sampai kantor sekitar 50 menit menurut Google, bisa sampai 1 jam 25 menit kalau macet.
-- Banjir: RT 004/RW 004 Semanan tidak punya catatan banjir 2021 sampai 2024 (BPBD DKI). RT banjir terdekat 1,4 km.
-- Carport: iklan menulis carport tersedia.
-- Badan tol terdekat 3,5 km.
-- Sekolah: SDN Semanan 04 sekitar 0,6 km. Peringkat sekolah di Jakarta Barat belum ada di data kita.
-- Iklan: https://www.threads.com/@lysaaple/post/DftX0fYGLPe (14 November 2026).
-- Alasan: satu-satunya rumah di Jakarta yang lolos semua kriteria sekarang, walaupun jauh dari wilayah yang biasa kalian cari.
-- Cek saat survei: besar DP dan lama cicilan, perjanjian di notaris, sertifikat atas nama siapa selama cicilan berjalan, kondisi lantai dua, dan perjalanan pagi ke gerbang Buaran Indah.
-
-### 3. Pondok Indah Jatisari, Jatiasih (500 jt)
+### 2. Pondok Indah Jatisari, Jatiasih (500 jt)
 
 - Harga 500 jt. Di atas 400 jt.
 - LT 90 / LB 70, satu lantai, 2 kamar tidur, 2 kamar mandi. SHM. Komplek satu pintu.
@@ -77,7 +62,7 @@ Urut dari waktu tempuh ke gerbang tol. Kalau sudah dicek di Google Maps, angka G
 - Alasan: tanah paling luas, ada sisa sekitar 20 m² untuk halaman, dan posisinya paling tinggi terhadap sungai.
 - Cek saat survei: kondisi rumah (belum ada foto), jalan dari komplek ke Jl. Raya Jatiasih pada jam berangkat, dan iuran komplek.
 
-### 4. Dukuh Zamrud, Kota Legenda (495 jt)
+### 3. Dukuh Zamrud, Kota Legenda (495 jt)
 
 - Harga 495 jt, rumah123 menandai harganya pernah turun. Di atas 400 jt.
 - LT 78 / LB 50, 2 kamar tidur, 1 kamar mandi, baru direnovasi. SHM. One gate, penjaga 24 jam.
@@ -97,58 +82,81 @@ Rumah-rumah ini belum gugur, tetapi ada kriteria wajib yang belum terbukti. Jang
 
 | No | Rumah | Harga | LT / LB | Gerbang tol | Ke gerbang (model / Google) | Sampai kantor (Google) | Yang belum terbukti |
 |---|---|---|---|---|---|---|---|
-| 5 | Kodau V Ambarapura, Jatimekar, Jatiasih | 450 jt (di atas 400 jt) | 63 / 36 | Jati Warna 1 (Lingkar Luar) | 10 / 10 menit | sekitar 55 menit | Rumah baru, reputasi developer |
-| 6 | Komplek Bintara Jaya, Bekasi Barat | 420 jt (di atas 400 jt) | tidak ditulis | Bintara (Lingkar Luar) | 10 / 8 menit | sekitar 45 menit | Luas tanah, carport, jarak ke tol |
-| 7 | Raisya Pro Residence 9, Kranggan | mulai 385 jt | mulai 62 | Jatikarya 2 (Cimanggis-Cibitung) | 16 / 14 menit | sekitar 80 menit | Rumah baru, reputasi developer |
-| 8 | Raisya Pro Residence 11, Jatimurni | mulai 400 jt | 75 sampai 98 / 36 atau 45 | Jati Warna 1 (Lingkar Luar) | 18 / 18 menit | sekitar 70 menit | Rumah baru, reputasi developer |
-| 9 | Cluster kecil di Cilangkap, Jakarta Timur | 470 jt (di atas 400 jt) | 70 / 60 | Setu (Lingkar Luar) | 21 / 14 menit | sekitar 65 menit | Lokasi tepat, banjir, surat masih AJB |
+| 4 | Kodau V Ambarapura, Jatimekar, Jatiasih | 450 jt (di atas 400 jt) | 63 / 36 | Jati Warna 1 (Lingkar Luar) | 10 / 10 menit | sekitar 55 menit | Rumah baru, reputasi developer |
+| 5 | Komplek Bintara Jaya, Bekasi Barat | 420 jt (di atas 400 jt) | tidak ditulis | Bintara (Lingkar Luar) | 10 / 8 menit | sekitar 45 menit | Luas tanah, carport, jarak ke tol |
+| 6 | Raisya Pro Residence 9, Kranggan | mulai 385 jt | mulai 62 | Jatikarya 2 (Cimanggis-Cibitung) | 16 / 14 menit | sekitar 80 menit | Rumah baru, reputasi developer |
+| 7 | Raisya Pro Residence 11, Jatimurni | mulai 400 jt | 75 sampai 98 / 36 atau 45 | Jati Warna 1 (Lingkar Luar) | 18 / 18 menit | sekitar 70 menit | Rumah baru, reputasi developer |
+| 8 | Cluster kecil di Cilangkap, Jakarta Timur | 470 jt (di atas 400 jt) | 70 / 60 | Setu (Lingkar Luar) | 21 / 14 menit | sekitar 65 menit | Lokasi tepat, banjir, surat masih AJB |
 
 Catatan per rumah:
 
-- **5. Kodau V Ambarapura.** Rumah baru tahap 6 di dalam komplek TNI AU. Penjual menjanjikan gratis AJB, BPHTB, dan SHM. Di luar zona bahaya banjir BNPB, 1,1 km dari badan tol. Iklannya dari Juli 2026, jadi mungkin sudah habis. Nama badan usaha developernya tidak ditulis. Iklan: https://www.threads.com/@jualrumah_jatiasih/post/Da7rby6GSn3
-- **6. Komplek Bintara Jaya.** Iklan hanya menulis siap huni, SHM, akses mobil, tidak pernah banjir, "akses tol Bintara dan nempel Kalimalang". Titik yang dipakai adalah Bintara Jaya Permai (anggapan saya). Pusat komplek itu 741 m dari tol Lingkar Luar. Kalau rumahnya memang menempel Kalimalang, berarti dekat tol layang Becakayu. Bisa jadi ini perumahan Bintara yang kalian maksud terlalu dekat tol. Dua perumahan tetangganya, Puri Bintara dan Mas Naga, tercatat banjir pada 2021 dan Januari 2026. Iklan: https://www.threads.com/@alhafidz_quran/post/DfuXPlvgEdg
-- **7 dan 8. Raisya Pro Residence.** Developernya memakai nama Raisya Propertindo. Di Google Maps ada cluster bernomor 3, 5, 9, 11, dan 12 di sekitar Kranggan dan Jatimurni, jadi mereka memang sudah membangun beberapa cluster. Saya tidak menemukan ulasan independen maupun berita keluhan. Itu bukan bukti bahwa developernya baik. Keduanya di luar zona bahaya banjir BNPB dan hampir 3 km dari badan tol. Harga "mulai" berarti unit termurah. Iklan: https://www.threads.com/@yusuf_raisya_property/post/Dfq7RX7ATE6 dan https://www.threads.com/@raisyapropertindo/post/Dfo4rsEE0aD
-- **9. Cilangkap.** Cadangan di Jakarta. One gate isi 8 rumah, akses mobil, di foto ada mobil terparkir di depan. Lokasi tepatnya belum diketahui (iklan: 3 menit dari Mabes TNI). Di titik perkiraan, 3 dari 24 RT dalam 500 m tercatat banjir 2021 sampai 2024. BPBD DKI juga mencatat 5 RT di Cilangkap terendam pada 22 Maret 2026 ([Republika](https://news.republika.co.id/berita/tcajgt416/banjir-masih-rendam-46-rt-di-jakarta-timur)). Surat masih AJB, lihat bagian berikut. Iklan: https://www.threads.com/@mr.yoginugraha/post/DfbncffIBEX
+- **4. Kodau V Ambarapura.** Rumah baru tahap 6 di dalam komplek TNI AU. Penjual menjanjikan gratis AJB, BPHTB, dan SHM. Di luar zona bahaya banjir BNPB, 1,1 km dari badan tol. Iklannya dari Juli 2026, jadi mungkin sudah habis. Nama badan usaha developernya tidak ditulis. Iklan: https://www.threads.com/@jualrumah_jatiasih/post/Da7rby6GSn3
+- **5. Komplek Bintara Jaya.** Iklan hanya menulis siap huni, SHM, akses mobil, tidak pernah banjir, "akses tol Bintara dan nempel Kalimalang". Titik yang dipakai adalah Bintara Jaya Permai (anggapan saya). Pusat komplek itu 741 m dari tol Lingkar Luar. Kalau rumahnya memang menempel Kalimalang, berarti dekat tol layang Becakayu. Bisa jadi ini perumahan Bintara yang kalian maksud terlalu dekat tol. Dua perumahan tetangganya, Puri Bintara dan Mas Naga, tercatat banjir pada 2021 dan Januari 2026. Iklan: https://www.threads.com/@alhafidz_quran/post/DfuXPlvgEdg
+- **6 dan 7. Raisya Pro Residence.** Developernya memakai nama Raisya Propertindo. Di Google Maps ada cluster bernomor 3, 5, 9, 11, dan 12 di sekitar Kranggan dan Jatimurni, jadi mereka memang sudah membangun beberapa cluster. Saya tidak menemukan ulasan independen maupun berita keluhan. Itu bukan bukti bahwa developernya baik. Keduanya di luar zona bahaya banjir BNPB dan hampir 3 km dari badan tol. Harga "mulai" berarti unit termurah. Iklan: https://www.threads.com/@yusuf_raisya_property/post/Dfq7RX7ATE6 dan https://www.threads.com/@raisyapropertindo/post/Dfo4rsEE0aD
+- **8. Cilangkap.** Cadangan di Jakarta. One gate isi 8 rumah, akses mobil, di foto ada mobil terparkir di depan. Lokasi tepatnya belum diketahui (iklan: 3 menit dari Mabes TNI). Di titik perkiraan, 3 dari 24 RT dalam 500 m tercatat banjir 2021 sampai 2024. BPBD DKI juga mencatat 5 RT di Cilangkap terendam pada 22 Maret 2026 ([Republika](https://news.republika.co.id/berita/tcajgt416/banjir-masih-rendam-46-rt-di-jakarta-timur)). Surat masih AJB, lihat bagian berikut. Iklan: https://www.threads.com/@mr.yoginugraha/post/DfbncffIBEX
 
-## Rumah yang kalian coret (18 dan 20 November)
+## Rumah yang kalian coret (18, 20, dan 22 November)
 
 | Dulu nomor | Rumah | Alasan |
 |---|---|---|
 | 1 | Kansa Residence, Kramat Jati, 390 jt | Kalian kurang tertarik, rumahnya terasa sempit (tanah 36 m²) |
 | 2 | Mini cluster Kemangsari, Jaticempaka, 475 jt | Sudah disurvei: bangunan rusak parah, seperti mau roboh |
 | 15 | AS Cluster Jatisari, 350 jt | Bangunan lama, kamar tidur tinggal satu (20 November) |
+| 2 | Komplek Alastua, Semanan, 650 jt | Sudah disurvei, lokasinya terlalu jauh (22 November) |
+| 18 | Rumah di Pondok Kelapa, Duren Sawit, 475 jt | Sudah terjual (22 November) |
 
-Ketiganya dicatat di `data/dicoret.csv`. Rumah yang dicoret tidak diberi nomor dan tidak tampil di peta maupun tabel, jadi semua rumah di bawahnya otomatis naik. Penomoran sekarang dihitung ulang setiap kali analisa dijalankan: rumah yang lolos semua di wilayah kalian dulu (urut waktu ke gerbang tol), lalu cadangan, lalu rumah kiriman kalian.
+Kelimanya dicatat di `data/dicoret.csv`. Rumah yang dicoret tidak diberi nomor dan tidak tampil di peta maupun tabel, jadi semua rumah di bawahnya otomatis naik. Penomoran sekarang dihitung ulang setiap kali analisa dijalankan: rumah yang lolos semua di wilayah kalian dulu (urut waktu ke gerbang tol), lalu cadangan, lalu rumah kiriman kalian.
 
 ## Rumah yang kalian kirim (17 dan 18 November)
 
-Semua rumah yang kalian kirim tetap dihitung tol, banjir, dan sekolahnya walaupun gugur di saringan lain. Di peta, nomornya berwarna ungu. Cilangkap (nomor 9) ada di cadangan dan Semanan (nomor 2) sudah lolos semua, jadi tidak diulang di sini.
+Semua rumah yang kalian kirim tetap dihitung tol, banjir, dan sekolahnya walaupun gugur di saringan lain. Di peta, nomornya berwarna ungu. Cilangkap (nomor 8) ada di cadangan, jadi tidak diulang di sini.
 
-Empat rumah Jakarta yang kalian kirim 18 November tidak di dalam komplek. Saya catat kriteria komplek untuk rumah itu sebagai "diterima" (kalian yang memilih), jadi tidak menggugurkan. Kriteria lain tetap berlaku.
+Rumah Jakarta yang kalian kirim 18 November tidak di dalam komplek. Saya catat kriteria komplek untuk rumah itu sebagai "diterima" (kalian yang memilih), jadi tidak menggugurkan. Kriteria lain tetap berlaku.
 
 | No | Rumah | Harga | LT / LB | Status | Gerbang tol (model / Google) | Banjir | Yang masih perlu dicek |
 |---|---|---|---|---|---|---|---|
-| 10 | Cluster Aldira 2, Jatisari | 350 jt | 50 / 70 | perlu dicek | Jati Asih 2, 23 menit / belum dicek | tidak ada catatan | akses mobil tidak disebut |
-| 11 | Cluster mini di Kalisari | 550 jt (di atas 400 jt) | 53 / 50 | gugur: harga di atas 500 jt | Gedong 2, 9 menit / belum dicek | tidak ada catatan | lokasi masih perkiraan |
-| 12 | Cluster Arsa 2, Pesanggrahan | 485 jt (di atas 400 jt) | 45 / 36 | perlu dicek | Ciledug 2, 6 menit / belum dicek | tidak ada catatan | carport tidak disebut; rumah baru, reputasi developer belum terbukti |
-| 13 | Lavender Crown Residence IV, Jatiasih | 320 jt | 64 / 48 | perlu dicek | Jati Asih 2, 16 menit / belum dicek | tidak ada catatan | akses mobil tidak disebut |
-| 14 | Cluster di Pekayon | 530 jt (di atas 400 jt) | 52 / tidak ditulis | gugur: harga di atas 500 jt | Bekasi Barat 2, 9 menit / belum dicek | tidak ada catatan | lokasi masih perkiraan |
-| 15 | Kavling Azzahra 1, Cilangkap | 460 jt (di atas 400 jt) | 70 / 60 | perlu dicek | Jatiwarna 2, 25 / 16 menit | tidak ada catatan | bukan komplek, kalian terima; carport tidak disebut |
-| 16 | Rumah indent di Cipayung | 500 jt (di atas 400 jt) | 50 / 40 | perlu dicek | Setu, 10 menit / belum dicek | belum jelas | bukan komplek, kalian terima; carport tidak disebut; banjir belum jelas; rumah baru, reputasi developer belum terbukti; lokasi masih perkiraan |
-| 17 | Jl. Sonton, Lenteng Agung | 370 jt | 40 / 40 | perlu dicek | Lenteng Agung 2, 16 / 12 menit | tidak ada catatan | bukan komplek, kalian terima; carport tidak disebut |
-| 18 | Rumah di Pondok Kelapa, Duren Sawit | 475 jt (di atas 400 jt) | 40 / tidak ditulis | perlu dicek | Pondok Kelapa 2, 8 menit / belum dicek | tidak ada catatan | bukan komplek, kalian terima; carport tidak disebut; lokasi masih perkiraan |
+| 9 | Cluster Aldira 2, Jatisari | 350 jt | 50 / 70 | perlu dicek | Jati Asih 2, 23 menit / belum dicek | tidak ada catatan | akses mobil tidak disebut |
+| 10 | Cluster mini di Kalisari | 550 jt (di atas 400 jt) | 53 / 50 | gugur: harga di atas 500 jt | Gedong 2, 9 menit / belum dicek | tidak ada catatan | lokasi masih perkiraan |
+| 11 | Cluster Arsa 2, Pesanggrahan | 485 jt (di atas 400 jt) | 45 / 36 | perlu dicek | Ciledug 2, 6 menit / belum dicek | tidak ada catatan | carport tidak disebut; rumah baru, reputasi developer belum terbukti |
+| 12 | Lavender Crown Residence IV, Jatiasih | 320 jt | 64 / 48 | perlu dicek | Jati Asih 2, 16 menit / belum dicek | tidak ada catatan | akses mobil tidak disebut |
+| 13 | Cluster di Pekayon | 530 jt (di atas 400 jt) | 52 / tidak ditulis | gugur: harga di atas 500 jt | Bekasi Barat 2, 9 menit / belum dicek | tidak ada catatan | lokasi masih perkiraan |
+| 14 | Kavling Azzahra 1, Cilangkap | 460 jt (di atas 400 jt) | 70 / 60 | perlu dicek | Jatiwarna 2, 25 / 16 menit | tidak ada catatan | bukan komplek, kalian terima; carport tidak disebut |
+| 15 | Rumah indent di Cipayung | 500 jt (di atas 400 jt) | 50 / 40 | perlu dicek | Setu, 10 menit / belum dicek | belum jelas | bukan komplek, kalian terima; carport tidak disebut; banjir belum jelas; rumah baru, reputasi developer belum terbukti; lokasi masih perkiraan |
+| 16 | Jl. Sonton, Lenteng Agung | 370 jt | 40 / 40 | perlu dicek | Lenteng Agung 2, 16 / 12 menit | tidak ada catatan | bukan komplek, kalian terima; carport tidak disebut |
 
 Catatan:
 
-- **10. Cluster Aldira 2, Jatisari.** Harga turun dari 550 jt menjadi 350 jt net, tunai, karena pemilik pulang kampung. Furnitur ikut. Penjual menulis bebas banjir dan surat masih AJB. Rumah 2 lantai, jadi lantai bawah bisa jadi carport. Iklan: https://www.threads.com/@echa_share/post/DfcfjxxE8bS
-- **11. Cluster mini di Kalisari.** Di dalam cluster mini, akses mobil, ada carport, tetapi 550 jt tanpa tawaran cicilan. Dekat gerbang tol (9 menit). Kalau harga bisa turun ke 500 jt, langsung masuk perlu dicek. Iklan: https://www.threads.com/@mulaimenatahidupp/post/DfuVunek7WD
-- **12. Cluster Arsa 2, Pesanggrahan.** Harga 550 jt di iklan adalah kavling 100 m². Rumah tipe 36 di atas tanah sekitar 45 m² harganya 485 jt dan belum dibangun. Penjual menulis jalannya bisa dilewati mobil kecil seperti Wuling. Paling dekat ke Manggala Wanabakti (13,5 km). Iklan: https://www.threads.com/@rizky.azhr/post/DfzNPRDgbsd
-- **13. Lavender Crown Residence IV, Jatiasih.** Paling murah di kiriman kalian (320 jt nego). Teras sudah berkanopi. Iklan menyebut 3 menit ke SDN Jatiasih. Iklan: https://www.threads.com/@chdilss/post/Dfy7ORgkqRI
-- **14. Cluster di Pekayon.** Di dalam cluster, akses mobil, ada carport, tetapi 530 jt tanpa cicilan. Dekat gerbang tol (9 menit). Iklan: https://www.threads.com/@yatiyahmin/post/DfKTwnCEumC
-- **15. Kavling Azzahra 1, Cilangkap.** Kavling isi 8 rumah, bukan komplek, tetapi kalian minta dimasukkan. LT 70 / LB 60. Tidak ada carport, tetapi iklan menulis mobil bisa sampai depan rumah. Titiknya titik Kavling Azzahra 1 di Google Maps (Jl. Basuki, Cilangkap). Google Maps: 16 menit ke gerbang Setu, sekitar 65 menit sampai kantor. Iklan: https://www.threads.com/@novianno_widy/post/DeMJep8HT3e
-- **16. Rumah indent di Cipayung.** Rumah baru indent, bukan komplek, kalian minta dimasukkan. Tipe 1 lantai LT 50 / LB 40 seharga 500 jt (tipe 2 lantai 675 jt). Akses 2 mobil, SHM dan PBG. Lokasi tepat belum diketahui (iklan: 5 menit ke tol Setu Cipayung). Reputasi pembangunnya belum terbukti. Iklan: https://www.threads.com/@allsyaf030/post/Dd5yHf-kSGe
-- **17. Jl. Sonton, Lenteng Agung.** Rumah baru di Jl. Sonton, Lenteng Agung (Jagakarsa), bukan komplek, kalian minta dimasukkan. LT 40 / LB 40, SHM, akses mobil, 370 jt nego tipis. Kalau bangunannya memenuhi tanah, tidak ada tempat untuk carport. Google Maps: 12 menit ke gerbang Lenteng Agung, sekitar 55 menit sampai kantor. Lenteng Agung masuk daerah yang kalian sebut pilihan terakhir. Iklan: https://www.threads.com/@rizky_syarif_darmawan/post/DfuZJWQnU4t
-- **18. Rumah di Pondok Kelapa, Duren Sawit.** Sebelumnya belum ada di shortlist, hanya di daftar rumah Jakarta di luar komplek. Sekarang sudah masuk. Pondok Kelapa, Duren Sawit, LT 40 (4 x 10 m), SHM, jalan muat 2 mobil. Harga 550 jt nego, net 475 jt dengan pajak masing-masing. Carport belum jelas dan lokasi tepat belum diketahui. Iklan: https://www.threads.com/@restina____/post/DfKApDunSUM
+- **9. Cluster Aldira 2, Jatisari.** Harga turun dari 550 jt menjadi 350 jt net, tunai, karena pemilik pulang kampung. Furnitur ikut. Penjual menulis bebas banjir dan surat masih AJB. Rumah 2 lantai, jadi lantai bawah bisa jadi carport. Iklan: https://www.threads.com/@echa_share/post/DfcfjxxE8bS
+- **10. Cluster mini di Kalisari.** Di dalam cluster mini, akses mobil, ada carport, tetapi 550 jt tanpa tawaran cicilan. Dekat gerbang tol (9 menit). Kalau harga bisa turun ke 500 jt, langsung masuk perlu dicek. Iklan: https://www.threads.com/@mulaimenatahidupp/post/DfuVunek7WD
+- **11. Cluster Arsa 2, Pesanggrahan.** Harga 550 jt di iklan adalah kavling 100 m². Rumah tipe 36 di atas tanah sekitar 45 m² harganya 485 jt dan belum dibangun. Penjual menulis jalannya bisa dilewati mobil kecil seperti Wuling. Paling dekat ke Manggala Wanabakti (13,5 km). Iklan: https://www.threads.com/@rizky.azhr/post/DfzNPRDgbsd
+- **12. Lavender Crown Residence IV, Jatiasih.** Paling murah di kiriman kalian (320 jt nego). Teras sudah berkanopi. Iklan menyebut 3 menit ke SDN Jatiasih. Iklan: https://www.threads.com/@chdilss/post/Dfy7ORgkqRI
+- **13. Cluster di Pekayon.** Di dalam cluster, akses mobil, ada carport, tetapi 530 jt tanpa cicilan. Dekat gerbang tol (9 menit). Iklan: https://www.threads.com/@yatiyahmin/post/DfKTwnCEumC
+- **14. Kavling Azzahra 1, Cilangkap.** Kavling isi 8 rumah, bukan komplek, tetapi kalian minta dimasukkan. LT 70 / LB 60. Tidak ada carport, tetapi iklan menulis mobil bisa sampai depan rumah. Titiknya titik Kavling Azzahra 1 di Google Maps (Jl. Basuki, Cilangkap). Google Maps: 16 menit ke gerbang Setu, sekitar 65 menit sampai kantor. Iklan: https://www.threads.com/@novianno_widy/post/DeMJep8HT3e
+- **15. Rumah indent di Cipayung.** Rumah baru indent, bukan komplek, kalian minta dimasukkan. Tipe 1 lantai LT 50 / LB 40 seharga 500 jt (tipe 2 lantai 675 jt). Akses 2 mobil, SHM dan PBG. Lokasi tepat belum diketahui (iklan: 5 menit ke tol Setu Cipayung). Reputasi pembangunnya belum terbukti. Iklan: https://www.threads.com/@allsyaf030/post/Dd5yHf-kSGe
+- **16. Jl. Sonton, Lenteng Agung.** Rumah baru di Jl. Sonton, Lenteng Agung (Jagakarsa), bukan komplek, kalian minta dimasukkan. LT 40 / LB 40, SHM, akses mobil, 370 jt nego tipis. Kalau bangunannya memenuhi tanah, tidak ada tempat untuk carport. Google Maps: 12 menit ke gerbang Lenteng Agung, sekitar 55 menit sampai kantor. Lenteng Agung masuk daerah yang kalian sebut pilihan terakhir. Iklan: https://www.threads.com/@rizky_syarif_darmawan/post/DfuZJWQnU4t
+
+## Rumah baru dari pembaruan 22 November
+
+Pembaruan ini menambah iklan rumah123 tiga hari terakhir, 59 pesan DM baru, dan satu sumber baru: Pinhome. Dari Pinhome masuk 769 iklan rumah sampai 860 jt yang tayang atau diperbarui 15 sampai 22 November. Hanya 255 di antaranya benar-benar tayang dalam tujuh hari itu; sisanya iklan lama yang diperbarui agennya. Pinhome diambil sekali, tidak diperbarui rutin.
+
+Pin lokasi dari agen Pinhome saya anggap perkiraan. Dari sepuluh pin yang saya periksa, tiga meleset 2 km sampai puluhan kilometer. Contohnya, rumah di Parung Panjang dipasang di Meruya Selatan, dan rumah di Tambun Utara dipasang di Jakasampurna. Karena itu belum ada rumah Pinhome yang lolos semua; semuanya masuk "perlu dicek" sampai lokasinya dipastikan. Di galeri, pin Pinhome digambar putus-putus.
+
+Rumah yang lolos semua di wilayah kalian tetap tiga. Yang paling layak dicari lokasinya dari pembaruan ini:
+
+| Rumah | Harga | LT / LB | Gerbang tol (model) | Yang belum terbukti | Iklan |
+|---|---|---|---|---|---|
+| Komplek Kranggan Permai, Jatisampurna | 375 jt | 63 / 70 | Jatikarya 2, 13 menit | Carport, banjir, lokasi tepat | [Pinhome](https://www.pinhome.id/dijual/rumah-sekunder/unit/dijual-rumah-murah-kranggan-permai-shm-bebas-banjir-favorit-di-jl-kranggan-permai-cempaka) |
+| Cluster Ranggon Jaya, Cipayung, Jakarta Timur | 400 jt-an | 53 / tidak ditulis | Setu, 10 menit | Akses mobil, banjir, lokasi tepat | [Threads](https://www.threads.com/@muhamadyusuf.2808/post/Df932jikTsh) |
+| Dukuh Zamrud, Cimuning, Mustikajaya | 420 jt | 90 / 40 | Tambun, 17 menit | Banjir, lokasi tepat | [Pinhome](https://www.pinhome.id/dijual/rumah-sekunder/unit/dijual-rumah-rumah-murah-dukuh-zamrud-di-dukuh-zamrud) |
+| Perumahan Wisma Jaya, Bekasi Timur | 485 jt | 66 / tidak ditulis | Bekasi Timur 2, 9 menit | Banjir (indeks BNPB 0,88 di titik perkiraan), lokasi tepat | [Threads](https://www.threads.com/@oktafiana05/post/DZPOaHfFDTS) |
+| Cluster di Cikunir, Jatiasih | 500 jt | 70 / 36 | Jati Asih 2, 7 menit | Lokasi tepat | [rumah123](https://www.rumah123.com/properti/bekasi-cikunir/rumah-minimalis-siap-huni-lt-70m2-nyamandekat-toll-jatiasih-hos18541865/) |
+
+Catatan:
+
+- Dukuh Zamrud yang ini satu perumahan dengan nomor 3, tetapi 75 jt lebih murah dan tanahnya lebih luas (90 m²). Ada garasi 1 mobil. Sertifikatnya HGB. Pertanyaan banjirnya sama dengan nomor 3: Kali Pete sekitar 240 m dari titik perkiraan.
+- Cluster Wibawa Mukti II di Jatisari (400 jt, 72 / 45, dari DM 18 November) juga diiklankan di Pinhome. Pin Pinhome-nya sekitar 2 km dari ujung Jl. Wibawa Mukti II, jadi lokasinya tetap belum pasti. Iklan Pinhome itu saya catat sebagai iklan ganda.
+- Green De Jalen Terrace di Tambun Utara (210 jt, 60 / 60, SHM, jalan muat 2 mobil) murah sekali, tetapi ada di Kabupaten Bekasi dan model menghitung 29 menit ke gerbang Tambun, jadi gugur di kriteria tol.
+- Ringkasan semua rumah Jakarta dengan akses mobil sampai 800 jt, urut jarak ke gerbang tol dan ke Manggala, ada di `output/ringkasan_jakarta_800jt.md` di folder lokal. Daftar rumah sekitar Unkris dan LRT Jatibening Baru ada di `output/sekitar_unkris.md` (juga lokal).
 
 ## Rumah baru dari pembaruan 20 November
 
@@ -195,39 +203,36 @@ Soal zonasi: Kota Bekasi dan Jawa Barat mengurutkan pendaftar SD dan SMP dengan 
 | No | Rumah | SD negeri terdekat | Sekolah favorit dalam 2 km | Sekolah paling favorit terdekat (jalan) |
 |---|---|---|---|---|
 | 1 | Cluster Prima Pedurenan 5, Jatiluhur | SDN JATILUHUR 4, 0,3 km | tidak ada | SMAN 3 BEKASI, 9,3 km |
-| 2 | Komplek Alastua, Semanan | SDN SEMANAN 04 PG, 0,6 km | tidak ada | SMAN 21, 32,4 km |
-| 3 | Pondok Indah Jatisari, Jatiasih | SDN JATI SARI 2, 0,8 km | SMAN 11 BEKASI (1,4 km) | SMAN 3 BEKASI, 10,4 km |
-| 4 | Dukuh Zamrud, Kota Legenda | SDN PADURENAN VI, 0,6 km | tidak ada | SMAN 3 BEKASI, 12,5 km |
-| 5 | Kodau V Ambarapura, Jatimekar | SDN JATIMAKMUR II, 0,2 km | SMAN 16 BEKASI (1,9 km) | SMAN 5 BEKASI, 4,3 km |
-| 6 | Komplek Bintara Jaya | SDN PONDOK KELAPA 05 PG, 0,3 km | SMPN 252 (0,4 km), SMAN 91 (1,5 km) | SMPN 252, 1,2 km |
-| 7 | Raisya Pro Residence 9, Kranggan | SDN JATIRANGGA II, 0,7 km | SMAN 11 BEKASI (1,5 km) | SMAN 5 BEKASI, 12,4 km |
-| 8 | Raisya Pro Residence 11, Jatimurni | SDN JATIRANGGON I, 0,6 km | SMAN 11 BEKASI (0,9 km) | SMAN 5 BEKASI, 9,3 km |
-| 9 | Cluster kecil di Cilangkap | SDN Cilangkap 01 Pagi, 0,9 km | tidak ada | SMAN 48, 10,4 km |
-| 10 | Cluster Aldira 2, Jatisari | SDN JATI SARI 2, 0,3 km | SMAN 11 BEKASI (1,1 km) | SMAN 3 BEKASI, 11,1 km |
-| 11 | Cluster mini di Kalisari | SDN Ciracas 01, 0,5 km | SMAN 58 (1,0 km), SMPN 9 (1,8 km), SMPN 179 (1,9 km) | SMPN 49, 6,6 km |
-| 12 | Cluster Arsa 2, Pesanggrahan | SDN PESANGGRAHAN 01, 0,4 km | tidak ada | SMPN 49, 20,3 km |
-| 13 | Lavender Crown Residence IV, Jatiasih | SDN JATILUHUR 4, 0,4 km | tidak ada | SMAN 3 BEKASI, 9,5 km |
-| 14 | Cluster di Pekayon | SDN PEKAYON JAYA III, 0,3 km | SMAN 2 BEKASI (1,7 km), SMAN 3 BEKASI (1,7 km) | SMAN 3 BEKASI, 2,9 km |
-| 15 | Kavling Azzahra 1, Cilangkap | SDN Cilangkap 01 Pagi, 0,6 km | tidak ada | SMAN 48, 10,1 km |
-| 16 | Rumah indent di Cipayung | SDN Cipayung 05 Pagi, 0,2 km | tidak ada | SMAN 48, 8,2 km |
-| 17 | Jl. Sonton, Lenteng Agung | MIN 3, 0,6 km | SMAN 39 (0,9 km), SMPN 179 (1,9 km) | SMPN 49, 8,4 km |
-| 18 | Rumah di Pondok Kelapa, Duren Sawit | SDN PONDOK KELAPA 05 PG, 0,6 km | SMPN 252 (0,6 km), SMAN 91 (1,2 km) | SMPN 252, 0,8 km |
+| 2 | Pondok Indah Jatisari, Jatiasih | SDN JATI SARI 2, 0,8 km | SMAN 11 BEKASI (1,4 km) | SMAN 3 BEKASI, 10,4 km |
+| 3 | Dukuh Zamrud, Kota Legenda | SDN PADURENAN VI, 0,6 km | tidak ada | SMAN 3 BEKASI, 12,5 km |
+| 4 | Kodau V Ambarapura, Jatimekar | SDN JATIMAKMUR II, 0,2 km | SMAN 16 BEKASI (1,9 km) | SMAN 5 BEKASI, 4,3 km |
+| 5 | Komplek Bintara Jaya | SDN PONDOK KELAPA 05 PG, 0,3 km | SMPN 252 (0,4 km), SMAN 91 (1,5 km) | SMPN 252, 1,2 km |
+| 6 | Raisya Pro Residence 9, Kranggan | SDN JATIRANGGA II, 0,7 km | SMAN 11 BEKASI (1,5 km) | SMAN 5 BEKASI, 12,4 km |
+| 7 | Raisya Pro Residence 11, Jatimurni | SDN JATIRANGGON I, 0,6 km | SMAN 11 BEKASI (0,9 km) | SMAN 5 BEKASI, 9,3 km |
+| 8 | Cluster kecil di Cilangkap | SDN Cilangkap 01 Pagi, 0,9 km | tidak ada | SMAN 48, 10,4 km |
+| 9 | Cluster Aldira 2, Jatisari | SDN JATI SARI 2, 0,3 km | SMAN 11 BEKASI (1,1 km) | SMAN 3 BEKASI, 11,1 km |
+| 10 | Cluster mini di Kalisari | SDN Ciracas 01, 0,5 km | SMAN 58 (1,0 km), SMPN 9 (1,8 km), SMPN 179 (1,9 km) | SMPN 49, 6,6 km |
+| 11 | Cluster Arsa 2, Pesanggrahan | SDN PESANGGRAHAN 01, 0,4 km | tidak ada | SMPN 49, 20,3 km |
+| 12 | Lavender Crown Residence IV, Jatiasih | SDN JATILUHUR 4, 0,4 km | tidak ada | SMAN 3 BEKASI, 9,5 km |
+| 13 | Cluster di Pekayon | SDN PEKAYON JAYA III, 0,3 km | SMAN 2 BEKASI (1,7 km), SMAN 3 BEKASI (1,7 km) | SMAN 3 BEKASI, 2,9 km |
+| 14 | Kavling Azzahra 1, Cilangkap | SDN Cilangkap 01 Pagi, 0,6 km | tidak ada | SMAN 48, 10,1 km |
+| 15 | Rumah indent di Cipayung | SDN Cipayung 05 Pagi, 0,2 km | tidak ada | SMAN 48, 8,2 km |
+| 16 | Jl. Sonton, Lenteng Agung | MIN 3, 0,6 km | SMAN 39 (0,9 km), SMPN 179 (1,9 km) | SMPN 49, 8,4 km |
 
-Semua rumah di daftar punya SD negeri dalam 1 km, jadi SD negeri bukan pembeda. Pembedanya SMP dan SMA favorit. Dalam hal ini Komplek Bintara Jaya (nomor 6) dan rumah Pondok Kelapa (nomor 18) paling unggul: SMPN 252 dan SMAN 91 ada dalam 1,5 km. Disusul Kalisari (nomor 11) dan Jl. Sonton (nomor 17), lalu rumah-rumah di Jatisari yang dekat SMAN 11 Bekasi. "Tidak ada di data" untuk Arsa 2 dan Semanan berarti peringkat sekolah Jakarta Selatan dan Jakarta Barat belum pernah kita kumpulkan, bukan berarti tidak ada sekolah bagus di sana.
+Semua rumah di daftar punya SD negeri dalam 1 km, jadi SD negeri bukan pembeda. Pembedanya SMP dan SMA favorit. Dalam hal ini Komplek Bintara Jaya (nomor 5) paling unggul: SMPN 252 dan SMAN 91 ada dalam 1,5 km. Disusul Kalisari (nomor 10) dan Jl. Sonton (nomor 16), lalu rumah-rumah di Jatisari yang dekat SMAN 11 Bekasi. "Tidak ada di data" untuk Arsa 2 berarti peringkat sekolah Jakarta Selatan belum pernah kita kumpulkan, bukan berarti tidak ada sekolah bagus di sana.
 
 ## Cicil langsung tanpa bunga
 
 Aturan harga sekarang: sampai 500 jt seperti sebelumnya, atau sampai 700 jt kalau iklan menulis jelas bisa dicicil langsung ke pemilik atau developer tanpa bunga, tanpa bank, atau tanpa BI checking. Kata yang dicari antara lain "cicil pribadi", "cicilan developer", "tanpa bunga", "tanpa riba", "tanpa bank", dan "syariah tanpa bank". Batas 700 jt adalah anggapan saya, bukan angka kalian. Over kredit tetap gugur, karena itu melanjutkan cicilan bank.
 
-Hasilnya, 15 rumah menyebut cicilan tanpa bunga dengan jelas, dan 8 di antaranya belum gugur. Yang ada di wilayah kalian:
+Hasilnya, 31 rumah menyebut cicilan tanpa bunga dengan jelas, dan 10 di antaranya belum gugur. Yang ada di wilayah kalian:
 
 | Rumah | Harga | Skema | Status | Iklan |
 |---|---|---|---|---|
-| Semanan, Kalideres (nomor 2) | 650 jt | cicil pribadi tanpa bunga, DP belum ditulis | lolos semua | [Threads](https://www.threads.com/@lysaaple/post/DftX0fYGLPe) |
 | Cluster di Jatiluhur, Jatiasih | 455 jt | DP 100 jt, sisa 355 jt dicicil 60 kali ke developer tanpa bunga dan tanpa BI checking (sekitar 5,9 jt per bulan) | perlu dicek (lokasi, banjir) | [Threads](https://www.threads.com/@iikamx/post/DfwxVGClLCo) |
 | Edensor County, Jaka Mulya, Bekasi Selatan | mulai 577 jt | skema syariah tanpa riba dari developer | perlu dicek (lokasi, banjir) | [rumah123](https://www.rumah123.com/properti/bekasi-jaka-mulya/hunian-syariah-edensor-county-di-jaka-mulya-bekasi-selatan-hos42715339/) |
 
-Ada juga 39 rumah belum gugur yang hanya berlabel "cash bertahap". Label itu kotak centang di rumah123 yang sering diisi agen untuk semua iklan, jadi tidak saya pakai untuk melonggarkan harga. Kolomnya tetap ada di tabel (`cicil_pribadi`).
+Ada juga 88 rumah belum gugur yang hanya berlabel "cash bertahap". Label itu kotak centang di rumah123 dan Pinhome yang sering diisi agen untuk semua iklan, jadi tidak saya pakai untuk melonggarkan harga. Kolomnya tetap ada di tabel (`cicil_pribadi`).
 
 Yang perlu ditanyakan ke penjual sebelum survei: besar DP, lama cicilan, apa yang terjadi kalau telat bayar, kapan sertifikat dibalik nama (sebelum atau sesudah lunas), dan apakah perjanjiannya dibuat di notaris. Cicilan pribadi berarti sertifikat biasanya masih atas nama penjual sampai lunas.
 
@@ -248,7 +253,7 @@ Catatan:
 - Cluster Arsa 2 adalah satu-satunya yang baru di Jakarta. Titiknya titik cluster di Google Maps (Jl. Pulo Indah Buntu I). RT itu tidak punya catatan banjir 2021 sampai 2024, RT banjir terdekat 374 m, dan badan tol Lingkar Luar 456 m. Rumah tipe 36 itu baru rencana dibangun, tanahnya sekitar 45 m² menurut balasan penjual, dan pembayarannya hanya tunai. Membayar tunai untuk rumah yang belum berdiri butuh perjanjian tertulis yang jelas.
 - Iklan Jatibening judulnya menyebut Kota Depok, padahal dipasang di Jatibening. Pastikan alamatnya dulu. Titik yang dipakai baru titik tengah Jatibening: 74 m dari badan tol dan indeks bahaya banjir BNPB 0,8. Dua hal itu harus dicek di tempat.
 - Rumah di Pondok Gede hanya menulis dalam komplek, LT 75, akses mobil, dan SHM. Tanyakan nama kompleknya supaya banjir dan jarak tolnya bisa dihitung.
-- Kranggan dan Summarecon adalah rumah baru. Seperti nomor 5, 7, dan 8, reputasi developernya belum terbukti.
+- Kranggan dan Summarecon adalah rumah baru. Seperti nomor 4, 6, dan 7, reputasi developernya belum terbukti.
 
 Foto kelima rumah ini ada di tabel kandidat dan di peta.
 
@@ -257,7 +262,7 @@ Foto kelima rumah ini ada di tabel kandidat dan di peta.
 1. Banjir: tanya dua atau tiga tetangga dan pengurus RT, bukan penjual. Lihat bekas garis air di tembok dan pagar, dan tinggi lantai rumah terhadap jalan.
 2. Mobil: bawa mobil sampai depan rumah pada jam orang berangkat kerja. Coba putar balik dan parkir.
 3. Tol: berangkat dari rumah itu pukul 06.30 pada hari kerja sampai gerbang yang ditulis di tabel, dan catat waktunya.
-4. Bising: berdiri di depan rumah dan di kamar dengan jendela tertutup, terutama untuk nomor 6.
+4. Bising: berdiri di depan rumah dan di kamar dengan jendela tertutup, terutama untuk nomor 5.
 5. Surat: minta foto halaman depan sertifikat, cocokkan nama, luas, dan nomornya, lalu cek di aplikasi Sentuh Tanahku atau kantor pertanahan.
 6. Komplek: ada gerbang dan penjaga atau tidak, iuran bulanan, dan siapa yang mengurus jalan.
 
@@ -265,7 +270,7 @@ Foto kelima rumah ini ada di tabel kandidat dan di peta.
 
 AJB adalah bukti jual beli, bukan sertifikat. Untuk menjadikannya SHM ada dua keadaan yang sangat berbeda.
 
-**Tanah induknya sudah bersertifikat dan tinggal dipecah.** Ini keadaan rumah nomor 9 (Cilangkap) dan nomor 10 (Aldira 2): penjual menulis "SHM proses pecah dan balik nama". Yang dikerjakan adalah pemecahan sertifikat induk, lalu balik nama ke pembeli. Ini jalur yang lebih ringan. Penjual menulis biaya AJB dan SHM ditanggung mereka kecuali pajak pembeli. Minta itu tertulis di perjanjian, dan jangan lunasi sebelum sertifikat pecahan terbit atau uangnya ditahan di notaris.
+**Tanah induknya sudah bersertifikat dan tinggal dipecah.** Ini keadaan rumah nomor 8 (Cilangkap) dan nomor 9 (Aldira 2): penjual menulis "SHM proses pecah dan balik nama". Yang dikerjakan adalah pemecahan sertifikat induk, lalu balik nama ke pembeli. Ini jalur yang lebih ringan. Penjual menulis biaya AJB dan SHM ditanggung mereka kecuali pajak pembeli. Minta itu tertulis di perjanjian, dan jangan lunasi sebelum sertifikat pecahan terbit atau uangnya ditahan di notaris.
 
 **Tanahnya belum pernah bersertifikat (girik atau letter C).** Ini pendaftaran tanah pertama kali, dan usahanya jauh lebih besar:
 
@@ -285,33 +290,33 @@ Kolom "sisa" dihitung berurutan dari atas. Kolom "gugur" adalah jumlah rumah yan
 
 | Kriteria | Sisa | Gugur di kriteria ini |
 |---|---|---|
-| Semua rumah yang terkumpul (iklan ganda sudah digabung) | 3.340 |  |
-| Harga sampai 500 jt, atau sampai 700 jt kalau bisa dicicil tanpa bunga, harga ditulis, bukan over kredit | 1.010 | 2.330 |
-| Luas tanah minimal 36 m² | 960 | 50 |
-| Di dalam cluster, one gate, atau komplek | 614 | 366 |
-| Mobil sampai depan rumah | 611 | 34 |
-| Carport ada atau mungkin dibuat | 608 | 3 |
-| Paling lama 25 menit ke gerbang tol arah Senayan pada pagi hari | 356 | 243 |
-| Tidak ada catatan banjir | 331 | 38 |
-| Lolos semua, tidak ada yang belum jelas, lokasi sudah tepat | 16 |  |
+| Semua rumah yang terkumpul (iklan ganda sudah digabung) | 4.396 |  |
+| Harga sampai 500 jt, atau sampai 700 jt kalau bisa dicicil tanpa bunga, harga ditulis, bukan over kredit | 1.431 | 2.965 |
+| Luas tanah minimal 36 m² | 1.350 | 81 |
+| Di dalam cluster, one gate, atau komplek | 752 | 639 |
+| Mobil sampai depan rumah | 748 | 42 |
+| Carport ada atau mungkin dibuat | 745 | 3 |
+| Paling lama 25 menit ke gerbang tol arah Senayan pada pagi hari | 440 | 295 |
+| Tidak ada catatan banjir | 411 | 45 |
+| Lolos semua, tidak ada yang belum jelas, lokasi sudah tepat | 15 |  |
 
-Dari 341 rumah yang belum gugur, 325 masih perlu dicek. Penyebab terbanyak: lokasi masih perkiraan (281 rumah), banjir belum jelas (146), dan rumah baru yang reputasi developernya belum terbukti (82). Sembilan rumah lain tidak punya titik lokasi sama sekali.
+Dari 420 rumah yang belum gugur, 405 masih perlu dicek. Penyebab terbanyak: lokasi masih perkiraan (359 rumah), banjir belum jelas (176), dan rumah baru yang reputasi developernya belum terbukti (111). Sepuluh rumah lain tidak punya titik lokasi sama sekali.
 
-Sebaran 16 rumah yang lolos semua dan 325 yang perlu dicek:
+Sebaran 15 rumah yang lolos semua dan 405 yang perlu dicek:
 
 | Wilayah | Lolos semua | Perlu dicek |
 |---|---|---|
-| Jakarta | 1 | 9 |
-| Pondok Gede, Jatiasih, Kota Bekasi | 3 | 45 |
-| Bekasi lain (kabupaten, atau kota dan kabupaten belum jelas) | 1 | 51 |
-| Depok | 4 | 89 |
-| Bogor, Tangerang, dan lainnya | 7 | 131 |
+| Jakarta | 0 | 10 |
+| Pondok Gede, Jatiasih, Kota Bekasi | 3 | 54 |
+| Bekasi lain (kabupaten, atau kota dan kabupaten belum jelas) | 1 | 64 |
+| Depok | 4 | 124 |
+| Bogor, Tangerang, dan lainnya | 7 | 153 |
 
 12 rumah yang lolos semua di luar wilayah yang kalian sebut ada di tabel kandidat (status "lolos semua"), di Cibubur, Cisauk, Legok, Pancoran Mas, Sawangan, Setu, Sukmajaya, Tajur Halang, Tanah Sareal.
 
 ## Kriteria yang layak dilonggarkan
 
-1. **Komplek, khusus untuk Jakarta.** Dari 99 rumah Jakarta yang lolos harga, 74 gugur karena bukan di cluster atau komplek, dan 48 di antaranya gugur hanya karena itu. Tujuh rumah yang gugur karena bukan komplek punya luas tanah cukup dan iklannya menyebut akses mobil. Empat di antaranya (Cilangkap, Cipayung, Jl. Sonton, dan Pondok Kelapa) sudah kalian masukkan pada 18 November, jadi sekarang dihitung lengkap di bagian rumah kiriman kalian.
+1. **Komplek, khusus untuk Jakarta.** Dari 151 rumah Jakarta yang lolos harga, 117 gugur karena bukan di cluster atau komplek, dan 81 di antaranya gugur hanya karena itu. Tujuh rumah yang gugur karena bukan komplek punya luas tanah cukup dan iklannya menyebut akses mobil. Empat di antaranya (Cilangkap, Cipayung, Jl. Sonton, dan Pondok Kelapa) sudah kalian masukkan pada 18 November, jadi sekarang dihitung lengkap di bagian rumah kiriman kalian. Pondok Kelapa sudah terjual (22 November).
 
    | Lokasi menurut iklan | Harga | LT | Iklan |
    |---|---|---|---|
@@ -319,13 +324,13 @@ Sebaran 16 rumah yang lolos semua dan 325 yang perlu dicek:
    | Bintara Jaya, Kalimalang (iklan menulis Jaktim, kelurahannya di Bekasi) | 410 jt | 60 | [Threads](https://www.threads.com/@alhafidz_quran/post/DfN6vL_gIBi) |
    | Lenteng Agung | 430 jt | 72 | [rumah123](https://www.rumah123.com/properti/jakarta-selatan-lenteng-agung/dijual-cepat-rumah-wilayah-lenteng-agung-non-cluster-kamar-tidur-3-akses-mobil-harga-430-jt-sugi-hos42816005/) |
    | Kavling Azzahra 1, Jl. Basuki, Cilangkap | 460 jt | 70 | [Threads](https://www.threads.com/@novianno_widy/post/DeMJep8HT3e) |
-   | Pondok Kelapa, Duren Sawit | 475 jt | 40 | [Threads](https://www.threads.com/@restina____/post/DfKApDunSUM) |
+   | Pondok Kelapa, Duren Sawit (sudah terjual) | 475 jt | 40 | [Threads](https://www.threads.com/@restina____/post/DfKApDunSUM) |
    | Cipayung | 500 jt | 50 | [Threads](https://www.threads.com/@allsyaf030/post/Dd5yHf-kSGe) |
    | Kalisari, dekat Cijantung | 500 jt | 50 | [Threads](https://www.threads.com/@mr.yoginugraha/post/Dfr3gR3j6Nb) |
 
    Dua rumah di Lenteng Agung masuk daerah yang kalian sebut pilihan terakhir.
-2. **Harga sampai 600 jt.** Menambah 9 rumah komplek di Jakarta dan 80 di Kota Bekasi sebelum dicek banjir dan tol. Ini bertentangan dengan batas 400 jt, jadi hanya berguna kalau harga bisa ditawar jauh.
-3. **Waktu ke gerbang sampai 35 menit.** Hanya menambah 14 rumah di Kota Bekasi. Tidak sepadan.
+2. **Harga sampai 600 jt.** Menambah 11 rumah komplek di Jakarta dan 98 di Kota Bekasi sebelum dicek banjir dan tol. Ini bertentangan dengan batas 400 jt, jadi hanya berguna kalau harga bisa ditawar jauh.
+3. **Waktu ke gerbang sampai 35 menit.** Hanya menambah 19 rumah di Kota Bekasi. Tidak sepadan.
 
 Yang tidak saya sarankan dilonggarkan: banjir dan akses mobil.
 
@@ -345,7 +350,7 @@ Perumahan dengan catatan banjir. Semua rumah di dalamnya sudah saya gugurkan.
 | Mutiara Gading City dan Segara City, Babelan dan Tarumajaya | 3 iklan | Indeks bahaya banjir BNPB tertinggi (1,0), dan lebih dari 25 menit ke gerbang | InaRISK BNPB |
 | Margahayu Jaya, Bekasi Timur | 1 iklan, 500 jt | 2021 dan Januari 2026, sampai 70 cm | detik, Metro TV |
 
-Di Bintara: Puri Bintara dan Mas Naga tercatat banjir pada 2021 dan Januari 2026 (sampai 90 cm). Tidak ada iklan kita di dua perumahan itu, tetapi rumah nomor 6 ada di dekatnya. Cluster As Salam di Bintara Jaya gugur karena mobil tidak sampai depan rumah. Perumahan Bintara yang kalian ingat terlalu dekat tol tidak bisa saya pastikan dari data. Kandidat terkuat adalah rumah nomor 6.
+Di Bintara: Puri Bintara dan Mas Naga tercatat banjir pada 2021 dan Januari 2026 (sampai 90 cm). Tidak ada iklan kita di dua perumahan itu, tetapi rumah nomor 5 ada di dekatnya. Cluster As Salam di Bintara Jaya gugur karena mobil tidak sampai depan rumah. Perumahan Bintara yang kalian ingat terlalu dekat tol tidak bisa saya pastikan dari data. Kandidat terkuat adalah rumah nomor 5.
 
 Daftar lengkap perumahan yang pernah banjir (61 nama dengan sumbernya) ada di `data/banjir_bernama.csv`. Yang terparah dan sebaiknya dihindari walaupun belum ada iklannya: Pondok Gede Permai, Villa Jatirasa, Kemang IFI, Bumi Nasio Indah, Komplek Dosen IKIP, Perum Jatiluhur, Graha Indah, Jatibening Permai, dan Duta Indah.
 
@@ -359,14 +364,14 @@ Developer: saya tidak menemukan developer dengan keluhan tertulis di antara kand
 
 ## Keterbatasan data
 
-- **Lokasi.** Hanya 51 dari 341 rumah yang belum gugur punya titik tepat atau titik komplek. Untuk rumah bernomor, titik komplek saya cari dari nama komplek, alamat, atau patokan di iklan lewat Google Maps dan OpenStreetMap. Itu tetap titik komplek, bukan titik rumah.
+- **Lokasi.** Hanya 51 dari 420 rumah yang belum gugur punya titik tepat atau titik komplek. Untuk rumah bernomor, titik komplek saya cari dari nama komplek, alamat, atau patokan di iklan lewat Google Maps dan OpenStreetMap. Itu tetap titik komplek, bukan titik rumah.
 - **Banjir di DKI.** Data BPBD per RT hanya 2021 sampai 2024. Banjir 2025 dan 2026 belum masuk, padahal Maret 2026 ada banjir di Cilangkap, Cibubur, Ciracas, dan Cipinang Melayu.
 - **Banjir di luar DKI.** Tidak ada data per RT. Saya memakai tiga hal: indeks bahaya banjir InaRISK BNPB (peta model dengan kotak 100 m, bukan catatan kejadian), jarak dan beda tinggi ke sungai terdekat (data ketinggian kasar, bisa meleset beberapa meter), dan daftar perumahan yang pernah diberitakan banjir. Daftar itu lengkap untuk Kota Bekasi (2021, 2025, 2026) tetapi tipis untuk Kabupaten Bekasi, Depok, Bogor, dan Tangerang. Rumah yang tidak ada di daftar belum tentu bebas banjir.
 - **Waktu tempuh.** Server rute publik OSRM tidak tahu kemacetan. Saya mengalikan hasilnya dengan 2,4. Angka itu dari 12 rute yang saya bandingkan dengan Google Maps untuk Senin pukul 06.30 (`data/kalibrasi_macet.csv`). Selisih per rute bisa 5 menit. Untuk sepuluh rumah di atas saya tulis juga angka Google.
 - **Gerbang tol.** Dari 401 gardu di OpenStreetMap, 173 gerbang terbukti pintu masuk dengan rute tol menerus ke arah Senayan. Aturannya ada di `sql/03_gerbang.sql`. Gerbang yang rutenya ke Senayan memutar jauh tetap dihitung selama tidak perlu keluar tol.
-- **Akses mobil dan carport.** Dibaca dari kata-kata di iklan. 78 rumah yang belum gugur tidak menyebut akses mobil sama sekali. Untuk sepuluh rumah pertama saya melihat fotonya.
+- **Akses mobil dan carport.** Dibaca dari kata-kata di iklan. 94 rumah yang belum gugur tidak menyebut akses mobil sama sekali. Untuk sepuluh rumah pertama saya melihat fotonya.
 - **Komplek.** Mengikuti penanda dari `komplek.py` di folder galeri (folder 23). Iklan yang tidak menulis kata cluster, komplek, atau perumahan dianggap bukan komplek, walaupun bisa saja sebenarnya di dalam komplek.
-- **Iklan aktif.** Iklan rumah123 dicek ulang 20 November 2026 (64 sudah hilang dan tidak ditampilkan). Post Threads tidak bisa dicek tanpa login, jadi hanya tanggal postnya yang saya tulis.
+- **Iklan aktif.** Iklan rumah123 dicek ulang 22 November 2026 (66 sudah hilang dan tidak ditampilkan). Iklan Pinhome diambil sekali pada 22 November dan tidak dicek ulang. Post Threads tidak bisa dicek tanpa login, jadi hanya tanggal postnya yang saya tulis.
 - **Developer.** Reputasi tidak bisa dibuktikan dari data yang ada. Semua rumah baru saya tandai "belum jelas", tidak ada yang saya loloskan.
 - **Sekolah.** Peringkat hanya ada untuk SMA (UTBK 2022, SNPMB tidak lagi merilis peringkat) dan sebagian SMP (TKA 2026 DKI, daftar media). SD tidak punya peringkat resmi. Peringkat sekolah di Jakarta Selatan, Jakarta Barat, Depok, Bogor, dan Tangerang belum dikumpulkan. Jarak jalan ke sekolah dihitung OSRM tanpa macet, dan bisa jauh lebih panjang dari jarak garis lurus kalau ada tol atau sungai di antaranya (contoh: Kansa Residence 1,2 km garis lurus ke SMPN 49, tetapi 5,3 km lewat jalan).
 - **Cicil tanpa bunga.** Hanya dibaca dari kata-kata iklan. Batas 700 jt untuk rumah seperti ini adalah anggapan saya.
@@ -404,13 +409,13 @@ Saya memakai DuckDB dengan ekstensi spatial seperti yang kalian minta. Untuk rut
 
 ## Pertanyaan yang hanya bisa dijawab kalian berdua
 
-1. Mana yang lebih penting: KTP Jakarta atau tinggal di dalam komplek? Empat rumah Jakarta di luar komplek sudah kalian masukkan. Kalau KTP Jakarta memang lebih penting, aturan komplek untuk Jakarta bisa dilonggarkan untuk semua rumah, bukan hanya yang kalian kirim.
-2. Berapa menit total perjalanan ke kantor yang masih bisa diterima? Kriteria sekarang hanya mengukur sampai gerbang tol. Rumah nomor 4, 7, dan 8 butuh sekitar 70 sampai 80 menit sampai kantor.
+1. Mana yang lebih penting: KTP Jakarta atau tinggal di dalam komplek? Tiga rumah Jakarta di luar komplek masih ada di kiriman kalian (Pondok Kelapa sudah terjual). Kalau KTP Jakarta memang lebih penting, aturan komplek untuk Jakarta bisa dilonggarkan untuk semua rumah, bukan hanya yang kalian kirim.
+2. Berapa menit total perjalanan ke kantor yang masih bisa diterima? Kriteria sekarang hanya mengukur sampai gerbang tol. Rumah nomor 3, 6, dan 7 butuh sekitar 70 sampai 80 menit sampai kantor.
 3. Jam berapa biasanya berangkat? Saya memakai 06.30. Kalau lebih siang, waktu tempuhnya lebih lama.
-4. Apakah rumah di atas 400 jt hanya untuk ditawar, atau memang mau dibeli di harga itu? Semua rumah yang lolos di wilayah kalian ada di 495 sampai 650 jt.
+4. Apakah rumah di atas 400 jt hanya untuk ditawar, atau memang mau dibeli di harga itu? Semua rumah yang lolos di wilayah kalian ada di 495 sampai 500 jt.
 5. Untuk rumah yang bisa dicicil tanpa bunga: berapa DP dan cicilan per bulan yang sanggup kalian bayar? Batas 700 jt sekarang hanya anggapan. Contoh di Jatiluhur: DP 100 jt lalu sekitar 5,9 jt per bulan selama 5 tahun.
-6. Sekolah mana yang paling penting: SD negeri dekat rumah (semua rumah di daftar punya), atau SMP dan SMA favorit untuk nanti? Jawaban ini menentukan apakah nomor 6 layak diutamakan.
-7. Apakah rumah ber-AJB boleh masuk kalau penjual menanggung pengurusan SHM? Ini menentukan nasib rumah nomor 9 dan 10.
-8. Apakah rumah baru dari developer kecil boleh masuk kalau kalian sudah melihat cluster mereka yang lama? Ini menentukan nomor 5, 7, 8, dan 17.
+6. Sekolah mana yang paling penting: SD negeri dekat rumah (semua rumah di daftar punya), atau SMP dan SMA favorit untuk nanti? Jawaban ini menentukan apakah nomor 5 layak diutamakan.
+7. Apakah rumah ber-AJB boleh masuk kalau penjual menanggung pengurusan SHM? Ini menentukan nasib rumah nomor 8 dan 9.
+8. Apakah rumah baru dari developer kecil boleh masuk kalau kalian sudah melihat cluster mereka yang lama? Ini menentukan nomor 4, 6, 7, dan 16.
 9. Perumahan Bintara mana yang dulu kalian lihat terlalu dekat tol? Namanya akan saya masukkan ke daftar hindari.
-10. Seberapa lebar jalan yang kalian anggap cukup: satu mobil, atau harus bisa berpapasan? Arsa 2 (nomor 12) hanya bisa dilewati mobil kecil.
+10. Seberapa lebar jalan yang kalian anggap cukup: satu mobil, atau harus bisa berpapasan? Arsa 2 (nomor 11) hanya bisa dilewati mobil kecil.

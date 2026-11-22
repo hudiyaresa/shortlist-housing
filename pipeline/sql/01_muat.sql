@@ -3,8 +3,9 @@
 
 INSTALL sqlite; LOAD sqlite;
 
--- 1. Semua rumah dari galeri (rumah123 + Threads + catatan survei, sudah bebas duplikat).
---    id_rumah stabil antar run: rumah123 memakai nomor iklannya, sumber lain memakai potongan hash tautan + teks.
+-- 1. Semua rumah dari galeri (rumah123 + Threads + catatan survei + Pinhome, sudah bebas duplikat per sumber).
+--    id_rumah stabil antar run: rumah123 dan Pinhome memakai nomor iklannya, sumber lain memakai potongan hash
+--    tautan + teks.
 CREATE OR REPLACE TABLE rumah AS
 WITH mentah AS (
     SELECT *, row_number() OVER () AS urut
@@ -18,6 +19,7 @@ WITH mentah AS (
 )
 SELECT
     CASE WHEN sumber = 'rumah123' THEN 'R-' || "no"
+         WHEN sumber = 'Pinhome' THEN 'P-' || "no"
          ELSE (CASE WHEN sumber = 'Catatan survei' THEN 'W-' ELSE 'T-' END)
               || substr(md5(coalesce(link, '') || '|' || coalesce(teks, '')), 1, 8) END AS id_rumah,
     sumber, bagian, judul, harga AS harga_teks, rp,

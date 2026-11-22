@@ -47,3 +47,7 @@ T-12f53c23;rumah_baru;ya;iklan menulis indent, unit terbatas
 T-6489b9a9;k_mobil;ya;iklan: tidak ada carport tetapi akses mobil sampai depan rumah
 T-5e9258b7;lt;30;iklan memuat dua tipe: 475 jt untuk LT 30 / LB 35, 795 jt untuk LT 60 / LB 55
 T-5e9258b7;lb;35;iklan memuat dua tipe: 475 jt untuk LT 30 / LB 35
+P-ph3149527;k_komplek;tidak;iklan Pinhome menulis bukan rumah cluster, di lingkungan yang sudah ramai penduduk
+P-ph3149573;wilayah_urut;3;deskripsi iklan menulis Tambun Utara, Kab. Bekasi, bukan Jakasampurna
+P-ph3150974;wilayah_urut;5;deskripsi iklan menulis Parung Panjang, Bogor, bukan Meruya Selatan
+P-ph3148104;duplikat;T-68fc479a;iklan Pinhome untuk rumah yang sama dengan post Threads Df31mYLFOnd (Wibawa Mukti II, 400 jt, LT 72 LB 45), pin Pinhome sekitar 2 km dari ujung Jl. Wibawa Mukti II

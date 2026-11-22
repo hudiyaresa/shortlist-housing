@@ -20,7 +20,7 @@ Pages (in Indonesian, because the listings, addresses and flood reports are Indo
 | `index.html`, `shortlist_rumah.md` | The shortlist write-up |
 | `peta_shortlist.html` | Leaflet map, one file. Dashed markers mean the location is only an area centroid |
 | `kandidat.csv`, `kandidat.html` | Every listing with one column per rule |
-| `foto/` | Small photos from the Threads posts, up to three per house. rumah123 photos load from their CDN |
+| `foto/` | Small photos from the Threads posts, up to three per house. rumah123 and Pinhome photos load from their CDNs |
 | `corong.csv` | How many listings drop out at each rule |
 | `gerbang_tol.csv` | Toll gates that turned out to be entrances heading toward Senayan |
 | `pipeline/` | Scripts, SQL and hand-made reference data |
@@ -76,7 +76,7 @@ This is a family discussion aid. It is not a property appraisal or financial adv
 ## Data sources
 
 OpenStreetMap (toll roads, rivers), OSRM public server (routing), BPBD DKI Jakarta (flood history per RT),
-BNPB InaRISK (flood hazard index), Open-Meteo (elevation), public listings on rumah123 and Threads, and news
+BNPB InaRISK (flood hazard index), Open-Meteo (elevation), public listings on rumah123, Pinhome (one snapshot, 22 November 2026) and Threads, and news
 reports quoting BPBD Kota Bekasi (listed in `data/banjir_sumber.csv`).
 
 Photos belong to the sellers and agents who posted the listings. They are shown here only so each house can be

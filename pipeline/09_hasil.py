@@ -60,7 +60,7 @@ KOLOM = """id_rumah, status, kelompok_wilayah,
     km_fav_jalan AS km_ke_sekolah_favorit, fav_nama AS sekolah_favorit_terdekat, link"""
 
 
-DIBUAT = "20 November 2026"
+DIBUAT = "22 November 2026"
 GALERI_PUBLIK = "https://hudiyaresa.github.io/house-listing-gallery/#map"
 HP = re.compile(r"(?<![0-9A-Za-z])(?:\+?62|0)8\d[\d\s.\-]{7,13}\d(?![0-9A-Za-z])")
 # di foto, nomor sering ditulis renggang ("+62 812 ..."), jadi polanya dibuat lebih longgar
@@ -92,7 +92,7 @@ def pilih_foto(c) -> dict[str, list[str]]:
             SELECT r.id_rumah, r.sumber, r.foto_daftar FROM rumah r JOIN kandidat k USING (id_rumah)
             WHERE k.k_harga = 'ya' AND k.duplikat_dari IS NULL AND len(r.foto_daftar) > 0
               AND r.sumber <> 'Catatan survei' ORDER BY r.id_rumah""").fetchall():
-        if sumber == "rumah123":
+        if sumber in ("rumah123", "Pinhome"):   # foto dari CDN situs iklan
             hasil[id_rumah] = [f["t"] for f in daftar[:MAKS_FOTO] if (f["t"] or "").startswith("https://")]
             continue
         calon = []
