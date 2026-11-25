@@ -51,3 +51,6 @@ P-ph3149527;k_komplek;tidak;iklan Pinhome menulis bukan rumah cluster, di lingku
 P-ph3149573;wilayah_urut;3;deskripsi iklan menulis Tambun Utara, Kab. Bekasi, bukan Jakasampurna
 P-ph3150974;wilayah_urut;5;deskripsi iklan menulis Parung Panjang, Bogor, bukan Meruya Selatan
 P-ph3148104;duplikat;T-68fc479a;iklan Pinhome untuk rumah yang sama dengan post Threads Df31mYLFOnd (Wibawa Mukti II, 400 jt, LT 72 LB 45), pin Pinhome sekitar 2 km dari ujung Jl. Wibawa Mukti II
+R-hos42449181;duplikat;T-0b921701;rumah123 untuk rumah yang sama dengan nomor 2 (Pondok Indah Jatisari, LT 90 LB 70, satu pintu), harga di rumah123 465 jt
+T-1a6f3db4;k_komplek;tidak;iklan menulis rumah kavling non cluster
+R-hos42907407;wilayah_urut;3;iklan menulis komplek Kota Serang Baru, Cibarusah, Kab. Bekasi, bukan Bekasi Timur
